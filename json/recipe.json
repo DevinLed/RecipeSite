@@ -1,0 +1,23 @@
+{
+    "Recipe":
+    [
+        {
+            "name": "Scalloped Potatoes",
+            "Ingredient": "5 Potatoes"
+
+        },
+        {
+            "name": "Mashed Potatoes",
+            "Ingredient": "5 Potatoes"
+
+        },
+        {
+             "name": "Baked Potatoes",
+             "Ingredient": "5 Potatoes"
+
+
+        }
+
+
+    ]
+}
