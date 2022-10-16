@@ -1,42 +1,68 @@
-html{      
-    width: 100%;
-    height: auto;
-  }
-body{ 
-    background-image: linear-gradient(to right, rgb(56, 1, 1) , rgb(126, 2, 2), rgb(51, 1, 1));
-    font-family: 'Roboto', sans-serif;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 25px;
-    background-size:contain;
-    display:flex;
+html {
+  width: 100%;
+  height: auto;
+  transition: all 0.3s ease 0s;
+}
+body {
+  background-image: linear-gradient(
+    to right,
+    rgb(56, 1, 1),
+    rgb(126, 2, 2),
+    rgb(51, 1, 1)
+  );
+  font-family: "Roboto", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 25px;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.searchWrapper{
+    display: flex;
     flex-direction: column;
-
+    gap: 0.25rem;
+}
+input{
+    font-size: 1rem;
+}
+.content{
+    width: 50%;
 }
 #Recipe{
-    text-align: center;
-    align-items: center;
-    width: min-content;
-    border: 5px solid rgb(0, 0, 0);
-    border-radius: 13%;
-    list-style: none;
-    margin-left: auto;
-    margin-right: 75%;
+  width: 90%;
+  align-items: center;
+  border: 5px solid rgb(0, 0, 0);
+  border-radius: 13%;
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 50vh;
 }
-ul li{ 
-    width: max-content;
-    position:relative;
-    background-color: rgb(90, 1, 1);
-    border: 1px solid rgb(0, 0, 0);
-    border-radius: 20%;
+ul .Expand li {
+  list-style: none;
+  width: max-content;
+  position: relative;
+  background-color: rgb(90, 1, 1);
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 10%;
+  padding: 1px;
 }
-h1{
-    font-size: 40px;
-    color:rgb(255, 255, 255);
-    text-align:center;
-    padding-top: 40px;
-    padding-bottom: 10rem;
+h1 {
+  font-size: 40px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 10rem;
 }
-.Ingredients{
-    list-style: none;
-
+.details-example {
+  padding: 5px;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.details-example:hover {
+  background-color: #380303;
+  border: 1px solid rgb(90, 1, 1);
+  border-radius: 20%;
+  transition: 0.5s 0.3 ease;
 }

@@ -5,17 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="scripts/domlisten.js"></script>
     <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="scripts/recipecall.js"></script>
     <title>Recipe Site</title>
 </head>
 
 <body>
     <h1>RECIPE WEBSITE</h1>
-    <ul id="Recipe"></ul>
-    <script type="text/javascript" src="scripts/recipecall.js"></script>
-    <script type="text/javascript" src="scripts/Ingredients.js"></script>
-    </script>
+    <input type="text" name="searchBar" id="searchBar" value="Potatoes">
+    <button onclick="returnText()">Search Recipes...</button>
+ 
 
+    <div class="content">
+        <ul id="Recipe"></ul>
+    </div>
 </body>
 
 </html>

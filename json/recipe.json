@@ -1,23 +1,66 @@
 {
-    "Recipe":
-    [
-        {
-            "name": "Scalloped Potatoes",
-            "Ingredient": "5 Potatoes"
-
-        },
-        {
-            "name": "Mashed Potatoes",
-            "Ingredient": "5 Potatoes"
-
-        },
-        {
-             "name": "Baked Potatoes",
-             "Ingredient": "5 Potatoes"
-
-
-        }
-
-
-    ]
+  "Recipe": [
+    {
+        "name": "Scalloped Potatoes",
+        "Ingredient": "Potatoes",
+        "Ingredient1": "Cheese",
+        "Ingredient2": "Patience",
+        "Measurement": "50",
+        "Measurement1": "1 stick of ",
+        "Measurement2": "More than enough ",
+        "Directions": "Boil um Mash um Stick um in a stew"
+    },
+    {
+      "name": "Mashed Potatoes",
+      "Ingredient": "Potatoes",
+      "Measurement": "50",
+      "Directions": "Boil um Mash um Stick um in a stew"
+    },
+    {
+      "name": "Baked Potatoes",
+      "Ingredient": "Potatoes",
+      "Measurement": "50",
+      "Directions": "Boil um Mash um Stick um in a stew"
+    },
+    {
+      "name": "Tatters",
+      "Ingredient": "Potatoes",
+      "Measurement": "50",
+      "Directions": "Boil um Mash um Stick um in a stew"
+    },
+    {
+      "name": "Fries",
+      "Ingredient": "Potatoes",
+      "Measurement": "50",
+      "Directions": "Boil um Mash um Stick um in a stew"
+    },
+    {
+        "name": "Hashbrown cakes",
+        "Ingredient": "Potatoes",
+        "Ingredient1": "Cheese",
+        "Ingredient2": "Patience",
+        "Measurement": "50",
+        "Measurement1": "1 stick of ",
+        "Measurement2": "More than enough ",
+        "Directions": "Boil um Mash um Stick um in a stew"
+    },
+    {
+      "name": "Hashbrown Mash",
+      "Ingredient": "Potatoes",
+      "Measurement": "50",
+      "Directions": "Boil um Mash um Stick um in a stew"
+    },
+    {
+      "name": "Hash Potatoes",
+      "Ingredient": "Potatoes",
+      "Measurement": "50",
+      "Directions": "Boil um Mash um Stick um in a stew"
+    },
+    {
+      "name": "Potatoe Pancake",
+      "Ingredient": "Potatoes",
+      "Measurement": "50",
+      "Directions": "Boil um Mash um Stick um in a stew"
+    }   
+  ]
 }

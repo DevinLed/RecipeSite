@@ -1,3 +1,46 @@
+const RecipesList = document.getElementById("name");
+const searchBar = document.getElementById("searchBar");
+let Recipe = [];
+
+searchBar.addEventListener("keyup", (e) => {
+  const searchString = e.target.value.toLowerCase();
+
+  const filteredRecipe = Recipe.filter((name) => {
+    return (
+      Recipe.name.toLowerCase().includes(searchString) 
+          );
+  });
+  displayRecipes(filteredRecipes);
+});
+
+const loadRecipes = async () => {
+  try {
+    const res = await fetch("json/recipe.json");
+    Recipes = await res.json();
+    displayRecipes(Recipes);
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+const displayRecipes = (Recipes) => {
+  const htmlString = Recipes
+    .map((Recipe) => {
+      return `
+            <li class="Recipe">
+                <h2>${Recipe.name}</h2>
+                <p>House: ${Recipe.house}</p>
+                <img src="${Recipe.image}"></img>
+            </li>
+        `;
+    })
+    .join("");
+  RecipesList.innerHTML = htmlString;
+};
+
+
+
+
 var Recipe = [];
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function () {
@@ -22,23 +65,10 @@ xhttp.onreadystatechange = function () {
       </li>
   </ul>`;
     }
-    const myData = "Recipe";
-
-function returnText() {
- let input = document.getElementById('searchBar').value.toLowerCase();
-
- let filteredNames = myData.filter((e) => {
-  return Object.values(e).some((value) => {
-   return value.toString().toLowerCase().includes(input);
-  });
- });
-
- console.log(filteredNames);
- }
-    
     document.getElementById("Recipe").innerHTML = output;
-    }
   }
+};
 xhttp.open("GET", "json/recipe.json", true);
 xhttp.send();
+
 
