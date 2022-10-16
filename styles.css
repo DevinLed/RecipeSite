@@ -29,7 +29,7 @@ input{
 .content{
     width: 50%;
 }
-#Recipe{
+#FullList{
   width: 90%;
   align-items: center;
   border: 5px solid rgb(0, 0, 0);
@@ -39,7 +39,7 @@ input{
   margin-right: auto;
   min-height: 50vh;
 }
-ul .Expand li {
+ul #Expand li {
   list-style: none;
   width: max-content;
   position: relative;

@@ -1,42 +1,52 @@
-var Recipe = [];
+var PullR = [];
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function () {
   if (this.readyState == 4 && this.status == 200) {
     var response = JSON.parse(xhttp.responseText);
-    var Recipe = response.Recipe;
+    var PullR = response.Recipe;
 
     var output = "";
-    for (var i = 0; i < Recipe.length; i++) {
+    for (var i = 0; i < PullR.length; i++) {
       output += `
-      <ul class="Expand">
-        <li>
-            <details class="details-example">
-                <summary>${Recipe[i].name}</summary>
-                    <ul class="list">
-                        <li>${Recipe[i].Measurement} ${Recipe[i].Ingredient}</li>
-                        <li>${Recipe[i].Measurement1} ${Recipe[i].Ingredient1}</li>
-                        <li>${Recipe[i].Measurement2} ${Recipe[i].Ingredient2}</li>
-                        <li>${Recipe[i].Directions}</li>
+      <ul id="Expand">
+            <li class="collection-header">
+                <details class="details-example">
+                <summary class="collection-header">${PullR[i].name}</summary>
+                    <ul id="list">
+                        <li class="collection-item">${PullR[i].Measurement} ${PullR[i].Ingredient}</li>
+                        <li class="collection-item">${PullR[i].Measurement1} ${PullR[i].Ingredient1}</li>
+                        <li class="collection-item">${PullR[i].Measurement2} ${PullR[i].Ingredient2}</li>
+                        <li>${PullR[i].Directions}</li>
                     </ul>
-            </details>
-      </li>
-  </ul>`;
+                </details>
+            </li>
+  </ul>`
+    // Get input element
+    let filterInput = document.getElementById('filterInput');
+    // Add event listener
+    filterInput.addEventListener('keyup', filterNames);
+
+    function filterNames(){
+      // Get value of input
+      let filterValue = document.getElementById('filterInput').value.toUpperCase();
+      let ul = document.getElementById('Expand');
+        //console.log(filterValue);
+        
+      let li = ul.querySelectorAll('li.collection-header');
+        for(let i = 0;i < li.length;i++){
+       // console.log(filterValue);
+        let a = PullR[i].name;
+        // If matched
+        if(a.toUpperCase().indexOf(filterValue) > -1){
+            li[i].style.display = '';
+        } else {
+          li[i].style.display = 'none';
+        }
     }
-    const myData = "Recipe";
-
-function returnText() {
- let input = document.getElementById('searchBar').value.toLowerCase();
-
- let filteredNames = myData.filter((e) => {
-  return Object.values(e).some((value) => {
-   return value.toString().toLowerCase().includes(input);
-  });
- });
-
- console.log(filteredNames);
- }
+    }
+}
     
-    document.getElementById("Recipe").innerHTML = output;
+    document.getElementById("FullList").innerHTML = output;
     }
   }
 xhttp.open("GET", "json/recipe.json", true);
