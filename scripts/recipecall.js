@@ -6,9 +6,9 @@ xhttp.onreadystatechange = function () {
     var PullR = response.Recipe;
 
     var output = "";
-    for (var i = 0; i < PullR.length; i++) {
+    for (let i = 0; i < PullR.length; i++) {
       output += `
-      <ul id="Expand">
+      <ul class="Expand">
             <li class="collection-header">
                 <details class="details-example">
                 <summary class="collection-header">${PullR[i].name}</summary>
@@ -20,35 +20,38 @@ xhttp.onreadystatechange = function () {
                     </ul>
                 </details>
             </li>
-  </ul>`
-    // Get input element
-    let filterInput = document.getElementById('filterInput');
-    // Add event listener
-    filterInput.addEventListener('keyup', filterNames);
+  </ul>`;
+      // Get input element
+      let filterInput = document.getElementById("filterInput");
+      // Add event listener
+      filterInput.addEventListener("keyup", filterNames);
 
-    function filterNames(){
-      // Get value of input
-      let filterValue = document.getElementById('filterInput').value.toUpperCase();
-      let ul = document.getElementById('Expand');
+      function filterNames() {
+        // Get value of input
+        let filterValue = document
+          .getElementById("filterInput")
+          .value.toUpperCase();
+        let ul = document.querySelector("ul.Expand");
         //console.log(filterValue);
-        
-      let li = ul.querySelectorAll('li.collection-header');
-        for(let i = 0;i < li.length;i++){
-       // console.log(filterValue);
-        let a = PullR[i].name;
-        // If matched
-        if(a.toUpperCase().indexOf(filterValue) > -1){
-            li[i].style.display = '';
-        } else {
-          li[i].style.display = 'none';
+
+        let li = ul.querySelectorAll("li.collection-header");
+        for (let i = 0; i < li.length; i++) {
+          // console.log(filterValue);
+          let a = PullR[i].name;
+          // If matched
+          if (a.toUpperCase().indexOf(filterValue) > -1) {
+            li[i].style.display = "";
+            console.log(i);
+          } else {
+            li[i].style.display = "none";
+            console.log(false);
+          }
         }
+      }
     }
-    }
-}
-    
+
     document.getElementById("FullList").innerHTML = output;
-    }
   }
+};
 xhttp.open("GET", "json/recipe.json", true);
 xhttp.send();
-
