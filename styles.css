@@ -4,12 +4,7 @@ html {
   transition: all 0.3s ease 0s;
 }
 body {
-  background-image: linear-gradient(
-    to right,
-    rgb(56, 1, 1),
-    rgb(126, 2, 2),
-    rgb(51, 1, 1)
-  );
+  background-image: rgb(255, 253, 208);
   font-family: "Roboto", sans-serif;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 25px;
@@ -18,42 +13,43 @@ body {
   flex-direction: column;
   align-items: center;
 }
-.searchWrapper{
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
+input {
+  font-size: 1rem;
 }
-input{
-    font-size: 1rem;
-}
-.content{
-    width: 50%;
-}
-#FullList{
-  width: 90%;
+.content {
+  display: flex;
   align-items: center;
-  border: 5px solid rgb(0, 0, 0);
-  border-radius: 13%;
-  list-style: none;
-  margin-left: auto;
-  margin-right: auto;
-  min-height: 50vh;
+  width: 105%;
+  margin: 0%;
+  background-color: rgb(105, 155, 247);
+  justify-content: space-between;
 }
-ul .Expand li {
+#listcontainer {
+  background-color: antiquewhite;
+  width: 40%;
+  align-items: center;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 0%;
+  min-height: 50vh;
+  margin-right: 232px;
+}
+ul .expandlist li {
   list-style: none;
   width: max-content;
   position: relative;
-  background-color: rgb(90, 1, 1);
-  border: 1px solid rgb(0, 0, 0);
+  background-color: rgb(241, 219, 219);
+  border: 1px solid rgb(187, 131, 131);
   border-radius: 10%;
   padding: 1px;
 }
 h1 {
-  font-size: 40px;
-  color: rgb(255, 255, 255);
-  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.0;
+  font-size: 50px;
+  color: rgb(52, 52, 61);
+  text-align: left;
   padding-top: 40px;
-  padding-bottom: 10rem;
+  padding-bottom: 1rem;
 }
 .details-example {
   padding: 5px;
@@ -61,8 +57,56 @@ h1 {
   width: fit-content;
 }
 .details-example:hover {
-  background-color: #380303;
-  border: 1px solid rgb(90, 1, 1);
-  border-radius: 20%;
-  transition: 0.5s 0.3 ease;
+  background-color: #ccbbbb;
+  border-radius: 6%;
+  transition: 0.5s 0.9 ease;
+}
+.sidebar {
+  display: flex;
+  margin-right: auto;
+  max-width: 500px;
+  padding-bottom: 27%;
+  padding-left: 8%;
+}
+.topbar {
+  padding: 40px;
+  width: 100%;
+  background-color: rgb(105, 155, 247);
+}
+.linklist {
+  display: flex;
+  width: 100%;
+}
+.navmenu{
+  padding-top: 60px;
+  width:60rem;
+  margin-left: 40%;
+}
+.navbar li, a{
+  justify-content: right;
+  color:rgb(255, 255, 255);
+  margin-left: 10%;
+  list-style: none;
+  display:inline-block;
+  list-style: none;
+  padding: 0px 5px;
+  background-color: rgb(105, 155, 247);
+  border-radius: 5px;
+}
+.icon{
+  display: flex;
+  width: 30%;
+  padding-left: 5%;
+}
+#filterInput{
+  margin-left: 42%;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+
+}
+
+.preview{
+  width: 20%;
+  justify-content: left;
+  
 }

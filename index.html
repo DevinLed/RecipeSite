@@ -6,20 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="scripts/domlisten.js"></script>
-    
+
     <link rel="stylesheet" href="styles.css">
     <title>Recipe Site</title>
 </head>
 
 <body>
-    <h1>RECIPE WEBSITE</h1>
-    <input type="text" id="filterInput" placeholder="Search recipes...">
- 
-
+    <div class="linklist">
+        <div class="icon">
+            <h1>Recipe Website</h1>
+        </div>
+        <div class="navmenu">
+            <ul class="navbar">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Samples</a></li>
+                <li><a href="#">Conversion</a></li>
+                <li><a href="#">Photos</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="topbar">
+        <input type="text" id="filterInput" onkeyup="processChanges()" placeholder="Search recipes...">
+    </div>
     <div class="content">
-        <ul id="FullList"></ul>
-            </div>
-            
+        <div class="sidebar">
+            <article>
+                <h2>MENU SIDEBAR</h2>
+            </article>
+        </div>
+        <ul id="listcontainer"></ul>
+        <div class="preview">
+
+            <img class="me-img" src="img/scal.jpg" />
+        </div>
+    </div>
+
     <script type="text/javascript" src="scripts/recipecall.js"></script>
 </body>
 
