@@ -1,66 +1,94 @@
 {
   "Recipe": [
     {
-        "name": "Scalloped Potatoes",
-        "Ingredient": "Potatoes",
-        "Ingredient1": "Cheese",
-        "Ingredient2": "Patience",
-        "Measurement": "50",
-        "Measurement1": "1 stick of ",
-        "Measurement2": "More than enough ",
-        "Directions": "Boil um Mash um Stick um in a stew"
+      "name": "Scalloped Potatoes",
+      "Ingredient": "Potatoes",
+      "Ingredient1": "Cheese",
+      "Ingredient2": "Patience",
+      "Measurement": "50",
+      "Measurement1": "1 stick of ",
+      "Measurement2": "More than enough ",
+      "Directions": "Thinly slice potatoes & onions. Make homemade sauce. Layer potatoes, onions and sauce. Cover and bake. Remove foil and bake a bit more, this step creates the delicious brown top on the scalloped potatoes."
     },
     {
       "name": "Mashed Potatoes",
       "Ingredient": "Potatoes",
+      "Ingredient1": "Cheese",
+      "Ingredient2": "Patience",
       "Measurement": "50",
-      "Directions": "Boil um Mash um Stick um in a stew"
+      "Measurement1": "1 stick of ",
+      "Measurement2": "More than enough ",
+      "Directions": "Boil the potatoes: Add the potatoes and garlic to a large pot of salted, boiling water. Reduce the heat and simmer until the potatoes are tender. Heat the milk: Heat the milk and butter in a saucepan until the butter is melted. Mash the potatoes: Drain the potatoes, then return them to the pot. Slowly add the warm milk mixture, mashing with a potato masher or blending with a mixer until the potatoes are smooth and creamy. Season to taste. "
     },
     {
       "name": "Baked Potatoes",
       "Ingredient": "Potatoes",
+      "Ingredient1": "Cheese",
+      "Ingredient2": "Patience",
       "Measurement": "50",
-      "Directions": "Boil um Mash um Stick um in a stew"
+      "Measurement1": "1 stick of ",
+      "Measurement2": "More than enough ",
+      "Directions": "Preheat the oven to 400 degrees F (200 degrees C). Place butter in a microwave-safe bowl and microwave on high until melted, 20 to 30 seconds. Stir in olive oil, garlic powder, salt, and pepper. Use a fork to poke about 5 holes into each potato. Place each potato on a sheet of aluminum foil about 6 inches wide. Brush butter mixture over potatoes, making sure to evenly coat each one. Wrap up completely in foil. Poke 5 more holes into the wrapped potatoes. Bake potatoes in the center of the preheated oven until easily pierced with a fork, about 1 hour. Spread leftover butter mixture over potatoes after cutting them open. "
     },
     {
       "name": "Tatters",
       "Ingredient": "Potatoes",
+      "Ingredient1": "Cheese",
+      "Ingredient2": "Patience",
       "Measurement": "50",
-      "Directions": "Boil um Mash um Stick um in a stew"
+      "Measurement1": "1 stick of ",
+      "Measurement2": "More than enough ",
+      "Directions": "Wash potatoes and cut into 1″ cubes. Soak in cold water about 15-20 minutes (optional). Preheat the oven to a very hot temperature. Add olive oil, seasonings, and herbs (per recipe below) and roast until tender."
     },
     {
       "name": "Fries",
       "Ingredient": "Potatoes",
+      "Ingredient1": "Cheese",
+      "Ingredient2": "Patience",
       "Measurement": "50",
-      "Directions": "Boil um Mash um Stick um in a stew"
+      "Measurement1": "1 stick of ",
+      "Measurement2": "More than enough ",
+      "Directions": "Slice potatoes into French fries and place them into a large bowl of cold water to prevent them from turning brown. Heat oil in a heavy saucepan or large skillet to 350 degrees F (175 degrees C). While the oil is heating, sift flour, garlic salt, onion salt, paprika, and salt into a large bowl. Gradually stir in enough water to make a slightly thick batter that can be drizzled from a spoon. Drain fries and pat dry; dip into the batter one at a time and place in hot oil to prevent them from clumping together. Fry until golden brown and crispy on all sides, about 7 to 10 minutes; drain on a paper towel-lined plate. "
     },
     {
-        "name": "Hashbrown cakes",
-        "Ingredient": "Potatoes",
-        "Ingredient1": "Cheese",
-        "Ingredient2": "Patience",
-        "Measurement": "50",
-        "Measurement1": "1 stick of ",
-        "Measurement2": "More than enough ",
-        "Directions": "Boil um Mash um Stick um in a stew"
+      "name": "Hashbrown cakes",
+      "Ingredient": "Potatoes",
+      "Ingredient1": "Cheese",
+      "Ingredient2": "Patience",
+      "Measurement": "50",
+      "Measurement1": "1 stick of ",
+      "Measurement2": "More than enough ",
+      "Directions": "Preheat oven to 300 degrees F. Peel and coarsely shred potatoes; immediately rinse with cold water in a colander. Drain well, pressing lightly, then pat dry with paper towels; place in a large bowl. Quarter the onion slices. Stir onion, oil, thyme, salt, and pepper into potatoes. Lightly coat an unheated very large nonstick skillet or griddle with nonstick cooking spray. Preheat skillet or griddle over medium heat. For each cake, scoop a slightly rounded measuring tablespoon of the potato mixture onto skillet or griddle. Press down potato mixture with a spatula to flatten evenly. Cook for 5 minutes. Using a wide spatula, carefully turn potato cakes (be sure not to turn cakes too soon or they will not hold together). Cook for 3 to 5 minutes more or until golden brown. Place cooked potato cakes on a baking sheet. Keep warm, uncovered, in oven while cooking remaining potato cakes. Repeat with remaining potato mixture, stirring mixture frequently. Makes 8 servings (16 potato cakes)."
     },
     {
       "name": "Hashbrown Mash",
       "Ingredient": "Potatoes",
+      "Ingredient1": "Cheese",
+      "Ingredient2": "Patience",
       "Measurement": "50",
+      "Measurement1": "1 stick of ",
+      "Measurement2": "More than enough ",
       "Directions": "Boil um Mash um Stick um in a stew"
     },
     {
       "name": "Hash Potatoes",
       "Ingredient": "Potatoes",
+      "Ingredient1": "Cheese",
+      "Ingredient2": "Patience",
       "Measurement": "50",
+      "Measurement1": "1 stick of ",
+      "Measurement2": "More than enough ",
       "Directions": "Boil um Mash um Stick um in a stew"
     },
     {
       "name": "Potatoe Pancake",
       "Ingredient": "Potatoes",
+      "Ingredient1": "Cheese",
+      "Ingredient2": "Patience",
       "Measurement": "50",
+      "Measurement1": "1 stick of ",
+      "Measurement2": "More than enough ",
       "Directions": "Boil um Mash um Stick um in a stew"
-    }   
+    }
   ]
 }

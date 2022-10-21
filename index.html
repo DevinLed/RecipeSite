@@ -12,32 +12,32 @@
 </head>
 
 <body>
+    <header>
     <div class="linklist">
-        <div class="icon">
-            <h1>Recipe Website</h1>
-        </div>
+          <img class="recipeheader" src="img/Recipeheader.jpg"/>
+        
         <div class="navmenu">
             <ul class="navbar">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Samples</a></li>
-                <li><a href="#">Conversion</a></li>
-                <li><a href="#">Photos</a></li>
+                <li class="navbarlink"><a href="#">Home</a></li>
+                <li class="navbarlink"><a href="#">Samples</a></li>
+                <li class="navbarlink"><a href="#">Conversion</a></li>
+                <li class="navbarlink"><a href="#">Photos</a></li>
             </ul>
         </div>
     </div>
+</header>
     <div class="topbar">
-        <input type="text" id="filterInput" onkeyup="processChanges()" placeholder="Search recipes...">
+        <input type="text" id="filterInput" type="search" placeholder="Search recipes...">
     </div>
     <div class="content">
         <div class="sidebar">
             <article>
                 <h2>MENU SIDEBAR</h2>
+                <span id="debounce"></span>
             </article>
         </div>
         <ul id="listcontainer"></ul>
         <div class="preview">
-
-            <img class="me-img" src="img/scal.jpg" />
         </div>
     </div>
 

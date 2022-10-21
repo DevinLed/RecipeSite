@@ -2,9 +2,11 @@ html {
   width: 100%;
   height: auto;
   transition: all 0.3s ease 0s;
+  overflow-x: hidden;
 }
 body {
-  background-image: rgb(255, 253, 208);
+  padding: 0;
+  background-image: antiquewhite;
   font-family: "Roboto", sans-serif;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 25px;
@@ -22,16 +24,23 @@ input {
   width: 105%;
   margin: 0%;
   background-color: rgb(105, 155, 247);
-  justify-content: space-between;
+  padding: 0;
 }
 #listcontainer {
+  margin: 0px;
+  padding: 0;
   background-color: antiquewhite;
   width: 40%;
   align-items: center;
-  border: 2px solid rgb(0, 0, 0);
-  border-radius: 0%;
+  border: 3px inset rgb(44, 108, 128);
+  border-radius: 3%;
   min-height: 50vh;
   margin-right: 232px;
+  max-height: 526.5px;
+  overflow: hidden;
+  min-width: 770px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 ul .expandlist li {
   list-style: none;
@@ -39,21 +48,11 @@ ul .expandlist li {
   position: relative;
   background-color: rgb(241, 219, 219);
   border: 1px solid rgb(187, 131, 131);
-  border-radius: 10%;
-  padding: 1px;
-}
-h1 {
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.0;
-  font-size: 50px;
-  color: rgb(52, 52, 61);
-  text-align: left;
-  padding-top: 40px;
-  padding-bottom: 1rem;
+  border-radius: 6%;
+  padding: 1px rgb(0, 174, 255) rgb(94, 121, 134);
 }
 .details-example {
   padding: 5px;
-  width: -moz-fit-content;
   width: fit-content;
 }
 .details-example:hover {
@@ -74,39 +73,71 @@ h1 {
   background-color: rgb(105, 155, 247);
 }
 .linklist {
-  display: flex;
+  background:  no-repeat center center fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 100%;
 }
-.navmenu{
-  padding-top: 60px;
-  width:60rem;
-  margin-left: 40%;
+.navmenu {
+  width: 40%;
+  margin-left: 27%;
+  background-color: bisque;
 }
-.navbar li, a{
+.navbar a {
+  list-style: none;
+  color: aliceblue;
+  text-decoration: none;
+}
+.navbarlink {
+  padding: 0;
+  border: 2px solid black;
   justify-content: right;
-  color:rgb(255, 255, 255);
   margin-left: 10%;
-  list-style: none;
-  display:inline-block;
-  list-style: none;
+  margin-top: 0;
   padding: 0px 5px;
-  background-color: rgb(105, 155, 247);
-  border-radius: 5px;
+  display: inline-block;
+  background-color: rgb(0, 0, 0);
+  border-radius: 40px;
 }
-.icon{
-  display: flex;
-  width: 30%;
-  padding-left: 5%;
-}
-#filterInput{
+#filterInput {
   margin-left: 42%;
   align-items: center;
   background-color: rgb(255, 255, 255);
-
 }
-
-.preview{
+.previewimg {
+  border-radius: 15px;
+  padding-left: 40px;
+  padding-top: 10px;
+  max-width: 60%;
+  height: auto;
+}
+.preview {
   width: 20%;
   justify-content: left;
-  
+}
+.collection-header {
+  align-items: center;
+  max-width: 770px;
+}
+.collection-item {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 75ch;
+}
+.imgandlink {
+  display: flex;
+  flex: 1;
+  color: rgb(0, 0, 0);
+  align-items: center;
+  width: 75%;
+  margin: 0;
+  justify-content: space-between;
+  padding: 0 10px 10px 0;
+}
+.recipelink {
+  margin: 0;
+  justify-content: center;
+  padding-right: 5px;
+  color: rgb(0, 0, 0);
 }
