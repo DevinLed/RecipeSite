@@ -6,7 +6,7 @@ html {
 }
 body {
   padding: 0;
-  background-image: antiquewhite;
+  background-color: bisque;
   font-family: "Roboto", sans-serif;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 25px;
@@ -25,6 +25,8 @@ input {
   margin: 0%;
   background-color: rgb(105, 155, 247);
   padding: 0;
+  margin-bottom: -1%;
+  height: auto;
 }
 #listcontainer {
   margin: 0px;
@@ -34,15 +36,41 @@ input {
   align-items: center;
   border: 3px inset rgb(44, 108, 128);
   border-radius: 3%;
-  min-height: 50vh;
   margin-right: 232px;
-  max-height: 526.5px;
   overflow: hidden;
   min-width: 770px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  min-height: 40px;
+  
+}
+
+#listdirection {
+  margin: 0px;
+  padding: 0;
+  background-color: antiquewhite;
+  border: 3px inset rgb(44, 108, 128);
+  border-radius: 3%;
+  min-width: 300px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  min-height: 40px;
+  margin-right: 5rem;
+  
 }
 ul .expandlist li {
+  list-style: none;
+  width: max-content;
+  position: relative;
+  background-color: rgb(241, 219, 219);
+  border: 1px solid rgb(187, 131, 131);
+  border-radius: 6%;
+  padding: 1px rgb(0, 174, 255) rgb(94, 121, 134);
+}
+ul .expandlist2 li {
   list-style: none;
   width: max-content;
   position: relative;
@@ -64,13 +92,15 @@ ul .expandlist li {
   display: flex;
   margin-right: auto;
   max-width: 500px;
-  padding-bottom: 27%;
+  padding-bottom: 17%;
   padding-left: 8%;
+  box-sizing: border-box;
 }
 .topbar {
   padding: 40px;
   width: 100%;
   background-color: rgb(105, 155, 247);
+  background-image: linear-gradient(bisque, rgb(105, 155, 247)); 
 }
 .linklist {
   background:  no-repeat center center fixed;
@@ -111,7 +141,7 @@ ul .expandlist li {
   max-width: 60%;
   height: auto;
 }
-.preview {
+.directions {
   width: 20%;
   justify-content: left;
 }
@@ -140,4 +170,29 @@ ul .expandlist li {
   justify-content: center;
   padding-right: 5px;
   color: rgb(0, 0, 0);
+}
+.recipeheader{
+margin-top:-1%;
+  background-repeat: no-repeat;
+}
+
+.container{
+  border-radius: 15%;
+  background-color: antiquewhite;
+  padding: 20px;
+  border: 2px solid black;
+  display:flow-root;
+}
+.searchables{
+  display: flex;
+}
+.collection-header2{
+  max-width: 25ch;
+  max-height: 90ch;
+  overflow: hidden;
+
+}
+#listdirection{
+  position:relative;
+
 }

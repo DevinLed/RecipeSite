@@ -1,9 +1,9 @@
-var pullname = [];
+var pullname2 = [];
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function () {
   if (this.readyState == 4 && this.status == 200) {
     var response = JSON.parse(xhttp.responseText);
-    pullname = response.Recipe;
+    pullname2 = response.Recipe;
 
     /*
     *Debounce testing, only working with debounce span as test*
@@ -26,25 +26,11 @@ xhttp.onreadystatechange = function () {
     }
     */
     var output = "";
-    for (let i = 0; i < pullname.length; i++) {
+    for (let i = 0; i < pullname2.length; i++) {
       output += `
-      <ul class="expandlist">
-            <li class="collection-header">
-                <details class="details-example">
-                <summary class="collection-header">${pullname[i].name}</summary>
-                    <ul id="list">
-                        <li class="collection-item">${pullname[i].Measurement} ${pullname[i].Ingredient}</li>
-                        <li class="collection-item">${pullname[i].Measurement1} ${pullname[i].Ingredient1}</li>
-                        <li class="collection-item">${pullname[i].Measurement2} ${pullname[i].Ingredient2}</li>
-                        <li class="collection-item">${pullname[i].Directions}</li>
-                    </ul>
-                    <div class="imgandlink">
-                    <img class="previewimg" src="img/${pullname[i].name}.jpg"/>
-                    <a class="recipelink" href="#">Full recipe: ${pullname[i].name}</a>
-                    </div>
-                </details>
-            </li>
-      </ul>`;
+      <ul class="expandlist2">
+            <li class="collection-header2">${pullname2[i].Directions}</li>
+       </ul>`;
 
       // Get input element
       let filterInput = document.getElementById("filterInput");
@@ -56,12 +42,13 @@ xhttp.onreadystatechange = function () {
         let filterValue = document
           .getElementById("filterInput")
           .value.toUpperCase();
-        let ul = document.getElementById("listcontainer");
+        let ul = document.getElementById("listdirection");
         //console.log(filterValue);
 
-        let li = ul.querySelectorAll("li.collection-header");
+
+        let li = ul.querySelectorAll("li.collection-header2");
         for (let i = 0; i < li.length; i++) {
-          let a = pullname[i].name;
+          let a = pullname2[i].name;
           // If matched
           if (a.toUpperCase().indexOf(filterValue) > -1) {
             li[i].style.display = "";
@@ -74,7 +61,7 @@ xhttp.onreadystatechange = function () {
       }
     }
 
-    document.getElementById("listcontainer").innerHTML = output;
+    document.getElementById("listdirection").innerHTML = output;
   }
 };
 xhttp.open("GET", "json/recipe.json", true);

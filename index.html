@@ -27,20 +27,44 @@
     </div>
 </header>
     <div class="topbar">
-        <input type="text" id="filterInput" type="search" placeholder="Search recipes...">
-    </div>
+        <input type="text" id="filterInput" type="search"  placeholder="Search recipes..."  />
+            </div>
     <div class="content">
         <div class="sidebar">
-            <article>
-                <h2>MENU SIDEBAR</h2>
-                <span id="debounce"></span>
-            </article>
+            <div class="container">
+                <h1>Egg Timer</h1>
+                <div id="time">
+                    <span class="digit" id="hr">
+                      00</span>
+                    <span class="txt">Hr</span>
+                    <span class="digit" id="min">
+                      00</span>
+                    <span class="txt">Min</span>
+                    <span class="digit" id="sec">
+                      00</span>
+                    <span class="txt">Sec</span>
+                    <span class="digit" id="count">
+                      00</span>
+                </div>
+                <div id="buttons">
+                    <button class="btn" id="start">
+                      Start</button>
+                    <button class="btn" id="stop">
+                      Stop</button>
+                    <button class="btn" id="reset">
+                      Reset</button>
+                </div>
+            </div>
+          
         </div>
+        <script type="text/javascript" src="scripts/timer.js"></script>
+        <div class="searchables">
         <ul id="listcontainer"></ul>
-        <div class="preview">
-        </div>
+        <ul id="listdirection"></ul>
+    </div>
     </div>
 
+    <script type="text/javascript" src="scripts/direction.js"></script>
     <script type="text/javascript" src="scripts/recipecall.js"></script>
 </body>
 
