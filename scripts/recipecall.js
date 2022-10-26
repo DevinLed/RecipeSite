@@ -40,7 +40,6 @@ xhttp.onreadystatechange = function () {
                     </ul>
                     <div class="imgandlink">
                     <img class="previewimg" src="img/${pullname[i].name}.jpg"/>
-                    <a class="recipelink" href="#">Full recipe: ${pullname[i].name}</a>
                     </div>
                 </details>
             </li>

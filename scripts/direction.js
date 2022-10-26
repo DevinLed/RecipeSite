@@ -29,7 +29,7 @@ xhttp.onreadystatechange = function () {
     for (let i = 0; i < pullname2.length; i++) {
       output += `
       <ul class="expandlist2">
-            <li class="collection-header2">${pullname2[i].Directions}</li>
+            <li class="collection-header2" style="display: none">${pullname2[i].Directions}</li>
        </ul>`;
 
       // Get input element
@@ -45,10 +45,14 @@ xhttp.onreadystatechange = function () {
         let ul = document.getElementById("listdirection");
         //console.log(filterValue);
 
-
         let li = ul.querySelectorAll("li.collection-header2");
         for (let i = 0; i < li.length; i++) {
           let a = pullname2[i].name;
+          if (a.toUpperCase().indexOf(filterValue) > 0) {
+            li[i].style.display = "none";
+          } else{
+            li[i].style.display = "";
+          }
           // If matched
           if (a.toUpperCase().indexOf(filterValue) > -1) {
             li[i].style.display = "";
