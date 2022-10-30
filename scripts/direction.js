@@ -1,3 +1,4 @@
+function showdirection(){
 var pullname2 = [];
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function () {
@@ -70,3 +71,5 @@ xhttp.onreadystatechange = function () {
 };
 xhttp.open("GET", "json/recipe.json", true);
 xhttp.send();
+}
+showdirection();

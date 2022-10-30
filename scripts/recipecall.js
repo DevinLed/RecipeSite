@@ -1,6 +1,8 @@
+function showall(){
+
 var pullname = [];
 var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function () {
+xhttp.onreadystatechange = function click() {
   if (this.readyState == 4 && this.status == 200) {
     var response = JSON.parse(xhttp.responseText);
     pullname = response.Recipe;
@@ -25,9 +27,16 @@ xhttp.onreadystatechange = function () {
       }
     }
     */
+
+    
     var output = "";
     for (let i = 0; i < pullname.length; i++) {
+
+
+
+     
       output += `
+      
       <ul class="expandlist">
             <li class="collection-header">
                 <details class="details-example">
@@ -40,6 +49,7 @@ xhttp.onreadystatechange = function () {
                     </ul>
                     <div class="imgandlink">
                     <img class="previewimg" src="img/${pullname[i].name}.jpg"/>
+                    <button onclick="showdirection()">Show Full Recipe</button>
                     </div>
                 </details>
             </li>
@@ -71,10 +81,13 @@ xhttp.onreadystatechange = function () {
           }
         }
       }
-    }
+    
 
     document.getElementById("listcontainer").innerHTML = output;
+  }
   }
 };
 xhttp.open("GET", "json/recipe.json", true);
 xhttp.send();
+}
+showall();

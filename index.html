@@ -8,11 +8,14 @@
   <script type="text/javascript" src="scripts/domlisten.js"></script>
   <link rel="stylesheet" href="styles.css">
   <script src="https://kit.fontawesome.com/a59b9b09ab.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="scripts/recipecall.js"></script>
+  <script type="text/javascript" src="scripts/direction.js"></script>
   <title>Recipe Site</title>
 </head>
 
 <body>
   <header>
+    
     <div class="linklist">
       <img class="recipeheader" src="img/Recipeheader.jpg" />
 
@@ -62,8 +65,15 @@
 </script>
 <div class="topbar">
   <input type="text" id="filterInput" type="search" placeholder="Search recipes..." />
+  
+<div class ="listall">
+  <button onclick = "showall()">Show All</button>
+  </div>
+  
+  
 </div>
 <div class="content">
+  
   <div class="sidebar">
     <div class="container">
       <h1>Egg Timer</h1>
@@ -99,8 +109,6 @@
   </div>
 </div>
 
-<script type="text/javascript" src="scripts/direction.js"></script>
-<script type="text/javascript" src="scripts/recipecall.js"></script>
 </body>
 
 </html>

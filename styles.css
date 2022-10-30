@@ -270,3 +270,11 @@ ul .expandlist2 li {
 .icon:hover {
   color: rgb(126, 126, 22);
 }
+.listall{
+  
+  margin-left: 45%;
+  padding-top: 10px;
+  width: 65px;
+  border-radius: 12%;
+  margin-bottom: -30px;
+}
