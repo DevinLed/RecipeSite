@@ -1,11 +1,11 @@
 function showall(){
 
-var pullname = [];
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function click() {
-  if (this.readyState == 4 && this.status == 200) {
-    var response = JSON.parse(xhttp.responseText);
-    pullname = response.Recipe;
+// var recipeCollection = [];
+// var xhttp = new XMLHttpRequest();
+// xhttp.onreadystatechange = function click() {
+//   if (this.readyState == 4 && this.status == 200) {
+//     var response = JSON.parse(xhttp.responseText);
+//     recipeCollection = response.Recipe;
 
     /*
     *Debounce testing, only working with debounce span as test*
@@ -30,25 +30,22 @@ xhttp.onreadystatechange = function click() {
 
     
     var output = "";
-    for (let i = 0; i < pullname.length; i++) {
+    for (let i = 0; i < recipeCollection.length; i++) {
 
-
-
-     
       output += `
       
       <ul class="expandlist">
             <li class="collection-header">
                 <details class="details-example">
-                <summary class="collection-header">${pullname[i].name}</summary>
+                <summary class="collection-header">${recipeCollection[i].name}</summary>
                     <ul id="list">
-                        <li class="collection-item">${pullname[i].Measurement} ${pullname[i].Ingredient}</li>
-                        <li class="collection-item">${pullname[i].Measurement1} ${pullname[i].Ingredient1}</li>
-                        <li class="collection-item">${pullname[i].Measurement2} ${pullname[i].Ingredient2}</li>
-                        <li class="collection-item">${pullname[i].Directions}</li>
+                        <li class="collection-item">${recipeCollection[i].Measurement} ${recipeCollection[i].Ingredient}</li>
+                        <li class="collection-item">${recipeCollection[i].Measurement1} ${recipeCollection[i].Ingredient1}</li>
+                        <li class="collection-item">${recipeCollection[i].Measurement2} ${recipeCollection[i].Ingredient2}</li>
+                        <li class="collection-item">${recipeCollection[i].Directions}</li>
                     </ul>
                     <div class="imgandlink">
-                    <img class="previewimg" src="img/${pullname[i].name}.jpg"/>
+                    <img class="previewimg" src="img/${recipeCollection[i].name}.jpg"/>
                     <button onclick="showdirection()">Show Full Recipe</button>
                     </div>
                 </details>
@@ -70,7 +67,7 @@ xhttp.onreadystatechange = function click() {
 
         let li = ul.querySelectorAll("li.collection-header");
         for (let i = 0; i < li.length; i++) {
-          let a = pullname[i].name;
+          let a = recipeCollection[i].name;
           // If matched
           if (a.toUpperCase().indexOf(filterValue) > -1) {
             li[i].style.display = "";
@@ -86,8 +83,5 @@ xhttp.onreadystatechange = function click() {
     document.getElementById("listcontainer").innerHTML = output;
   }
   }
-};
-xhttp.open("GET", "json/recipe.json", true);
-xhttp.send();
-}
+
 showall();

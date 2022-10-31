@@ -1,36 +1,21 @@
-function showdirection(){
-var pullname2 = [];
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function () {
-  if (this.readyState == 4 && this.status == 200) {
-    var response = JSON.parse(xhttp.responseText);
-    pullname2 = response.Recipe;
+/*
+On page load, load all recipes from json
+  - add to our recipe array
+setup event listener for search
+  - requires hide/show functionality for recipe list
+when recipe is selected, show full view
+when 'show full' button clicked, show directions in right panel
+*/
 
-    /*
-    *Debounce testing, only working with debounce span as test*
-    const input = document.querySelector("input")
-    const debounceText = document.getElementById("debounce")
-    const updateDebounceText = debounce(text => {
-      debounceText.textContent = text
-    })
-    input.addEventListener("input", e => {
-      updateDebounceText(e.target.value)
-    })
-    function debounce (cb, delay= 1500){
-      let timeout
-      return (...args) => {
-        clearTimeout(timeout)
-        timeout = setTimeout(() => {
-          cb(...args)
-        }, delay)
-      }
-    }
-    */
-    var output = "";
-    for (let i = 0; i < pullname2.length; i++) {
+
+
+
+function x() {
+  var output = "";
+    for (let i = 0; i < recipeCollection.length; i++) {
       output += `
       <ul class="expandlist2">
-            <li class="collection-header2" style="display: none">${pullname2[i].Directions}</li>
+            <li class="collection-header2" style="display: none">${recipeCollection[i].Directions}</li>
        </ul>`;
 
       // Get input element
@@ -48,7 +33,7 @@ xhttp.onreadystatechange = function () {
 
         let li = ul.querySelectorAll("li.collection-header2");
         for (let i = 0; i < li.length; i++) {
-          let a = pullname2[i].name;
+          let a = recipeCollection[i].name;
           if (a.toUpperCase().indexOf(filterValue) > 0) {
             li[i].style.display = "none";
           } else{
@@ -67,9 +52,4 @@ xhttp.onreadystatechange = function () {
     }
 
     document.getElementById("listdirection").innerHTML = output;
-  }
-};
-xhttp.open("GET", "json/recipe.json", true);
-xhttp.send();
 }
-showdirection();
