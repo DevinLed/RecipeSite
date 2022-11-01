@@ -16,17 +16,8 @@ xhttp.onreadystatechange = function click() {
     })
     input.addEventListener("input", e => {
       updateDebounceText(e.target.value)
-    })
-    function debounce (cb, delay= 1500){
-      let timeout
-      return (...args) => {
-        clearTimeout(timeout)
-        timeout = setTimeout(() => {
-          cb(...args)
-        }, delay)
-      }
-    }
-    */
+    })*/
+    
 
     
     var output = "";
@@ -35,7 +26,7 @@ xhttp.onreadystatechange = function click() {
 
 
      
-      output += `
+      output += `50
       
       <ul class="expandlist">
             <li class="collection-header">

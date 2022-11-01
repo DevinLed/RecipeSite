@@ -48,10 +48,11 @@ input {
 
 #listdirection {
   margin: 0px;
-  padding: 0;
+  padding: 6px;
   background-color: antiquewhite;
   border: 3px inset rgb(44, 108, 128);
   min-width: 300px;
+  max-width: 300px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
   min-height: 40px;
@@ -61,6 +62,42 @@ input {
   min-height: 300px;
   max-height: 500px;
 }
+.showpop{
+    padding: 10px 30px;
+    background: #fff;
+    border:0;
+    outline: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 400;
+    border-radius: 30px;
+}
+
+.popup{
+  width: 400px;
+  background: #fff;
+  border-radius: 6px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  text-align: center;
+  padding: 0 30px 30px;
+  color: #333;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+  }
+
+.open-popup{
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+
+
+
+
 ul .expandlist li {
   list-style: none;
   width: max-content;

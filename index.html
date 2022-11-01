@@ -5,17 +5,17 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script type="text/javascript" src="scripts/domlisten.js"></script>
+  <!-- <script type="text/javascript" src="scripts/domlisten.js"></script> -->
   <link rel="stylesheet" href="styles.css">
   <script src="https://kit.fontawesome.com/a59b9b09ab.js" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="scripts/recipecall.js"></script>
-  <script type="text/javascript" src="scripts/direction.js"></script>
+  <script type="text/javascript" src="scripts/main.js"></script>
+  <!-- <script type="text/javascript" src="scripts/direction.js"></script> -->
   <title>Recipe Site</title>
 </head>
 
 <body>
   <header>
-    
+
     <div class="linklist">
       <img class="recipeheader" src="img/Recipeheader.jpg" />
 
@@ -64,16 +64,16 @@
   }
 </script>
 <div class="topbar">
-  <input type="text" id="filterInput" type="search" placeholder="Search recipes..." />
-  
-<div class ="listall">
-  <button onclick = "showall()">Show All</button>
+  <input type="text" id="filterInput" type="search" placeholder="Search recipes..." onkeyup="searchKeyUpEvent()" />
+
+  <div class="listall">
+    <button onclick="showAllRecipes()" class="showpop">Show All</button>
   </div>
-  
-  
+
+
 </div>
 <div class="content">
-  
+
   <div class="sidebar">
     <div class="container">
       <h1>Egg Timer</h1>
@@ -108,6 +108,7 @@
     <ul id="listdirection"></ul>
   </div>
 </div>
+
 
 </body>
 
