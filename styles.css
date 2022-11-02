@@ -6,7 +6,7 @@ html {
 }
 body {
   padding: 0;
-  background-color: bisque;
+  background-color: rgb(105, 155, 247);
   font-family: "Roboto", sans-serif;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 25px;
@@ -28,14 +28,10 @@ input {
   height: auto;
 }
 #listcontainer {
-  margin: 0px;
   padding: 0;
   background-color: antiquewhite;
-  width: 40%;
-  align-items: center;
   border: 3px inset rgb(44, 108, 128);
   border-radius: 3%;
-  margin-right: 150px;
   overflow: hidden;
   min-width: 770px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
@@ -44,65 +40,82 @@ input {
   overflow: hidden;
   text-overflow: ellipsis;
   min-height: 40px;
-}
-
-#listdirection {
-  margin: 0px;
-  padding: 6px;
-  background-color: antiquewhite;
-  border: 3px inset rgb(44, 108, 128);
-  min-width: 300px;
-  max-width: 300px;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
-    rgba(0, 0, 0, 0.22) 0px 15px 12px;
-  min-height: 40px;
-  margin-right: 10rem;
-
-  overflow: hidden;
-  min-height: 300px;
-  max-height: 500px;
+  max-height: auto;
+  margin-left: 22%;
+  width: 190%;
+  align-items: center;
+  justify-content: center;
 }
 .showpop{
-    padding: 10px 30px;
-    background: #fff;
-    border:0;
-    outline: none;
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: 400;
-    border-radius: 30px;
+  padding: 10px 30px;
+  background: bisque;
+  border: 2px solid rgb(0, 0, 0);
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 400;
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 20px,
+    rgba(0, 0, 0, 0.22) 0px 7px 6px;
 }
 
-.popup{
-  width: 400px;
+.popup {   
+  white-space:pre-line;
+  list-style: none;
+  word-wrap: break-word;   
+  width: 60%;
   background: #fff;
   border-radius: 6px;
-  position: absolute;
+  position: fixed;
+  border: 2px solid rgb(0, 0, 0);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
   top: 0;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.1);
+  transform: translate(-50%, -50%) scale(0.9);
   text-align: center;
   padding: 0 30px 30px;
   color: #333;
   visibility: hidden;
   transition: transform 0.4s, top 0.4s;
-  }
+  word-wrap: break-word; 
+  height: 250px;
+  min-height: 300px;
+  max-height: auto;
+  padding-top: 120px;
+  z-index: 9002;
+}
 
-.open-popup{
+.open-popup {
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.mainpage{
+  
+  max-width: 500px;
+  padding-bottom: 17%;
+  padding-left: 8%;
+  box-sizing: border-box;
+  
+}
+.sidebar {
+  max-width: 500px;
+  box-sizing: border-box;
+}
+
+.open-timer{
   visibility: visible;
   top: 50%;
   transform: translate(-50%, -50%) scale(1);
 }
 
 
-
-
-
 ul .expandlist li {
   list-style: none;
   width: max-content;
   position: relative;
-  background-color: rgb(241, 219, 219);
+  background-color: rgba(197, 216, 214, 0.904);
   border: 1px solid rgb(187, 131, 131);
   border-radius: 6%;
   padding: 1px rgb(0, 174, 255) rgb(94, 121, 134);
@@ -115,7 +128,6 @@ ul .expandlist2 li {
   margin: 0;
 }
 .expandlist2 {
-
   margin: 0;
   padding: 5px;
 }
@@ -124,20 +136,17 @@ ul .expandlist2 li {
   width: fit-content;
 }
 .details-example:hover {
-  background-color: #ccbbbb;
+  background-color: rgba(197, 216, 214, 0.904);
   border-radius: 6%;
   transition: 0.5s 0.9 ease;
 }
-.sidebar {
-  margin-right: auto;
-  max-width: 500px;
-  padding-bottom: 17%;
-  padding-left: 8%;
-  box-sizing: border-box;
-}
 .topbar {
+  width: 110%;
+  height: 100%;
   padding: 40px;
-  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background-color: rgb(105, 155, 247);
   background-image: linear-gradient(bisque, rgb(105, 155, 247));
 }
@@ -180,9 +189,23 @@ ul .expandlist2 li {
   margin-right: auto;
   width: 50%;
 }
+.directionBtn{
+  border-radius: 15px;
+  padding-top: 15px;
+  padding-left: 37%;
+  width: 100%;
+
+}
 .directions {
   width: 20%;
   justify-content: left;
+}
+@keyframes sweep {
+  0%    {opacity: 0; margin-left: -10px}
+  100%  {opacity: 1; margin-left: 0px}
+}
+details[open] summary ~ * {
+  animation: sweep .5s ease-in-out;
 }
 .collection-header {
   align-items: center;
@@ -206,8 +229,14 @@ ul .expandlist2 li {
   padding: 0 10px 10px 0;
 }
 .recipeheader {
-  margin-top: -1%;
+  aspect-ratio: initial;
+  margin: -1%;
   background-repeat: no-repeat;
+  width: 110%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .container {
@@ -228,12 +257,8 @@ ul .expandlist2 li {
   max-height: 90ch;
   overflow: hidden;
 }
-#listdirection {
-  position: relative;
-}
-
 .main-scroll-div {
-  width: 50%;
+  width: 70%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -254,7 +279,7 @@ ul .expandlist2 li {
   z-index: 99;
   height: 100%;
   width: 180px;
-  background-image: linear-gradient(90deg, bisque, transparent);
+  background-image: linear-gradient(90deg, rgb(105, 155, 247), transparent);
 }
 
 .cover::after {
@@ -265,7 +290,7 @@ ul .expandlist2 li {
   z-index: 99;
   height: 100%;
   width: 160px;
-  background-image: linear-gradient(-90deg, bisque, transparent);
+  background-image: linear-gradient(-90deg, rgb(105, 155, 247), transparent);
 }
 
 .scroll-images {
@@ -296,7 +321,7 @@ ul .expandlist2 li {
 
 .icon {
   color: rgb(2, 34, 3);
-  background-color: bisque;
+  background-color: rgb(105, 155, 247);
   font-size: 50px;
   outline: none;
   border: none;
@@ -305,10 +330,9 @@ ul .expandlist2 li {
 }
 
 .icon:hover {
-  color: rgb(126, 126, 22);
+  color: rgb(226, 226, 85);
 }
-.listall{
-  
+.listall {
   margin-left: 45%;
   padding-top: 10px;
   width: 65px;

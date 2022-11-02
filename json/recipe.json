@@ -74,7 +74,7 @@
         { "name": "Cheese", "measure": "1 stick of " },
         { "name": "Patience", "measure": "More than enough " }
       ],
-      "directions": "Pick it out of the bucket",
+      "directions": "Preheat the oven to 400 degrees F (200 degrees C). Place butter in a microwave-safe bowl and microwave on high until melted, 20 to 30 seconds. Stir in olive oil, garlic powder, salt, and pepper. Use a fork to poke about 5 holes into each potato. Place each potato on a sheet of aluminum foil about 6 inches wide. Brush butter mixture over potatoes, making sure to evenly coat each one. Wrap up completely in foil. Poke 5 more holes into the wrapped potatoes. Bake potatoes in the center of the preheated oven until easily pierced with a fork, about 1 hour. Spread leftover butter mixture over potatoes after cutting them open. ",
       "img": "./img/HashbrownMash.jpg"
     },
     {
@@ -85,7 +85,7 @@
         { "name": "Cheese", "measure": "1 stick of " },
         { "name": "Patience", "measure": "More than enough " }
       ],
-      "directions": "Pick it out of the bucket",
+      "directions": "Preheat the oven to 400 degrees F (200 degrees C). Place butter in a microwave-safe bowl and microwave on high until melted, 20 to 30 seconds. Stir in olive oil, garlic powder, salt, and pepper. Use a fork to poke about 5 holes into each potato. Place each potato on a sheet of aluminum foil about 6 inches wide. Brush butter mixture over potatoes, making sure to evenly coat each one. Wrap up completely in foil. Poke 5 more holes into the wrapped potatoes. Bake potatoes in the center of the preheated oven until easily pierced with a fork, about 1 hour. Spread leftover butter mixture over potatoes after cutting them open. ",
       "img": "./img/HashPotatoes.jpg"
     },
     {
@@ -96,7 +96,128 @@
         { "name": "Cheese", "measure": "1 stick of " },
         { "name": "Patience", "measure": "More than enough " }
       ],
-      "directions": "Pick it out of the bucket",
+      "directions": "Preheat the oven to 400 degrees F (200 degrees C). Place butter in a microwave-safe bowl and microwave on high until melted, 20 to 30 seconds. Stir in olive oil, garlic powder, salt, and pepper. Use a fork to poke about 5 holes into each potato. Place each potato on a sheet of aluminum foil about 6 inches wide. Brush butter mixture over potatoes, making sure to evenly coat each one. Wrap up completely in foil. Poke 5 more holes into the wrapped potatoes. Bake potatoes in the center of the preheated oven until easily pierced with a fork, about 1 hour. Spread leftover butter mixture over potatoes after cutting them open. ",
+      "img": "./img/PotatoPancake.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Example10",
+      "ingredients": [
+        { "name": "Potatoes", "measure": "50 " },
+        { "name": "Cheese", "measure": "1 stick of " },
+        { "name": "Patience", "measure": "More than enough " }
+      ],
+      "directions": "Preheat the oven to 400 degrees F (200 degrees C). Place butter in a microwave-safe bowl and microwave on high until melted, 20 to 30 seconds. Stir in olive oil, garlic powder, salt, and pepper. Use a fork to poke about 5 holes into each potato. Place each potato on a sheet of aluminum foil about 6 inches wide. Brush butter mixture over potatoes, making sure to evenly coat each one. Wrap up completely in foil. Poke 5 more holes into the wrapped potatoes. Bake potatoes in the center of the preheated oven until easily pierced with a fork, about 1 hour. Spread leftover butter mixture over potatoes after cutting them open. ",
+      "img": "./img/PotatoPancake.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Example11",
+      "ingredients": [
+        { "name": "Potatoes", "measure": "50 " },
+        { "name": "Cheese", "measure": "1 stick of " },
+        { "name": "Patience", "measure": "More than enough " }
+      ],
+      "directions": "Preheat the oven to 400 degrees F (200 degrees C). Place butter in a microwave-safe bowl and microwave on high until melted, 20 to 30 seconds. Stir in olive oil, garlic powder, salt, and pepper. Use a fork to poke about 5 holes into each potato. Place each potato on a sheet of aluminum foil about 6 inches wide. Brush butter mixture over potatoes, making sure to evenly coat each one. Wrap up completely in foil. Poke 5 more holes into the wrapped potatoes. Bake potatoes in the center of the preheated oven until easily pierced with a fork, about 1 hour. Spread leftover butter mixture over potatoes after cutting them open. ",
+      "img": "./img/PotatoPancake.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Example12",
+      "ingredients": [
+        { "name": "Potatoes", "measure": "50 " },
+        { "name": "Cheese", "measure": "1 stick of " },
+        { "name": "Patience", "measure": "More than enough " }
+      ],
+      "directions": "Preheat the oven to 400 degrees F (200 degrees C). Place butter in a microwave-safe bowl and microwave on high until melted, 20 to 30 seconds. Stir in olive oil, garlic powder, salt, and pepper. Use a fork to poke about 5 holes into each potato. Place each potato on a sheet of aluminum foil about 6 inches wide. Brush butter mixture over potatoes, making sure to evenly coat each one. Wrap up completely in foil. Poke 5 more holes into the wrapped potatoes. Bake potatoes in the center of the preheated oven until easily pierced with a fork, about 1 hour. Spread leftover butter mixture over potatoes after cutting them open. ",
+      "img": "./img/PotatoPancake.jpg"
+    },
+    {
+      "id": 13,
+      "name": "Example13",
+      "ingredients": [
+        { "name": "Potatoes", "measure": "50 " },
+        { "name": "Cheese", "measure": "1 stick of " },
+        { "name": "Patience", "measure": "More than enough " }
+      ],
+      "directions": "Preheat the oven to 400 degrees F (200 degrees C). Place butter in a microwave-safe bowl and microwave on high until melted, 20 to 30 seconds. Stir in olive oil, garlic powder, salt, and pepper. Use a fork to poke about 5 holes into each potato. Place each potato on a sheet of aluminum foil about 6 inches wide. Brush butter mixture over potatoes, making sure to evenly coat each one. Wrap up completely in foil. Poke 5 more holes into the wrapped potatoes. Bake potatoes in the center of the preheated oven until easily pierced with a fork, about 1 hour. Spread leftover butter mixture over potatoes after cutting them open. ",
+      "img": "./img/PotatoPancake.jpg"
+    },
+    {
+      "id": 14,
+      "name": "Example14",
+      "ingredients": [
+        { "name": "Potatoes", "measure": "50 " },
+        { "name": "Cheese", "measure": "1 stick of " },
+        { "name": "Patience", "measure": "More than enough " }
+      ],
+      "directions": "Preheat the oven to 400 degrees F (200 degrees C). Place butter in a microwave-safe bowl and microwave on high until melted, 20 to 30 seconds. Stir in olive oil, garlic powder, salt, and pepper. Use a fork to poke about 5 holes into each potato. Place each potato on a sheet of aluminum foil about 6 inches wide. Brush butter mixture over potatoes, making sure to evenly coat each one. Wrap up completely in foil. Poke 5 more holes into the wrapped potatoes. Bake potatoes in the center of the preheated oven until easily pierced with a fork, about 1 hour. Spread leftover butter mixture over potatoes after cutting them open. ",
+      "img": "./img/PotatoPancake.jpg"
+    },
+    {
+      "id": 15,
+      "name": "Example15",
+      "ingredients": [
+        { "name": "Potatoes", "measure": "50 " },
+        { "name": "Cheese", "measure": "1 stick of " },
+        { "name": "Patience", "measure": "More than enough " }
+      ],
+      "directions": "Preheat the oven to 400 degrees F (200 degrees C). Place butter in a microwave-safe bowl and microwave on high until melted, 20 to 30 seconds. Stir in olive oil, garlic powder, salt, and pepper. Use a fork to poke about 5 holes into each potato. Place each potato on a sheet of aluminum foil about 6 inches wide. Brush butter mixture over potatoes, making sure to evenly coat each one. Wrap up completely in foil. Poke 5 more holes into the wrapped potatoes. Bake potatoes in the center of the preheated oven until easily pierced with a fork, about 1 hour. Spread leftover butter mixture over potatoes after cutting them open. ",
+      "img": "./img/PotatoPancake.jpg"
+    },
+    {
+      "id": 16,
+      "name": "Example16",
+      "ingredients": [
+        { "name": "Potatoes", "measure": "50 " },
+        { "name": "Cheese", "measure": "1 stick of " },
+        { "name": "Patience", "measure": "More than enough " }
+      ],
+      "directions": "Preheat the oven to 400 degrees F (200 degrees C). Place butter in a microwave-safe bowl and microwave on high until melted, 20 to 30 seconds. Stir in olive oil, garlic powder, salt, and pepper. Use a fork to poke about 5 holes into each potato. Place each potato on a sheet of aluminum foil about 6 inches wide. Brush butter mixture over potatoes, making sure to evenly coat each one. Wrap up completely in foil. Poke 5 more holes into the wrapped potatoes. Bake potatoes in the center of the preheated oven until easily pierced with a fork, about 1 hour. Spread leftover butter mixture over potatoes after cutting them open. ",
+      "img": "./img/PotatoPancake.jpg"
+    },
+    {
+      "id": 17,
+      "name": "Example17",
+      "ingredients": [
+        { "name": "Potatoes", "measure": "50 " },
+        { "name": "Cheese", "measure": "1 stick of " },
+        { "name": "Patience", "measure": "More than enough " }
+      ],
+      "directions": "Preheat the oven to 400 degrees F (200 degrees C). Place butter in a microwave-safe bowl and microwave on high until melted, 20 to 30 seconds. Stir in olive oil, garlic powder, salt, and pepper. Use a fork to poke about 5 holes into each potato. Place each potato on a sheet of aluminum foil about 6 inches wide. Brush butter mixture over potatoes, making sure to evenly coat each one. Wrap up completely in foil. Poke 5 more holes into the wrapped potatoes. Bake potatoes in the center of the preheated oven until easily pierced with a fork, about 1 hour. Spread leftover butter mixture over potatoes after cutting them open. ",
+      "img": "./img/PotatoPancake.jpg"
+    },
+    {
+      "id": 18,
+      "name": "Example18",
+      "ingredients": [
+        { "name": "Potatoes", "measure": "50 " },
+        { "name": "Cheese", "measure": "1 stick of " },
+        { "name": "Patience", "measure": "More than enough " }
+      ],
+      "directions": "Preheat the oven to 400 degrees F (200 degrees C). Place butter in a microwave-safe bowl and microwave on high until melted, 20 to 30 seconds. Stir in olive oil, garlic powder, salt, and pepper. Use a fork to poke about 5 holes into each potato. Place each potato on a sheet of aluminum foil about 6 inches wide. Brush butter mixture over potatoes, making sure to evenly coat each one. Wrap up completely in foil. Poke 5 more holes into the wrapped potatoes. Bake potatoes in the center of the preheated oven until easily pierced with a fork, about 1 hour. Spread leftover butter mixture over potatoes after cutting them open. ",
+      "img": "./img/PotatoPancake.jpg"
+    },
+    {
+      "id": 19,
+      "name": "Example19",
+      "ingredients": [
+        { "name": "Potatoes", "measure": "50 " },
+        { "name": "Cheese", "measure": "1 stick of " },
+        { "name": "Patience", "measure": "More than enough " }
+      ],
+      "directions": "Preheat the oven to 400 degrees F (200 degrees C). Place butter in a microwave-safe bowl and microwave on high until melted, 20 to 30 seconds. Stir in olive oil, garlic powder, salt, and pepper. Use a fork to poke about 5 holes into each potato. Place each potato on a sheet of aluminum foil about 6 inches wide. Brush butter mixture over potatoes, making sure to evenly coat each one. Wrap up completely in foil. Poke 5 more holes into the wrapped potatoes. Bake potatoes in the center of the preheated oven until easily pierced with a fork, about 1 hour. Spread leftover butter mixture over potatoes after cutting them open. ",
+      "img": "./img/PotatoPancake.jpg"
+    },
+    {
+      "id": 20,
+      "name": "Example20",
+      "ingredients": [
+        { "name": "Potatoes", "measure": "50 " },
+        { "name": "Cheese", "measure": "1 stick of " },
+        { "name": "Patience", "measure": "More than enough " }
+      ],
+      "directions": "Preheat the oven to 400 degrees F (200 degrees C). Place butter in a microwave-safe bowl and microwave on high until melted, 20 to 30 seconds. Stir in olive oil, garlic powder, salt, and pepper. Use a fork to poke about 5 holes into each potato. Place each potato on a sheet of aluminum foil about 6 inches wide. Brush butter mixture over potatoes, making sure to evenly coat each one. Wrap up completely in foil. Poke 5 more holes into the wrapped potatoes. Bake potatoes in the center of the preheated oven until easily pierced with a fork, about 1 hour. Spread leftover butter mixture over potatoes after cutting them open. ",
       "img": "./img/PotatoPancake.jpg"
     }
   ]
