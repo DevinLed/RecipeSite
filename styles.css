@@ -18,6 +18,9 @@ body {
 input {
   font-size: 1rem;
 }
+header{
+  background-color: bisque;
+}
 .content {
   display: flex;
   width: 105%;
@@ -42,7 +45,7 @@ input {
   min-height: 40px;
   max-height: auto;
   margin-left: 22%;
-  width: 190%;
+  width: 100%;
   align-items: center;
   justify-content: center;
 }
@@ -96,29 +99,101 @@ input {
   max-width: 500px;
   padding-bottom: 17%;
   padding-left: 8%;
+  padding-top: 50px;
   box-sizing: border-box;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
   
 }
 .sidebar {
-  max-width: 500px;
+  width: 100%;
   box-sizing: border-box;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
 }
 
 .open-timer{
   visibility: visible;
   top: 50%;
-  transform: translate(-50%, -50%) scale(1);
+  transform: translate(0%, 20%) scale(1);
+  transition: transform 0.4s, top 0.4s;
+}
+
+.showtimerbtn{
+  background: bisque;
+            font-size: 20px;
+            color: rgb(0, 0, 0);
+            border-radius: 7px;
+            box-shadow: 0 7px 0px #36759f;
+            display: inline-block;
+            transition: all .2s;
+            position: relative;
+            padding: 20px 25px;
+            position: relative;
+            top: 0;
+            cursor: pointer;
+  margin:0 20px;
+    visibility: visible;
+  }
+  
+
+  .showtimerbtn:active {
+    top: 3px;
+    box-shadow: 0 2px 0px #6d4c41;
+    transition: all .2s;
+}
+.hidetimerbtn{
+  background: bisque;
+            font-size: 20px;
+            color: rgb(0, 0, 0);
+            border-radius: 7px;
+            box-shadow: 0 7px 0px #36759f;
+            display: inline-block;
+            transition: all .2s;
+            position: relative;
+            padding: 20px 25px;
+            position: relative;
+            top: 0;
+            cursor: pointer;
+  margin:0 20px;
+    visibility: hidden;
+  }
+  
+
+  .hidetimerbtn:active {
+    top: 3px;
+    box-shadow: 0 2px 0px #6d4c41;
+    transition: all .2s;
 }
 
 
+
+
+  .open-Btn{
+    visibility: visible;
+    transform: translate(0%, -100%) scale(1);
+  }
+
+  .close-Btn{
+    visibility: hidden;
+    transform: translate(0%, 0%) scale(1);
+  }
+
+#buttons, #time, h1{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 ul .expandlist li {
   list-style: none;
   width: max-content;
   position: relative;
   background-color: rgba(197, 216, 214, 0.904);
-  border: 1px solid rgb(187, 131, 131);
+  border: 1px solid rgb(220, 206, 206);
   border-radius: 6%;
   padding: 1px rgb(0, 174, 255) rgb(94, 121, 134);
+  max-height: auto;
 }
 ul .expandlist2 li {
   list-style: none;
@@ -126,6 +201,7 @@ ul .expandlist2 li {
   width: max-content;
   background-color: rgb(241, 219, 219);
   margin: 0;
+  max-height: auto;
 }
 .expandlist2 {
   margin: 0;
@@ -178,9 +254,13 @@ ul .expandlist2 li {
   border-radius: 40px;
 }
 #filterInput {
+  display: inline-block;    
   margin-left: 42%;
   align-items: center;
+  width: 250px;
   background-color: rgb(255, 255, 255);
+  position: relative;    
+  z-index: 1;
 }
 .previewimg {
   border-radius: 15px;
@@ -250,6 +330,7 @@ details[open] summary ~ * {
 }
 .searchables {
   display: flex;
+  margin-left: -8%;
   padding-bottom: 50px;
 }
 .collection-header2 {
@@ -333,9 +414,9 @@ details[open] summary ~ * {
   color: rgb(226, 226, 85);
 }
 .listall {
-  margin-left: 45%;
-  padding-top: 10px;
-  width: 65px;
+  margin-left: -7%;
+  padding-top: 105px;
+  width: 100%;
   border-radius: 12%;
   margin-bottom: -30px;
 }

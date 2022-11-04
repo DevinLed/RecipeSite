@@ -8,99 +8,102 @@
   <!-- <script type="text/javascript" src="scripts/domlisten.js"></script> -->
   <link rel="stylesheet" href="styles.css">
   <script src="https://kit.fontawesome.com/a59b9b09ab.js" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="scripts/main.js"></script>
-  <script type="text/javascript" src="scripts/timer.js"></script>
   <!-- <script type="text/javascript" src="scripts/direction.js"></script> -->
   <title>Recipe Site</title>
 </head>
 
-<body>
-  <header>
 
-    <div class="linklist">
-      <img class="recipeheader" src="img/Recipeheader.jpg" />
+<header>
+
+  <body>
+  <div class="linklist">
+    <img class="recipeheader" src="img/Recipeheader.jpg" />
 
 
-    </div>
-
-  </header>
-
-<div class="topbar">
-  <input type="text" id="filterInput" type="search" placeholder="Search recipes..." onkeyup="searchKeyUpEvent()" />
-
-  <div class="listall">
-    <button onclick="showAllRecipes()" class="showpop">Show All</button>
   </div>
 
+</header>
 
-</div>
-<div class="content">
-<div class="mainpage">
-  <button type="submit" class="showpop" onclick="openTimer()">Open Timer</button>
-  <div class="sidebar" id="sidebar">
-    <div class="container">
-      <h1>Egg Timer</h1>
-      <div id="time">
-        <span class="digit" id="hr">
-          00</span>
-        <span class="txt">Hr</span>
-        <span class="digit" id="min">
-          00</span>
-        <span class="txt">Min</span>
-        <span class="digit" id="sec">
-          00</span>
-        <span class="txt">Sec</span>
-        <span class="digit" id="count">
-          00</span>
+
+  <div class="topbar">
+    <input type="text" id="filterInput" type="search" placeholder="Search recipes..." onkeyup="searchKeyUpEvent()" />
+
+    <div class="listall">
+      <button onclick="showAllRecipes()" class="showpop">Show All</button>
+    </div>
+
+
+  </div>
+  <div class="content">
+    <div class="mainpage">
+      <button type="submit" class="showtimerbtn" id="btnTimer" onclick="openTimer()">Open Timer</button>
+
+      <button type="submit" class="hidetimerbtn" id="showtimerbtn" onclick="closeTimer()">Close Timer</button>
+      <div class="sidebar" id="sidebar">
+        <div class="container">
+          <h1>Egg Timer</h1>
+          <div id="time">
+            <span class="digit" id="hr">
+              00</span>
+            <span class="txt">Hr</span>
+            <span class="digit" id="min">
+              00</span>
+            <span class="txt">Min</span>
+            <span class="digit" id="sec">
+              00</span>
+            <span class="txt">Sec</span>
+            <span class="digit" id="count">
+              00</span>
+          </div>
+          <div id="buttons">
+            <button class="btn" id="start">
+              Start</button>
+            <button class="btn" id="stop">
+              Stop</button>
+            <button class="btn" id="reset">
+              Reset</button>
+          </div>
+        </div>
+
+
       </div>
-      <div id="buttons">
-        <button class="btn" id="start">
-          Start</button>
-        <button class="btn" id="stop">
-          Stop</button>
-        <button class="btn" id="reset">
-          Reset</button>
+    </div>
+
+    <div class="searchables">
+      <ul id="listcontainer"></ul>
+    </div>
+
+  </div>
+  <div class="main-scroll-div">
+    <div>
+      <button class="icon" onclick="scrolll()"> <i class="fas fa-angle-double-left"></i></button>
+    </div>
+    <div class="cover">
+      <div class="scroll-images">
+        <div class="child"><img class="child-img" src="img/BakedPotato.jpg" alt="image"></div>
+        <div class="child"><img class="child-img" src="img/Tatters.jpg" alt="image"></div>
+        <div class="child"><img class="child-img" src="img/ScallopedPotatoes.jpg" alt="image"></div>
+        <div class="child"><img class="child-img" src="img/Potatopancake.jpg" alt="image"></div>
+        <div class="child"><img class="child-img" src="img/MashedPotatoes.jpg" alt="image"></div>
+        <div class="child"><img class="child-img" src="img/HashbrownMash.jpg" alt="image"></div>
+        <div class="child"><img class="child-img" src="img/Hashbrowncakes.jpg" alt="image"></div>
+        <div class="child"><img class="child-img" src="img/HashPotatoes.jpg" alt="image"></div>
+        <div class="child"><img class="child-img" src="img/Fries.jpg" alt="image"></div>
+        <div class="child"><img class="child-img" src="img/gnocchi.jpg" alt="image"></div>
+        <div class="child"><img class="child-img" src="img/dominopotato.jpg" alt="image"></div>
+        <div class="child"><img class="child-img" src="img/garlicpotato.jpg" alt="image"></div>
+        <div class="child"><img class="child-img" src="img/Hasselbackpotato.jpg" alt="image"></div>
+        <div class="child"><img class="child-img" src="img/potatochip.jpg" alt="image"></div>
+        <div class="child"><img class="child-img" src="img/spinachgnocchi.jpg" alt="image"></div>
+        <div class="child"><img class="child-img" src="img/spiralpotato.jpg" alt="image"></div>
       </div>
     </div>
-
-    <script type="text/javascript" src="scripts/timer.js"></script>
-  </div>
-</div>
-  
-
-  <div class="searchables">
-    <ul id="listcontainer"></ul>
-  </div>
-  
-</div>
-<div class="main-scroll-div">
-  <div>
-    <button class="icon" onclick="scrolll()"> <i class="fas fa-angle-double-left"></i></button>
-  </div>
-  <div class="cover">
-    <div class="scroll-images">
-      <div class="child"><img class="child-img" src="img/BakedPotato.jpg" alt="image"></div>
-      <div class="child"><img class="child-img" src="img/Tatters.jpg" alt="image"></div>
-      <div class="child"><img class="child-img" src="img/ScallopedPotatoes.jpg" alt="image"></div>
-      <div class="child"><img class="child-img" src="img/Potatopancake.jpg" alt="image"></div>
-      <div class="child"><img class="child-img" src="img/MashedPotatoes.jpg" alt="image"></div>
-      <div class="child"><img class="child-img" src="img/HashbrownMash.jpg" alt="image"></div>
-      <div class="child"><img class="child-img" src="img/Hashbrowncakes.jpg" alt="image"></div>
-      <div class="child"><img class="child-img" src="img/HashPotatoes.jpg" alt="image"></div>
-      <div class="child"><img class="child-img" src="img/Fries.jpg" alt="image"></div>
-      <div class="child"><img class="child-img" src="img/gnocchi.jpg" alt="image"></div>
-      <div class="child"><img class="child-img" src="img/dominopotato.jpg" alt="image"></div>
-      <div class="child"><img class="child-img" src="img/garlicpotato.jpg" alt="image"></div>
-      <div class="child"><img class="child-img" src="img/Hasselbackpotato.jpg" alt="image"></div>
-      <div class="child"><img class="child-img" src="img/potatochip.jpg" alt="image"></div>
-      <div class="child"><img class="child-img" src="img/spinachgnocchi.jpg" alt="image"></div>
-      <div class="child"><img class="child-img" src="img/spiralpotato.jpg" alt="image"></div>
+    <div>
+      <button class="icon" onclick="scrollr()"> <i class="fas fa-angle-double-right"></i></button>
     </div>
   </div>
-  <div>
-    <button class="icon" onclick="scrollr()"> <i class="fas fa-angle-double-right"></i></button>
-  </div>
-</div>
+  <script type="text/javascript" src="scripts/timer.js"></script>
+  <script type="text/javascript" src="scripts/main.js"></script>
 
 </body>
 

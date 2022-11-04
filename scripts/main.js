@@ -18,9 +18,14 @@ function loadAllRecipes() {
   xhttp.open("GET", "/json/recipe.json", true);
   xhttp.send();
 }
+function clearInput(){
+    document.getElementById("filterInput").innerHTML = `"Search recipes`;
+}
 
 // Loads all recipes in listcontainer, linked to button "showpop". Resets list from search function
 function showAllRecipes() {
+    
+    document.getElementById('filterInput').value = '';
   var output = "";
   //cycles through recipe.json data
   recipeCollection.forEach((recipe) => {
@@ -106,13 +111,6 @@ function showdirection(recipeId) {
   ).innerHTML = `<li>${recipe.directions}</li>`;
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  loadAllRecipes();
-
-  // Get input element
-  let filterInput = document.getElementById("filterInput");
-  // Add event listener
-});
 //displays popup window with name and recipe, working on including measurements+ ingredient name
 
 function openPopup(recipeId) {
@@ -137,10 +135,31 @@ function scrollr() {
 }
 
 //test for egg timer open/close button
-let poptimer = document.getElementById("mainpage");
+let poptimer = document.getElementById("sidebar");
+let btntimer = document.getElementById("showtimerbtn");
 function openTimer(){
     poptimer.classList.add("open-timer");
+    btntimer.classList.add("open-Btn");
 }
 function closeTimer(){
     poptimer.classList.remove("open-timer");
+    btntimer.classList.remove("open-Btn");
 }
+
+function openBtn(){
+    btntimer.classList.add("open-Btn");
+}
+function closeBtn(){
+    btntimer.classList.remove("open-Btn");
+}
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    loadAllRecipes();
+  
+    // Get input element
+    let filterInput = document.getElementById("filterInput");
+    // Add event listener
+  });
