@@ -5,10 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <script type="text/javascript" src="scripts/domlisten.js"></script> -->
   <link rel="stylesheet" href="styles.css">
   <script src="https://kit.fontawesome.com/a59b9b09ab.js" crossorigin="anonymous"></script>
-  <!-- <script type="text/javascript" src="scripts/direction.js"></script> -->
   <title>Recipe Site</title>
 </head>
 
@@ -16,21 +14,22 @@
 <header>
 
   <body>
-  <div class="linklist">
-    <img class="recipeheader" src="img/Recipeheader.jpg" />
-
-
-  </div>
+    <div class="linklist">
+      <h1 class="logo"> Recipe Cookbook</h1>
+    </div>
 
 </header>
 
 
-  <div class="topbar">
-    <input type="text" id="filterInput" type="search" placeholder="Search recipes..." onkeyup="searchKeyUpEvent()" />
+<div class="topbar">
+  <input type="text" id="filterInput" type="search" placeholder="Search recipes..." onkeyup="searchKeyUpEvent()" />
 
-    <div class="listall">
-      <button onclick="showAllRecipes()" class="showpop">Show All</button>
-    </div>
+  <div class="listall">
+    <img class="recipeheader" src="img/PotatoBanner.jpg" />
+    <button onclick="showAllRecipes()" class="showpop">Show All</button>
+
+
+    <hr/div>
 
 
   </div>
@@ -41,7 +40,7 @@
       <button type="submit" class="hidetimerbtn" id="showtimerbtn" onclick="closeTimer()">Close Timer</button>
       <div class="sidebar" id="sidebar">
         <div class="container">
-          <h1>Egg Timer</h1>
+          <h1 class="egger">Egg Timer</h1>
           <div id="time">
             <span class="digit" id="hr">
               00</span>
@@ -72,7 +71,32 @@
     <div class="searchables">
       <ul id="listcontainer"></ul>
     </div>
-
+    <div class="rightSide">
+      <div class="converter">
+        <h2 class="weightc">Weight Converter</h2>
+        <div class="bothConvert">
+        <div class="liquidWeight">
+        <p style="text-align:center; font-size: 20px;">Liquid</p>    
+          <label>Ounces: </label><input class="inputWeight" id="inputOunces" type="number" placeholder="Oz" oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
+          <label>Grams: </label><input class="inputWeight" id="inputGrams" type="number" placeholder="g" oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
+          <label>Cups: </label><input class="inputWeight" id="inputCups" type="number" placeholder="cups" oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
+          <label>Tablespoon: </label><input class="inputWeight" id="inputTbl" type="number" placeholder="tbsp" oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
+          <label>Teaspoon: </label><input class="inputWeight" id="inputTsp" type="number" placeholder="tsp" oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
+          <label>Millilitres: </label><input class="inputWeight" id="inputMl" type="number" placeholder="ml" oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
+      </div>
+      <div class="dryWeight">
+        <p style="text-align:center; font-size: 20px;">Dry</p>    
+          <label>Ounces: </label><input class="inputWeight" id="inputDOunces" type="number" placeholder="Oz" oninput="weightConverterDry(this.id,this.value)" onchange="weightConverterDry(this.id,this.value)">
+          <label>Grams: </label><input class="inputWeight" id="inputDGrams" type="number" placeholder="g" oninput="weightConverterDry(this.id,this.value)" onchange="weightConverterDry(this.id,this.value)">
+          <label>Cups: </label><input class="inputWeight" id="inputDCups" type="number" placeholder="cups" oninput="weightConverterDry(this.id,this.value)" onchange="weightConverterDry(this.id,this.value)">
+          <label>Tablespoon: </label><input class="inputWeight" id="inputDTbl" type="number" placeholder="tbsp" oninput="weightConverterDry(this.id,this.value)" onchange="weightConverterDry(this.id,this.value)">
+          <label>Teaspoon: </label><input class="inputWeight" id="inputDTsp" type="number" placeholder="tsp" oninput="weightConverterDry(this.id,this.value)" onchange="weightConverterDry(this.id,this.value)">
+          <label>Millilitres: </label><input class="inputWeight" id="inputDMl" type="number" placeholder="ml" oninput="weightConverterDry(this.id,this.value)" onchange="weightConverterDry(this.id,this.value)">
+      </div>
+      </div>
+      <button id="clearMeasure" onclick="clearMeasure()">Clear</button>
+      </div>
+    </div>
   </div>
   <div class="main-scroll-div">
     <div>
@@ -104,7 +128,8 @@
   </div>
   <script type="text/javascript" src="scripts/timer.js"></script>
   <script type="text/javascript" src="scripts/main.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-</body>
+  </body>
 
 </html>

@@ -6,7 +6,8 @@ html {
 }
 body {
   padding: 0;
-  background-color: rgb(105, 155, 247);
+  margin: 0;
+  background-color: rgb(251, 250, 245);
   font-family: "Roboto", sans-serif;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 25px;
@@ -14,18 +15,31 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 768px;
+  overflow: hidden;
 }
 input {
   font-size: 1rem;
 }
-header{
+header {
   background-color: bisque;
+  color: rgb(185, 82, 77);
+  font-family: serif;
+  text-align: center;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background-image: linear-gradient(bisque, rgb(251, 250, 245));
+  min-height: 100px;
+
+  text-shadow: rgba(0, 0, 0, 0.3) 0px 4px 9px,
+  rgba(0, 0, 0, 0.22) 0px 3px 3px;
 }
 .content {
   display: flex;
-  width: 105%;
+  width: 100%;
   margin: 0%;
-  background-color: rgb(105, 155, 247);
+  background-color: rgb(251, 250, 245);
   padding: 0;
   margin-bottom: -1%;
   height: auto;
@@ -33,8 +47,6 @@ header{
 #listcontainer {
   padding: 0;
   background-color: antiquewhite;
-  border: 3px inset rgb(44, 108, 128);
-  border-radius: 3%;
   overflow: hidden;
   min-width: 770px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
@@ -44,32 +56,31 @@ header{
   text-overflow: ellipsis;
   min-height: 40px;
   max-height: auto;
-  margin-left: 22%;
-  width: 100%;
+  width: auto;
   align-items: center;
   justify-content: center;
 }
-.showpop{
-  padding: 10px 30px;
-  background: bisque;
-  border: 2px solid rgb(0, 0, 0);
+.showpop {
+  margin-top: 3%;
+  padding: 10px 25px;
+  align-items: center;
+  justify-content: center;
+  background: rgb(251, 250, 245);
   cursor: pointer;
   font-size: 15px;
   font-weight: 400;
   border-radius: 30px;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 20px,
-    rgba(0, 0, 0, 0.22) 0px 7px 6px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 20px, rgba(0, 0, 0, 0.22) 0px 7px 6px;
 }
 
-.popup {   
-  white-space:pre-line;
+.popup {
+  white-space: pre-line;
   list-style: none;
-  word-wrap: break-word;   
+  word-wrap: break-word;
   width: 60%;
   background: #fff;
   border-radius: 6px;
   position: fixed;
-  border: 2px solid rgb(0, 0, 0);
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
   top: 0;
@@ -80,7 +91,7 @@ header{
   color: #333;
   visibility: hidden;
   transition: transform 0.4s, top 0.4s;
-  word-wrap: break-word; 
+  word-wrap: break-word;
   height: 250px;
   min-height: 300px;
   max-height: auto;
@@ -94,17 +105,14 @@ header{
   transform: translate(-50%, -50%) scale(1);
 }
 
-.mainpage{
-  
+.mainpage {
+  width: 25%;
   max-width: 500px;
   padding-bottom: 17%;
-  padding-left: 8%;
   padding-top: 50px;
   box-sizing: border-box;
-  text-align: center;
   align-items: center;
   justify-content: center;
-  
 }
 .sidebar {
   width: 100%;
@@ -113,86 +121,107 @@ header{
   transition: transform 0.4s, top 0.4s;
 }
 
-.open-timer{
+.open-timer {
   visibility: visible;
   top: 50%;
   transform: translate(0%, 20%) scale(1);
   transition: transform 0.4s, top 0.4s;
 }
 
-.showtimerbtn{
-  background: bisque;
-            font-size: 20px;
-            color: rgb(0, 0, 0);
-            border-radius: 7px;
-            box-shadow: 0 7px 0px #36759f;
-            display: inline-block;
-            transition: all .2s;
-            position: relative;
-            padding: 20px 25px;
-            position: relative;
-            top: 0;
-            cursor: pointer;
-  margin:0 20px;
-    visibility: visible;
-  }
-  
-
-  .showtimerbtn:active {
-    top: 3px;
-    box-shadow: 0 2px 0px #6d4c41;
-    transition: all .2s;
-}
-.hidetimerbtn{
-  background: bisque;
-            font-size: 20px;
-            color: rgb(0, 0, 0);
-            border-radius: 7px;
-            box-shadow: 0 7px 0px #36759f;
-            display: inline-block;
-            transition: all .2s;
-            position: relative;
-            padding: 20px 25px;
-            position: relative;
-            top: 0;
-            cursor: pointer;
-  margin:0 20px;
-    visibility: hidden;
-  }
-  
-
-  .hidetimerbtn:active {
-    top: 3px;
-    box-shadow: 0 2px 0px #6d4c41;
-    transition: all .2s;
+.showtimerbtn {
+  margin-top: 3%;
+  padding: 10px 25px;
+  align-items: center;
+  justify-content: center;
+  background: 251, 250, 245;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 400;
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 20px, rgba(0, 0, 0, 0.22) 0px 7px 6px;
+  top: 0;
+  cursor: pointer;
+  margin: 0;
+  visibility: visible;
+  min-width: 75px;
 }
 
+.showtimerbtn:active {
+  top: 3px;
+  box-shadow: 0 2px 0px #6d4c41;
+  transition: all 0.2s;
+}
+.hidetimerbtn {
+  margin-top: 3%;
+  padding: 10px 25px;
+  align-items: center;
+  justify-content: center;
+  background: 251, 250, 245;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 400;
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 20px, rgba(0, 0, 0, 0.22) 0px 7px 6px;
+  position: relative;
+  top: 0;
+  cursor: pointer;
+  margin: 0;
+  visibility: hidden;
+}
 
+.hidetimerbtn:active {
+  top: 3px;
+  box-shadow: 0 2px 0px #6d4c41;
+  transition: all 0.2s;
+}
 
+.open-Btn {
+  visibility: visible;
+  transform: translate(0%, 0%) scale(1);
+}
 
-  .open-Btn{
-    visibility: visible;
-    transform: translate(0%, -100%) scale(1);
-  }
+.close-Btn {
+  visibility: hidden;
+  transform: translate(0%, 0%) scale(1);
+}
 
-  .close-Btn{
-    visibility: hidden;
-    transform: translate(0%, 0%) scale(1);
-  }
-
-#buttons, #time, h1{
+#buttons,
+#time,
+h1, h2 {
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+h2{
+  
+  background-color: bisque;
+  color: rgb(185, 82, 77);
+  font-family: serif;
+}
+.logo{
+  font-size:60px;
+}
+.weightc{
+  color: black;
+  font-size:25px;
+  background-color: antiquewhite;
+}
+.bothConvert{
+  display:flex;
+}
+.egger{
+  
+  background-color: bisque;
+  color: rgb(185, 82, 77);
+  font-family: serif;
+  color:rgb(0, 0, 0);
 }
 ul .expandlist li {
   list-style: none;
   width: max-content;
   position: relative;
-  background-color: rgba(197, 216, 214, 0.904);
-  border: 1px solid rgb(220, 206, 206);
-  border-radius: 6%;
-  padding: 1px rgb(0, 174, 255) rgb(94, 121, 134);
+  background-color: antiquewhite;
+  padding: 1px rgb(251, 250, 245) rgb(251, 250, 245);
   max-height: auto;
 }
 ul .expandlist2 li {
@@ -203,6 +232,10 @@ ul .expandlist2 li {
   margin: 0;
   max-height: auto;
 }
+
+ul .expandlist2 li:hover {
+  border-bottom: solid 10px rgb(000, 000, 000);
+}
 .expandlist2 {
   margin: 0;
   padding: 5px;
@@ -211,20 +244,28 @@ ul .expandlist2 li {
   padding: 5px;
   width: fit-content;
 }
-.details-example:hover {
-  background-color: rgba(197, 216, 214, 0.904);
-  border-radius: 6%;
-  transition: 0.5s 0.9 ease;
+.details-example::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  transform-origin: bottom right;
+}
+
+.details-example:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 .topbar {
-  width: 110%;
+  margin: 0;
+  width: 100%;
   height: 100%;
-  padding: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: rgb(105, 155, 247);
-  background-image: linear-gradient(bisque, rgb(105, 155, 247));
+  padding-top: 5px;
+  background-color: rgb(251, 250, 245);
 }
 .linklist {
   background: no-repeat center center fixed;
@@ -254,13 +295,16 @@ ul .expandlist2 li {
   border-radius: 40px;
 }
 #filterInput {
-  display: inline-block;    
-  margin-left: 42%;
+  margin: 0 auto;
+  display: block;
+  margin-left: 43%;
   align-items: center;
-  width: 250px;
-  background-color: rgb(255, 255, 255);
-  position: relative;    
+  justify-content: center;
+  width: 15%;
+  background-color: rgb(251, 250, 245);
+  position: relative;
   z-index: 1;
+  transform: translate(0%, 100px);
 }
 .previewimg {
   border-radius: 15px;
@@ -269,23 +313,28 @@ ul .expandlist2 li {
   margin-right: auto;
   width: 50%;
 }
-.directionBtn{
+.directionBtn {
   border-radius: 15px;
   padding-top: 15px;
   padding-left: 37%;
   width: 100%;
-
 }
 .directions {
   width: 20%;
   justify-content: left;
 }
 @keyframes sweep {
-  0%    {opacity: 0; margin-left: -10px}
-  100%  {opacity: 1; margin-left: 0px}
+  0% {
+    opacity: 0;
+    margin-left: -10px;
+  }
+  100% {
+    opacity: 1;
+    margin-left: 0px;
+  }
 }
 details[open] summary ~ * {
-  animation: sweep .5s ease-in-out;
+  animation: sweep 0.5s ease-in-out;
 }
 .collection-header {
   align-items: center;
@@ -311,27 +360,29 @@ details[open] summary ~ * {
 .recipeheader {
   aspect-ratio: initial;
   margin: -1%;
-  background-repeat: no-repeat;
   width: 110%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  z-index: -1;
 }
 
 .container {
   display: block;
-  position: initial;
   top: 400px;
   border-radius: 15%;
-  background-color: antiquewhite;
-  padding: 20px;
-  border: 2px solid black;
+  background-color: bisque;
+  padding: 5px;
+  margin: 10px;
+  max-width: 250px;
+  
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 20px, rgba(0, 0, 0, 0.22) 0px 7px 6px;
 }
 .searchables {
-  display: flex;
-  margin-left: -8%;
+  width: 75%;
   padding-bottom: 50px;
+  align-items: center;
+  justify-content: center;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 .collection-header2 {
   max-width: 33ch;
@@ -339,6 +390,8 @@ details[open] summary ~ * {
   overflow: hidden;
 }
 .main-scroll-div {
+  margin-left: 15%;
+  margin-right: 15%;
   width: 70%;
   height: 100%;
   display: flex;
@@ -360,7 +413,7 @@ details[open] summary ~ * {
   z-index: 99;
   height: 100%;
   width: 180px;
-  background-image: linear-gradient(90deg, rgb(105, 155, 247), transparent);
+  background-image: linear-gradient(90deg, rgb(251, 250, 245), transparent);
 }
 
 .cover::after {
@@ -371,7 +424,7 @@ details[open] summary ~ * {
   z-index: 99;
   height: 100%;
   width: 160px;
-  background-image: linear-gradient(-90deg, rgb(105, 155, 247), transparent);
+  background-image: linear-gradient(-90deg, rgb(251, 250, 245), transparent);
 }
 
 .scroll-images {
@@ -402,7 +455,7 @@ details[open] summary ~ * {
 
 .icon {
   color: rgb(2, 34, 3);
-  background-color: rgb(105, 155, 247);
+  background-color: rgb(251, 250, 245);
   font-size: 50px;
   outline: none;
   border: none;
@@ -411,12 +464,56 @@ details[open] summary ~ * {
 }
 
 .icon:hover {
-  color: rgb(226, 226, 85);
+  color: rgb(13, 38, 129);
 }
 .listall {
-  margin-left: -7%;
-  padding-top: 105px;
+  background-color: rgb(251, 250, 245);
   width: 100%;
-  border-radius: 12%;
-  margin-bottom: -30px;
+  position: relative;
+  text-align: center;
+  margin-top: -25px;
+}
+.rightSide {
+  display: grid;
+  width: 25%;
+  padding: 15px;
+  justify-content: center;
+  max-height: 150px;
+}
+.converter {
+  padding: 15px;
+  background-color: antiquewhite;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  min-height: 40px;
+  max-height: auto;
+  width: 200px;
+}
+hr {
+  margin-top: 25px;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0)
+  );
+}
+#clearMeasure{
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+}
+span {
+  display: inline-block;
+}
+details summary::-webkit-details-marker {
+  display:none;
+}
+details > summary:first-of-type {
+  list-style-type: none;
+}
+.inputWeight{
+  width: 90px;
 }
