@@ -286,7 +286,7 @@ function weightConverterDry(source, valNum) {
     inputDTspn.value = (valNum / 4.929).toFixed(1);
   }
 }
-
+//clear button to wipe out all values in conversion chart
 function clearMeasure() {
     inputOunces.value = (0).toFixed();
     inputGrams.value = (0).toFixed();

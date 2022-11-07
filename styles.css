@@ -32,8 +32,7 @@ header {
   background-image: linear-gradient(bisque, rgb(251, 250, 245));
   min-height: 100px;
 
-  text-shadow: rgba(0, 0, 0, 0.3) 0px 4px 9px,
-  rgba(0, 0, 0, 0.22) 0px 3px 3px;
+  text-shadow: rgba(0, 0, 0, 0.3) 0px 4px 9px, rgba(0, 0, 0, 0.22) 0px 3px 3px;
 }
 .content {
   display: flex;
@@ -187,34 +186,33 @@ header {
 
 #buttons,
 #time,
-h1, h2 {
+h1,
+h2 {
   align-items: center;
   justify-content: center;
   text-align: center;
 }
-h2{
-  
+h2 {
   background-color: bisque;
   color: rgb(185, 82, 77);
   font-family: serif;
 }
-.logo{
-  font-size:60px;
+.logo {
+  font-size: 60px;
 }
-.weightc{
+.weightc {
   color: black;
-  font-size:25px;
+  font-size: 25px;
   background-color: antiquewhite;
 }
-.bothConvert{
-  display:flex;
+.bothConvert {
+  display: flex;
 }
-.egger{
-  
+.egger {
   background-color: bisque;
   color: rgb(185, 82, 77);
   font-family: serif;
-  color:rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
 }
 ul .expandlist li {
   list-style: none;
@@ -245,7 +243,7 @@ ul .expandlist2 li:hover {
   width: fit-content;
 }
 .details-example::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   transform: scaleX(0);
@@ -373,7 +371,7 @@ details[open] summary ~ * {
   padding: 5px;
   margin: 10px;
   max-width: 250px;
-  
+
   box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 20px, rgba(0, 0, 0, 0.22) 0px 7px 6px;
 }
 .searchables {
@@ -479,6 +477,7 @@ details[open] summary ~ * {
   padding: 15px;
   justify-content: center;
   max-height: 150px;
+  align-items: start;
 }
 .converter {
   padding: 15px;
@@ -500,7 +499,7 @@ hr {
     rgba(0, 0, 0, 0)
   );
 }
-#clearMeasure{
+#clearMeasure {
   margin-top: 10px;
   width: 100%;
   padding: 10px;
@@ -509,11 +508,11 @@ span {
   display: inline-block;
 }
 details summary::-webkit-details-marker {
-  display:none;
+  display: none;
 }
 details > summary:first-of-type {
   list-style-type: none;
 }
-.inputWeight{
+.inputWeight {
   width: 90px;
 }
