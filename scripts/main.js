@@ -15,7 +15,7 @@ function loadAllRecipes() {
       showAllRecipes();
     }
   };
-  xhttp.open("GET", "/json/recipe.json", true);
+  xhttp.open("GET", "./json/recipe.json", true);
   xhttp.send();
 }
 /*
