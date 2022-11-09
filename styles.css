@@ -293,12 +293,13 @@ ul .expandlist2 li:hover {
   border-radius: 40px;
 }
 #filterInput {
+  padding: 0.5rem;
+  border-radius: 1rem;
   margin: 0 auto;
   display: block;
-  margin-left: 43%;
   align-items: center;
   justify-content: center;
-  width: 15%;
+  width: 25%;
   background-color: rgb(251, 250, 245);
   position: relative;
   z-index: 1;

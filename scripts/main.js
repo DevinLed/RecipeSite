@@ -1,6 +1,59 @@
 // crates array for json input
 
 let recipeCollection = [];
+let searchButton = document.querySelector(".testsearch");
+
+searchButton.addEventListener("click", ()=>{
+  console.log("button pressed")
+  sendApiRequest()
+})
+
+
+async function sendApiRequest(){
+  let APP_ID = "e9121c76"
+  let API_KEY = "56b9fc8ce334b4a7a762c9a5d815ab88"
+  let response = await fetch (`https://api.edamam.com/search?app_id=${APP_ID}&app_key=${API_KEY}&q=pizza`);
+  let data = await response.json()
+  console.log(data)
+  useApiData(data)
+}
+
+function useApiData(data){
+  var output ="";
+  data.hits.forEach(name => {
+  output +=`
+    <ul class="expandlist">
+        <li class="collection-header">
+            <details class="details-example">
+            <summary class="collection-header">${name.recipe.label}</summary>
+                <ul id="list">
+    `});
+    //loads list of ingredients from json for each initial item
+    data.hits[0].recipe.ingredientLines.forEach((ingredient) => {
+      output += `<li class="collection-item">${ingredient}</li>`;
+    });
+    output += `     
+                </ul>
+                <div class="imgandlink">
+                <img class="previewimg" src="${data.hits[0].recipe.image}"/>
+                </div>
+                <div class="directionBtn">
+                <button type="submit" class="showpop" id="directionlink"><a href="${data.hits[0].recipe.url}">Show Full Recipe</button></a>
+                </div>
+                </details>
+        </li>
+    </ul>
+    <div class="outerpop">
+    <div class="popup" id="popup">
+                </div>
+    `;
+
+
+  document.getElementById("listcontainer").innerHTML = output;
+}
+
+
+
 
 // Loads all recipes in listcontainer to start page
 function loadAllRecipes() {
@@ -15,8 +68,9 @@ function loadAllRecipes() {
       showAllRecipes();
     }
   };
-  xhttp.open("GET", "./json/recipe.json", true);
-  xhttp.send();
+
+  // xhttp.open("GET", "./json/recipe.json", true);
+  // xhttp.send();
 }
 /*
 function clearInput() {
@@ -25,7 +79,7 @@ function clearInput() {
 */
 
 // Loads all recipes in listcontainer, linked to button "showpop". Resets list from search function
-function showAllRecipes() {
+/*function showAllRecipes() {
   document.getElementById("filterInput").value = "";
   var output = "";
   //cycles through recipe.json data
@@ -40,7 +94,6 @@ function showAllRecipes() {
     `;
     //loads list of ingredients from json for each initial item
     recipe.ingredients.forEach((ingredient) => {
-      let popup = document.getElementById("popup");
       output += `<li class="collection-item">${ingredient.measure}${ingredient.name}</li>`;
     });
     output += `     
@@ -62,7 +115,7 @@ function showAllRecipes() {
   });
   //prints list of json values into listcontainer field
   document.getElementById("listcontainer").innerHTML = output;
-}
+}*/
 
 //delay of 600ms needed after typing to search list
 function debounce(func, timeout = 600) {
@@ -83,7 +136,7 @@ function filterNames(event) {
   //fills list with data pulled from json
   let li = ul.querySelectorAll("li.collection-header");
   for (let i = 0; i < li.length; i++) {
-    let a = recipeCollection[i].name;
+    let a = data.hits[0].recipe[i].name;
     // If matched
     if (a.toUpperCase().indexOf(filterValue) > -1) {
       //if name matched, display in list
@@ -115,7 +168,7 @@ function showdirection(recipeId) {
 //displays popup window with name and recipe, working on including measurements+ ingredient name
 
 function openPopup(recipeId) {
-  popup.classList.add("open-popup");
+  document.getElementById("popup").classList.add("open-popup");
   const recipe = recipeCollection.find((recipe) => recipe.id === recipeId);
   document.getElementById(
     "popup"
@@ -123,7 +176,7 @@ function openPopup(recipeId) {
     <button type="submit" class="showpop" onclick="closePopup()">Close Recipe</button>`;
 }
 function closePopup() {
-  popup.classList.remove("open-popup");
+  document.getElementById("popup").classList.remove("open-popup");
 }
 
 //scroll function for img scroll in footer
