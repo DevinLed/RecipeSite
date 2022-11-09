@@ -14,31 +14,33 @@ async function sendApiRequest(){
   let API_KEY = "56b9fc8ce334b4a7a762c9a5d815ab88"
   let response = await fetch (`https://api.edamam.com/search?app_id=${APP_ID}&app_key=${API_KEY}&q=pizza`);
   let data = await response.json()
-  console.log(data)
-  useApiData(data)
+  console.log(data);
+  useApiData(data);
+  carouselLoader(data);
 }
 
 function useApiData(data){
-  var output ="";
-  data.hits.forEach(name => {
+  var output =""; 
+  for (let i = 0; i < data.hits.length; i++) {
+console.log(data.hits[i].recipe.label);
   output +=`
     <ul class="expandlist">
         <li class="collection-header">
             <details class="details-example">
-            <summary class="collection-header">${name.recipe.label}</summary>
+            <summary class="collection-header">${data.hits[i].recipe.label}</summary>
                 <ul id="list">
-    `});
+    `
     //loads list of ingredients from json for each initial item
-    data.hits[0].recipe.ingredientLines.forEach((ingredient) => {
+    data.hits[i].recipe.ingredientLines.forEach((ingredient) => {
       output += `<li class="collection-item">${ingredient}</li>`;
     });
     output += `     
                 </ul>
                 <div class="imgandlink">
-                <img class="previewimg" src="${data.hits[0].recipe.image}"/>
+                <img class="previewimg" src="${data.hits[i].recipe.image}"/>
                 </div>
                 <div class="directionBtn">
-                <button type="submit" class="showpop" id="directionlink"><a href="${data.hits[0].recipe.url}">Show Full Recipe</button></a>
+                <button type="submit" class="showpop" id="directionlink"><a href="${data.hits[i].recipe.url}">Show Full Recipe</button></a>
                 </div>
                 </details>
         </li>
@@ -48,8 +50,22 @@ function useApiData(data){
                 </div>
     `;
 
-
+  }
   document.getElementById("listcontainer").innerHTML = output;
+}
+
+function carouselLoader(data){
+  var output ="";
+  for (let i = 0; i < data.hits.length; i++) {
+      output +=`
+      <div class="scroll-images">
+      <div class="child"><img class="child-img" src="${data.hits[i].recipe.image}" alt="image"></div>
+    </div>`
+    
+  console.log(data.hits[i].recipe.image);
+  };
+
+  document.getElementById("cover").innerHTML= output;
 }
 
 
@@ -72,14 +88,14 @@ function loadAllRecipes() {
   // xhttp.open("GET", "./json/recipe.json", true);
   // xhttp.send();
 }
-/*
+
 function clearInput() {
   document.getElementById("filterInput").innerHTML = `"Search recipes`;
 }
-*/
+
 
 // Loads all recipes in listcontainer, linked to button "showpop". Resets list from search function
-/*function showAllRecipes() {
+function showAllRecipes() {
   document.getElementById("filterInput").value = "";
   var output = "";
   //cycles through recipe.json data
@@ -115,10 +131,10 @@ function clearInput() {
   });
   //prints list of json values into listcontainer field
   document.getElementById("listcontainer").innerHTML = output;
-}*/
+}
 
 //delay of 600ms needed after typing to search list
-function debounce(func, timeout = 600) {
+function debounce(func, timeout = 800) {
   let timer;
   return (...args) => {
     clearTimeout(timer);
@@ -128,7 +144,7 @@ function debounce(func, timeout = 600) {
   };
 }
 //compares input value to names in json
-function filterNames(event) {
+function filterNames(data) {
   filterInput.addEventListener("keyup", filterNames);
   // Get value of input
   let filterValue = document.getElementById("filterInput").value.toUpperCase();
@@ -136,7 +152,7 @@ function filterNames(event) {
   //fills list with data pulled from json
   let li = ul.querySelectorAll("li.collection-header");
   for (let i = 0; i < li.length; i++) {
-    let a = data.hits[0].recipe[i].name;
+    let a = data.hits[i].recipe.label;
     // If matched
     if (a.toUpperCase().indexOf(filterValue) > -1) {
       //if name matched, display in list
@@ -354,8 +370,14 @@ function clearMeasure() {
     inputDTsp.value = (0).toFixed();
     inputDMl.value = (0).toFixed();
   }
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
   loadAllRecipes();
+  sendApiRequest()
 
   // Get input element
   let filterInput = document.getElementById("filterInput");
