@@ -6,6 +6,7 @@ const APP_ID = "e9121c76";
 const API_KEY = "56b9fc8ce334b4a7a762c9a5d815ab88";
 const baseUrl = `https://api.edamam.com/search?app_id=${APP_ID}&app_key=${API_KEY}`;
 const searchButton = document.querySelector(".testsearch");
+const recipeContainer = document.getElementById("listcontainer");
 
 searchButton.addEventListener("click", () => loadRecipes(searchText.value));
 
@@ -16,14 +17,48 @@ searchText.addEventListener("keyup", (e) => {
   }
 });
 
-function loadRecipes(data, type = "recipe") {
+function loadRecipes(type = "recipe") {
   const url = baseUrl + `&q=${type}`;
   fetch(url)
     .then((res) => res.json())
-    .then((data) => document.getElementById("listcontainer").innerHTML = data.hits)
+    .then((data) => renderRecipies(data.hits))
     .catch((error) => console.log(error));
 }
 
+const renderRecipies = (recipeList = []) => {
+  recipeContainer.innerHTML ="";
+  recipeList.forEach((recipeObj) => {
+    const {
+      label: recipeTitle,
+      ingredientLines,
+      image: recipeImage,
+      url: url,
+    } = recipeObj.recipe;
+    let htmlStr = `
+    <ul class="expandlist">
+        <li class="collection-header">
+            <details class="details-example">
+            <summary class="collection-header">${recipeTitle}</summary>
+              <ul id="list">`;
+              
+    //loads list of ingredients from json for each initial item
+    ingredientLines.forEach((ingredient) => {
+      htmlStr += `<li class="collection-item">${ingredient}</li>`;
+    });
+    htmlStr += `</ul>
+              <div class="imgandlink">
+                <img class="previewimg" src="${recipeImage}"/>
+              </div>
+              <div class="directionBtn">
+                <button type="submit" class="showpop" id="directionlink"><a href="${url}">Show Full Recipe</button></a>
+              </div>
+            </details>
+        </li>
+    </ul>`;
+    recipeContainer.insertAdjacentHTML("beforeend", htmlStr);
+  });
+};
+//loads pizza list on page start
 async function sendApiRequest() {
   let response = await fetch(
     `https://api.edamam.com/search?app_id=${APP_ID}&app_key=${API_KEY}&q=pizza`
@@ -31,19 +66,18 @@ async function sendApiRequest() {
   let data = await response.json();
   useApiData(data);
 }
-
+//call to load each pizza item
 function useApiData(data) {
   var output = "";
   const bar = document.querySelector(".collection-header");
-  for (let i = 0; i < 10; i++) {
-        output += `
+  for (let i = 0; i < data.hits.length; i++) {
+    output += `
     <ul class="expandlist">
         <li class="collection-header">
             <details class="details-example">
             <summary class="collection-header">${data.hits[i].recipe.label}</summary>
             <ul id="list">
-    `
-    ;
+    `;
     //loads list of ingredients from json for each initial item
     data.hits[i].recipe.ingredientLines.forEach((ingredient) => {
       output += `<li class="collection-item">${ingredient}</li>`;
@@ -63,7 +97,6 @@ function useApiData(data) {
     <div class="popup" id="popup">
                 </div>
     `;
-
   }
   document.getElementById("listcontainer").innerHTML = output;
 }
