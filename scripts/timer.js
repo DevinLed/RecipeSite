@@ -76,3 +76,21 @@ function stopWatch() {
         setTimeout(stopWatch, 10);
     }
 }
+//test for egg timer open/close button
+let poptimer = document.getElementById("sidebar");
+let btntimer = document.getElementById("showtimerbtn");
+function openTimer() {
+  poptimer.classList.add("open-timer");
+  btntimer.classList.add("open-Btn");
+}
+function closeTimer() {
+  poptimer.classList.remove("open-timer");
+  btntimer.classList.remove("open-Btn");
+}
+
+function openBtn() {
+  btntimer.classList.add("open-Btn");
+}
+function closeBtn() {
+  btntimer.classList.remove("open-Btn");
+}
