@@ -26,7 +26,7 @@ function loadRecipes(type = "recipe") {
 }
 
 const renderRecipies = (recipeList = []) => {
-  recipeContainer.innerHTML ="";
+  recipeContainer.innerHTML = "";
   recipeList.forEach((recipeObj) => {
     const {
       label: recipeTitle,
@@ -34,14 +34,14 @@ const renderRecipies = (recipeList = []) => {
       image: recipeImage,
       url: url,
     } = recipeObj.recipe;
-    console.log(recipeTitle);
     let htmlStr = `
     <ul class="expandlist">
         <li class="collection-header">
             <details class="details-example">
             <summary class="collection-header">${recipeTitle}</summary>
-              <ul id="list">`;
-              
+              <ul id="list">
+             `;
+
     //loads list of ingredients from json for each initial item
     ingredientLines.forEach((ingredient) => {
       htmlStr += `<li class="collection-item">${ingredient}</li>`;
@@ -70,19 +70,21 @@ async function sendApiRequest() {
 //call to load each pizza item
 function useApiData(data) {
   var output = "";
-  const bar = document.querySelector(".collection-header");
   for (let i = 0; i < data.hits.length; i++) {
     output += `
     <ul class="expandlist">
         <li class="collection-header">
             <details class="details-example">
             <summary class="collection-header">${data.hits[i].recipe.label}</summary>
+           
             <ul id="list">
-    `;
+            `;
+
     //loads list of ingredients from json for each initial item
     data.hits[i].recipe.ingredientLines.forEach((ingredient) => {
       output += `<li class="collection-item">${ingredient}</li>`;
     });
+
     output += `     
                 </ul>
                 <div class="imgandlink">

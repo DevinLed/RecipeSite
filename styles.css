@@ -70,11 +70,14 @@ header {
   font-size: 15px;
   font-weight: 400;
   border-radius: 30px;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 20px, rgba(0, 0, 0, 0.22) 0px 7px 6px;
   z-index: 1;
   transform: translate(0%, 120px);
 }
-
+a{
+  
+  text-decoration: none;
+  color: #000000;
+}
 .showpop {
   margin-top: 3%;
   padding: 10px 25px;
@@ -85,7 +88,6 @@ header {
   font-size: 15px;
   font-weight: 400;
   border-radius: 30px;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 20px, rgba(0, 0, 0, 0.22) 0px 7px 6px;
 }
 
 .popup {
@@ -153,12 +155,12 @@ header {
   font-size: 15px;
   font-weight: 400;
   border-radius: 30px;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 20px, rgba(0, 0, 0, 0.22) 0px 7px 6px;
   top: 0;
   cursor: pointer;
   margin: 0;
   visibility: visible;
   min-width: 75px;
+  background-color: #fff;
 }
 
 .showtimerbtn:active {
@@ -257,23 +259,28 @@ ul .expandlist2 li:hover {
 .details-example {
   padding: 5px;
   width: fit-content;
+  position: relative;
 }
 .details-example::after {
   content: "";
   position: absolute;
-  width: 100%;
+  width: 50rem;
   transform: scaleX(0);
-  height: 2px;
+  height: 100%;
   bottom: 0;
   left: 0;
-  background-color: #000000;
-  transform-origin: bottom right;
+  background-color: rgb(0, 0, 0, 0.1);
+  transform-origin: bottom left;
+  transition: 0.8s ease;
+  pointer-events: none
 }
-
 .details-example:hover:after {
   transform: scaleX(1);
   transform-origin: bottom left;
+  width: 100rem;
+  
 }
+
 .topbar {
   margin: 0;
   width: 100%;
