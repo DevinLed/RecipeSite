@@ -145,4 +145,20 @@ function weightConverter(source, valNum) {
     inputDTsp.value = (0).toFixed();
     inputDMl.value = (0).toFixed();
   }
-  
+  let popcnvt = document.getElementById("converter");
+let btncnvt = document.getElementById("showconverterbtn");
+function openConverter() {
+  popcnvt.classList.add("open-cnvt");
+  btncnvt.classList.add("open-cnvt");
+}
+function closeConverter() {
+  popcnvt.classList.remove("open-cnvt");
+  btncnvt.classList.remove("open-cnvt");
+}
+
+function openCnvt() {
+  btntimer.classList.add("open-cnvt");
+}
+function closeCnvt() {
+  btntimer.classList.remove("open-cnvt");
+}

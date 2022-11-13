@@ -8,16 +8,17 @@ const baseUrl = `https://api.edamam.com/search?app_id=${APP_ID}&app_key=${API_KE
 const searchButton = document.querySelector(".testsearch");
 const recipeContainer = document.getElementById("listcontainer");
 
+//search function when button is pressed
 searchButton.addEventListener("click", () => loadRecipes(searchText.value));
-
+//search function at the press of Enter
 searchText.addEventListener("keyup", (e) => {
   const inputVal = searchText.value;
   if (e.keyCode === 13) {
     loadRecipes(inputVal);
   }
 });
-
-function loadRecipes(type = "recipe") {
+//loads list of pizza recipes by calling cnst renderRecipies
+function loadRecipes(type = "pizza") {
   const url = baseUrl + `&q=${type}`;
   fetch(url)
     .then((res) => res.json())
@@ -25,6 +26,7 @@ function loadRecipes(type = "recipe") {
     .catch((error) => console.log(error));
 }
 
+//loads the list based off input in filterInput field, and calls subsequent info
 const renderRecipies = (recipeList = []) => {
   recipeContainer.innerHTML = "";
   recipeList.forEach((recipeObj) => {
@@ -35,11 +37,11 @@ const renderRecipies = (recipeList = []) => {
       url: url,
     } = recipeObj.recipe;
     let htmlStr = `
-    <ul class="expandlist">
+    <ul class="expandlist" style="padding-left: 0px;">
         <li class="collection-header">
             <details class="details-example">
             <summary class="collection-header">${recipeTitle}</summary>
-              <ul id="list">
+            <ul id="list">
              `;
 
     //loads list of ingredients from json for each initial item
@@ -51,58 +53,41 @@ const renderRecipies = (recipeList = []) => {
                 <img class="previewimg" src="${recipeImage}"/>
               </div>
               <div class="directionBtn">
-                <button type="submit" class="showpop" id="directionlink"><a href="${url}">Show Full Recipe</button></a>
+                <button type="submit" title="Visit external site" class="showpop" id="directionlink"><a href="${url}">Show Full Recipe</button></a>
               </div>
+              <div id="popup"><iframe id="popupiframe"></iframe></div>
+              <div id="popupdarkbg"></div>
             </details>
         </li>
     </ul>`;
     recipeContainer.insertAdjacentHTML("beforeend", htmlStr);
+
+    document.getElementById("directionlink").onclick = function(e) {
+      e.preventDefault();
+      document.getElementById("popupdarkbg").style.display = "block";
+      document.getElementById("popup").style.display = "block";
+      document.getElementById('popupiframe').src = recipeObj.recipe.url;
+      document.getElementById('popupdarkbg').onclick = function() {
+          document.getElementById("popup").style.display = "none";
+          document.getElementById("popupdarkbg").style.display = "none";
+      };
+      return false;
+    }
+    
+    window.onkeydown = function(e) {
+        if (e.keyCode == 27) {
+          document.getElementById("popup").style.display = "none";
+          document.getElementById("popupdarkbg").style.display = "none";
+          e.preventDefault();
+          return;
+        }
+    }
+
+
+
+
   });
 };
-//loads pizza list on page start
-async function sendApiRequest() {
-  let response = await fetch(
-    `https://api.edamam.com/search?app_id=${APP_ID}&app_key=${API_KEY}&q=pizza`
-  );
-  let data = await response.json();
-  useApiData(data);
-}
-//call to load each pizza item
-function useApiData(data) {
-  var output = "";
-  for (let i = 0; i < data.hits.length; i++) {
-    output += `
-    <ul class="expandlist">
-        <li class="collection-header">
-            <details class="details-example">
-            <summary class="collection-header">${data.hits[i].recipe.label}</summary>
-           
-            <ul id="list">
-            `;
-
-    //loads list of ingredients from json for each initial item
-    data.hits[i].recipe.ingredientLines.forEach((ingredient) => {
-      output += `<li class="collection-item">${ingredient}</li>`;
-    });
-
-    output += `     
-                </ul>
-                <div class="imgandlink">
-                <img class="previewimg" src="${data.hits[i].recipe.image}"/>
-                </div>
-                <div class="directionBtn">
-                <button type="submit" class="showpop" id="directionlink"><a href="${data.hits[i].recipe.url}">Show Full Recipe</button></a>
-                </div>
-                </details>
-        </li>
-    </ul>
-    <div class="outerpop">
-    <div class="popup" id="popup">
-                </div>
-    `;
-  }
-  document.getElementById("listcontainer").innerHTML = output;
-}
 
 function clearInput() {
   document.getElementById("filterInput").value = "";
@@ -110,7 +95,7 @@ function clearInput() {
   var output = "";
   //generates initial clickable item in list
   output += `
-    <ul class="expandlist">
+    <ul class="expandlist" style="padding-left: 3px;">
         <li class="collection-header">
             <details class="details-example">
             <summary class="collection-header"></summary>
@@ -152,15 +137,13 @@ function openPopup(recipeId) {
   document.getElementById(
     "popup"
   ).innerHTML = `<li>${recipe.name}</li><li>${recipe.directions}</li>
-    <button type="submit" class="showpop" onclick="closePopup()">Close Recipe</button>`;
+    <button type="submit" class="showpop" onclick="closePopup()">Recipe</button>`;
 }
 function closePopup() {
   document.getElementById("popup").classList.remove("open-popup");
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  sendApiRequest();
-  // Get input element
-  let filterInput = document.getElementById("filterInput");
-  // Add event listener
+  loadRecipes();
+  console.log("Content Loaded");
 });
