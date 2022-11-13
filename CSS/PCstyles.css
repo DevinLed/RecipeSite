@@ -256,11 +256,12 @@ ul .expandlist2 li:hover {
 .details-example {
   padding: 5px;
   width: fit-content;
-  position:inherit;
+  position: relative;
 }
 .details-example::after {
   content: "";
   width: 50rem;
+  position: absolute;
   transform: scaleX(0);
   height: 100%;
   bottom: 0;
@@ -268,7 +269,7 @@ ul .expandlist2 li:hover {
   background-color: rgb(0, 0, 0, 0.1);
   transform-origin: bottom left;
   transition: 0.8s ease;
-  pointer-events: none;
+  pointer-events: none
 }
 .details-example:hover:after {
   transform: scaleX(1);
