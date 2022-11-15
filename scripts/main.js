@@ -9,22 +9,37 @@ const searchButton = document.querySelector(".testsearch");
 const recipeContainer = document.getElementById("listcontainer");
 
 //search function when button is pressed
-searchButton.addEventListener("click", () => loadRecipes(searchText.value));
+searchButton.addEventListener("click", () => {
+  recipeContainer.innerHTML = "<div class='loader'></div>";
+  setTimeout(() => {
+  loadRecipes(searchText.value); 
+  }, 700);
+});
 //search function at the press of Enter
 searchText.addEventListener("keyup", (e) => {
-  const inputVal = searchText.value;
-  if (e.keyCode === 13) {
-    loadRecipes(inputVal);
-  }
+
+  
+    const inputVal = searchText.value;
+    if (e.keyCode === 13) {
+      recipeContainer.innerHTML = "<div class='loader'></div>"
+  setTimeout(() => {
+      loadRecipes(inputVal);
+    }, 700);
+    }
 });
+  
 //loads list of pizza recipes by calling cnst renderRecipies
 function loadRecipes(type = "pizza") {
+
+  recipeContainer.innerHTML = "<div class='loader'></div>";
+  setTimeout(() => {  
   const url = baseUrl + `&q=${type}`;
   fetch(url)
     .then((res) => res.json())
     .then((data) => renderRecipies(data.hits))
     .catch((error) => console.log(error));
-}
+  }, 500);
+};
 
 //loads the list based off input in filterInput field, and calls subsequent info
 const renderRecipies = (recipeList = []) => {
@@ -52,42 +67,27 @@ const renderRecipies = (recipeList = []) => {
               <div class="imgandlink">
                 <img class="previewimg" src="${recipeImage}"/>
               </div>
+
               <div class="directionBtn">
-                <button type="submit" title="Visit external site" class="showpop" id="directionlink"><a href="${url}">Show Full Recipe</button></a>
+                <button type="submit" title="Visit external site" class="showpop" id="directionlink"><a href="${url}" target="_blank">Show Full Recipe</button></a>
               </div>
-              <div id="popup"><iframe id="popupiframe"></iframe></div>
-              <div id="popupdarkbg"></div>
+              
             </details>
         </li>
     </ul>`;
-    recipeContainer.insertAdjacentHTML("beforeend", htmlStr);
 
-    document.getElementById("directionlink").onclick = function(e) {
-      e.preventDefault();
-      document.getElementById("popupdarkbg").style.display = "block";
-      document.getElementById("popup").style.display = "block";
-      document.getElementById('popupiframe').src = recipeObj.recipe.url;
-      document.getElementById('popupdarkbg').onclick = function() {
-          document.getElementById("popup").style.display = "none";
-          document.getElementById("popupdarkbg").style.display = "none";
-      };
-      return false;
-    }
     
-    window.onkeydown = function(e) {
-        if (e.keyCode == 27) {
-          document.getElementById("popup").style.display = "none";
-          document.getElementById("popupdarkbg").style.display = "none";
-          e.preventDefault();
-          return;
-        }
-    }
-
-
+    
+    recipeContainer.insertAdjacentHTML("beforeend", htmlStr);
 
 
   });
+  
+  
 };
+
+
+
 
 function clearInput() {
   document.getElementById("filterInput").value = "";

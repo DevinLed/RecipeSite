@@ -8,10 +8,8 @@ html {
   overflow-x: hidden;
 }
 body {
-  padding: 0;
   margin: 0;
   background-color: rgb(251, 250, 245);
-  font-family: "Roboto", sans-serif;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 25px;
   background-size: contain;
@@ -28,8 +26,6 @@ input {
 header {
   background-color: bisque;
   color: rgb(185, 82, 77);
-  font-family: serif;
-  text-align: center;
   width: 100%;
   padding: 0;
   border: 0;
@@ -41,7 +37,6 @@ header {
 .content {
   display: flex;
   width: 100%;
-  margin: 0%;
   background-color: rgb(251, 250, 245);
   padding: 0;
   margin-bottom: -1%;
@@ -58,9 +53,6 @@ header {
   overflow: hidden;
   text-overflow: ellipsis;
   min-height: 40px;
-  max-height: auto;
-  align-items: center;
-  justify-content: center;
 }
 .testsearch {
   margin: 0 auto;
@@ -127,11 +119,9 @@ a {
   max-width: 500px;
   padding-bottom: 17%;
   box-sizing: border-box;
-  align-items: center;
-  justify-content: center;
 }
 .sidebar {
-  width: 100%;
+  width: 50%;
   box-sizing: border-box;
   visibility: hidden;
   transition: transform 0.4s, top 0.4s;
@@ -139,22 +129,15 @@ a {
 
 .open-timer {
   visibility: visible;
-  top: 50%;
-  transform: translate(0%, 20%) scale(1);
+  transform: translate(0%, 2%) scale(1);
   transition: transform 0.4s, top 0.4s;
 }
 
 .showtimerbtn {
-  margin-top: 3%;
   padding: 10px 25px;
-  align-items: center;
-  justify-content: center;
-  background: 251, 250, 245;
-  cursor: pointer;
   font-size: 15px;
   font-weight: 400;
   border-radius: 30px;
-  top: 0;
   cursor: pointer;
   margin: 0;
   visibility: visible;
@@ -167,18 +150,13 @@ a {
   transition: all 0.2s;
 }
 .hidetimerbtn {
-  margin-top: 3%;
   padding: 10px 25px;
-  align-items: center;
-  justify-content: center;
-  background: 251, 250, 245;
   cursor: pointer;
   font-size: 15px;
   font-weight: 400;
   border-radius: 30px;
   position: relative;
   top: 0;
-  cursor: pointer;
   margin: 0;
   visibility: hidden;
   background-color: #fff;
@@ -204,8 +182,6 @@ a {
 #time,
 h1,
 h2 {
-  align-items: center;
-  justify-content: center;
   text-align: center;
 }
 h2 {
@@ -225,9 +201,7 @@ h2 {
   display: flex;
 }
 .egger {
-  background-color: bisque;
-  color: rgb(185, 82, 77);
-  font-family: serif;
+  background-color: antiquewhite;
   color: rgb(0, 0, 0);
 }
 ul .expandlist li {
@@ -248,6 +222,7 @@ ul .expandlist2 li {
 
 ul .expandlist2 li:hover {
   border-bottom: solid 10px rgb(000, 000, 000);
+  cursor: pointer;
 }
 .expandlist2 {
   margin: 0;
@@ -269,12 +244,14 @@ ul .expandlist2 li:hover {
   background-color: rgb(0, 0, 0, 0.1);
   transform-origin: bottom left;
   transition: 0.8s ease;
-  pointer-events: none
+  pointer-events: none;
+  cursor: pointer;
 }
 .details-example:hover:after {
   transform: scaleX(1);
   transform-origin: bottom left;
   width: 100rem;
+  cursor: pointer;
 }
 #list{
   display:table;
@@ -290,8 +267,6 @@ ul .expandlist2 li:hover {
 }
 .linklist {
   background: no-repeat center center fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
   width: 100%;
 }
 .navmenu {
@@ -373,7 +348,6 @@ details[open] summary ~ * {
 
 .expandlist:nth-child(odd){
   align-items: center;
-  width: fit-content(200px);
   background-color: white;
 }
 .collection-item {
@@ -381,6 +355,11 @@ details[open] summary ~ * {
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 50ch;
+}
+.collection-item:hover {
+    background-color: bisque;
+    border-radius: 10px;
+    cursor: pointer;
 }
 .imgandlink {
   display: flex;
@@ -402,20 +381,15 @@ details[open] summary ~ * {
 
 .container {
   display: block;
-  top: 400px;
-  border-radius: 15%;
-  background-color: bisque;
+  background-color: antiquewhite;
   padding: 5px;
-  margin: 10px;
-  max-width: 250px;
+  margin-bottom: 5px;
 
   box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 1px, rgba(0, 0, 0, 0.22) 0px 1px 1px;
 }
 .searchables {
   width: 50%;
   padding-bottom: 50px;
-  align-items: center;
-  justify-content: center;
   padding-left: 25px;
   padding-right: 25px;
 }
@@ -433,10 +407,9 @@ details[open] summary ~ * {
 }
 .rightSide {
   display:grid;
-  width: 25%;
+  width: 50%;
   max-height: 150px;
-  padding-bottom: 27rem;
-  justify-content: center;
+  padding-bottom: 10rem;
 }
 
 .converter {
@@ -446,7 +419,6 @@ details[open] summary ~ * {
   box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 1px,
     rgba(0, 0, 0, 0.22) 0px 1px 1px;
   min-height: 40px;
-  max-height: auto;
   width: 200px;
   visibility: hidden;
 }
@@ -459,16 +431,10 @@ details[open] summary ~ * {
 }
 
 .showconverterbtn {
-  margin-top: 3%;
   padding: 10px 25px;
-  align-items: center;
-  justify-content: center;
-  background: 251, 250, 245;
-  cursor: pointer;
   font-size: 15px;
   font-weight: 400;
   border-radius: 30px;
-  top: 0;
   cursor: pointer;
   margin: 0;
   visibility: visible;
@@ -481,12 +447,7 @@ details[open] summary ~ * {
   transition: all 0.2s;
 }
 .hideconverterbtn {
-  margin-top: 3%;
   padding: 10px 25px;
-  align-items: center;
-  justify-content: center;
-  background: 251, 250, 245;
-  cursor: pointer;
   font-size: 15px;
   font-weight: 400;
   border-radius: 30px;
@@ -545,12 +506,36 @@ summary{
 .inputWeight {
   width: 90px;
 }
-#popup { display: none; position: fixed; top: 12%; left: 15%; width: 70%; height: 70%; background-color: white; z-index: 10; }
-#popup iframe { width: 100%; height: 100%; border: 0; }
-#popupdarkbg { position: fixed; z-index: 5; left: 0; top: 0; width: 100%; height: 100%; overflow: hidden; background-color: rgba(0,0,0,.75); display: none; }
 
+.loader {
+  pointer-events: none;
+  width: 30px;
+  height: 30px; 
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: rgb(0, 0, 0);
+  animation: an1 1s ease infinite;
+  background-color: rgb(255, 255, 255);
+  display:grid;
+  place-content: center;
+  margin-left: 48%;
+
+  
+}
+@keyframes an1 {
+  0%{
+    transform: rotate(0turn);
+  }
+  100%{
+    transform: rotate(1turn);
+  }
+  
+}
 
 
 
 
 }
+
+
+
