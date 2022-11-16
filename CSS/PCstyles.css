@@ -16,25 +16,28 @@
     position: relative;
     width: 100%;
   }
-  .inputHeader{
-    display:flex;
-    align-items: center;
+  .inputHeader {
+    display: flex;
+    margin-left: 35%;
     padding: 2rem;
     justify-content: space-between;
   }
-  .hdSearch{
+  .hdSearch {
     width: 100%;
   }
-  
+  .hdBtn {
+    display: inline-block;
+  }
+
   #filterInput {
+    display: inline-block;
     padding: 0.5rem;
     border-radius: 1rem;
-    margin-left: 35rem;
-    width: 30rem;
+    width: 20rem;
     background-color: rgb(251, 250, 245);
     z-index: 1;
   }
-  
+
   .testsearch {
     margin: 0 auto;
     align-items: center;
@@ -89,7 +92,6 @@ header {
     overflow: hidden;
     text-overflow: ellipsis;
     min-height: 40px;
-    
   }
   a {
     text-decoration: none;
@@ -97,7 +99,7 @@ header {
   }
   .showpop {
     padding: 10px 25px;
-    background: rgb(251, 250, 245);
+    background: #fff;
     cursor: pointer;
     font-size: 15px;
     font-weight: 400;
@@ -136,16 +138,19 @@ header {
   }
 
   .mainpage {
+    display: flex;
+    flex-direction: column;
     width: 25%;
     max-width: 500px;
     box-sizing: border-box;
-    padding-top: 5rem;
-    
-  background:linear-gradient(to left , rgb(251, 250, 245),rgb(233,243,255));
-    
+    background: linear-gradient(
+      to left,
+      rgb(251, 250, 245),
+      rgb(233, 243, 255)
+    );
   }
   .sidebar {
-    width: 50%;
+    width: 100%;
     box-sizing: border-box;
     visibility: hidden;
     transition: transform 0.4s, top 0.4s;
@@ -158,10 +163,10 @@ header {
   }
 
   .showtimerbtn {
-    padding: 10px 25px;
+    padding: 10px 0px;
+    width: 100%;
     font-size: 15px;
     font-weight: 400;
-    border-radius: 30px;
     cursor: pointer;
     margin: 0;
     visibility: visible;
@@ -174,11 +179,11 @@ header {
     transition: all 0.2s;
   }
   .hidetimerbtn {
-    padding: 10px 25px;
+    padding: 10px 0;
+    width: 100%;
     cursor: pointer;
     font-size: 15px;
     font-weight: 400;
-    border-radius: 30px;
     position: relative;
     top: 0;
     margin: 0;
@@ -208,6 +213,17 @@ header {
   h2 {
     text-align: center;
   }
+  #time{
+    border-radius: 15px;
+    padding: 5px;
+    background-color: #fff;
+    width: 50%;
+    margin-left: 25%;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    padding-bottom: 5px;
+  }
   h2 {
     background-color: bisque;
     color: rgb(185, 82, 77);
@@ -219,13 +235,13 @@ header {
   .weightc {
     color: black;
     font-size: 25px;
-    background-color: antiquewhite;
+    background-color: rgb(233, 243, 255);
   }
   .bothConvert {
     display: flex;
   }
   .egger {
-    background-color: antiquewhite;
+    background-color: rgb(233, 243, 255);
     color: rgb(0, 0, 0);
   }
   ul .expandlist li {
@@ -377,7 +393,7 @@ header {
 
   .container {
     display: block;
-    background-color: antiquewhite;
+    background-color: rgb(233, 243, 255);
     padding: 5px;
     margin-bottom: 5px;
 
@@ -402,39 +418,50 @@ header {
   }
   .rightSide {
     display: grid;
-    width: 50%;
     max-height: 150px;
   }
-.toolbar{
-  padding-top: 0rem;
-}
-h3{
-  font-size: 30px;
-  text-align: center;
-  translate: 0px -50px;
-}
+  .toolbar {
+    padding-top: 0rem;
+  }
+  h3 {
+    font-size: 30px;
+    text-align: center;
+    translate: 0px -50px;
+  }
   .converter {
-    display: table;
-    padding: 15px;
-    background-color: antiquewhite;
+    display: grid;
+    background-color: rgb(233, 243, 255);
     box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 1px, rgba(0, 0, 0, 0.22) 0px 1px 1px;
     min-height: 40px;
-    width: 200px;
+    width: 100%;
     visibility: hidden;
+    padding-bottom: 500px;
+    justify-content: center;
   }
-
+  .liquidWeight {
+    padding: 0px 5px;
+    display: grid;
+  }
+  .dryWeight {
+    display: grid;
+    padding: 0px 5px;
+  }
   .open-cnvt {
     visibility: visible;
     top: 50%;
     transform: translate(0%, 20%) scale(1);
     transition: transform 0.4s, top 0.4s;
   }
-
+  .btn {
+    border-radius: 20px;
+    padding: 8px 10px;
+    background-color: #fff;
+  }
   .showconverterbtn {
-    padding: 10px 25px;
+    padding: 10px 0px;
+    width: 100%;
     font-size: 15px;
     font-weight: 400;
-    border-radius: 30px;
     cursor: pointer;
     margin: 0;
     visibility: visible;
@@ -447,10 +474,9 @@ h3{
     transition: all 0.2s;
   }
   .hideconverterbtn {
-    padding: 10px 25px;
+    padding: 10px 0px;
     font-size: 15px;
     font-weight: 400;
-    border-radius: 30px;
     position: relative;
     top: 0;
     cursor: pointer;
@@ -486,6 +512,11 @@ h3{
       rgba(0, 0, 0, 0)
     );
   }
+  .clearAll{
+    font-size: 20px;
+
+
+  }
   #clearMeasure {
     margin-top: 10px;
     width: 100%;
@@ -504,7 +535,7 @@ h3{
     margin-right: 5rem;
   }
   .inputWeight {
-    width: 90px;
+    width: 50px;
   }
 
   .loader {
