@@ -13,7 +13,7 @@ searchButton.addEventListener("click", () => {
   recipeContainer.innerHTML = "<div class='loader'></div>";
   setTimeout(() => {
   loadRecipes(searchText.value); 
-  }, 700);
+  }, 500);
 });
 //search function at the press of Enter
 searchText.addEventListener("keyup", (e) => {
@@ -21,10 +21,10 @@ searchText.addEventListener("keyup", (e) => {
   
     const inputVal = searchText.value;
     if (e.keyCode === 13) {
-      recipeContainer.innerHTML = "<div class='loader'></div>"
+      recipeContainer.innerHTL = "<div class='loader'></div>"
   setTimeout(() => {
       loadRecipes(inputVal);
-    }, 700);
+    }, 500);
     }
 });
   
@@ -100,8 +100,6 @@ function clearInput() {
             <details class="details-example">
             <summary class="collection-header"></summary>
                 <ul id="list">
-                <li class="collection-item"></li>
-     
                 <li class="collection-item"></li>
                 </ul>
                 <div class="imgandlink">

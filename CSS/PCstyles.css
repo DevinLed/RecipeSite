@@ -249,6 +249,7 @@ header {
     position: relative;
     padding: 1px rgb(251, 250, 245) rgb(251, 250, 245);
     max-height: auto;
+    cursor: pointer;
   }
   ul .expandlist2 li {
     list-style: none;
@@ -261,7 +262,7 @@ header {
   }
 
   ul .expandlist2 li:hover {
-    border-bottom: solid 10px rgb(000, 000, 000);
+    border-bottom: solid 10px rgb(255, 255, 255);
     cursor: pointer;
   }
   .expandlist2 {
@@ -270,7 +271,7 @@ header {
   }
   .details-example {
     padding: 5px;
-    width: fit-content;
+    width: 55rem;
     position: relative;
   }
   .details-example::after {
@@ -286,7 +287,7 @@ header {
     transition: 0.8s ease;
     pointer-events: none;
     cursor: pointer;
-  }
+   }
   .details-example:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
@@ -294,8 +295,8 @@ header {
     cursor: pointer;
   }
   #list {
-    display: table;
-    align-items: center;
+    width: 90%;
+    
   }
 
   .linklist {
@@ -324,18 +325,19 @@ header {
     border-radius: 40px;
   }
   .previewimg {
-    border-radius: 15px;
     padding-top: 15px;
     width: 50%;
-    margin: 0 auto;
+    margin-left: 31%;
   }
   .directionBtn {
     border-radius: 15px;
     padding-top: 15px;
     display: block;
+    width: 100%;
+    margin-left: 50%;
   }
   #directionlink {
-    margin-left: 25%;
+    translate: -50px 0px;
   }
   .directions {
     width: 20%;
@@ -372,22 +374,18 @@ header {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 50ch;
+    width: 100%;
+    border: 1px solid black;
+    background-color: #fff;
   }
-  .collection-item:hover {
-    background-color: bisque;
-    border-radius: 10px;
-    cursor: pointer;
+  .collection-item:nth-child(even) {
+    background-color: #e9e9f9;
   }
   .imgandlink {
     display: flex;
-    flex: 1;
+    flex-direction: column;
     color: rgb(0, 0, 0);
-    align-items: center;
-    justify-content: center;
     width: 100%;
-    margin: 0;
-    justify-content: space-between;
     padding: 0 10px 10px 0;
   }
 
@@ -530,6 +528,15 @@ header {
   }
   details > summary:first-of-type {
     list-style-type: none;
+    transition: font-size 3s;
+    padding-bottom: 5px;
+    cursor: pointer;
+  }
+  details > summary:first-of-type:hover {
+    list-style-type: none;
+    font-size: 30px;
+    
+    transition:all 0.7s ease-in-out;
   }
   summary {
     margin-right: 5rem;
