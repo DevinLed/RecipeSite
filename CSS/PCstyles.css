@@ -2,9 +2,9 @@
 @media only screen and (min-width: 768px) {
   html {
     width: 100%;
-    height: auto;
+    height: 100vh;
     transition: all 0.3s ease 0s;
-    overflow-x: hidden;
+    overflow-y: scroll;
   }
 
   .topbar {
@@ -33,7 +33,7 @@
     display: inline-block;
     padding: 0.5rem;
     border-radius: 1rem;
-    width: 20rem;
+    width: 25vw;
     background-color: rgb(251, 250, 245);
     z-index: 1;
   }
@@ -55,8 +55,8 @@
     font-family: Arial, Helvetica, sans-serif;
     line-height: 25px;
     min-width: 768px;
-    overflow: hidden;
     height: auto;
+    padding-bottom: 1px;
   }
   input {
     font-size: 1rem;
@@ -79,7 +79,6 @@ header {
     width: 100%;
     background-color: rgb(251, 250, 245);
     padding: 0;
-    margin-bottom: -1%;
     height: 100%;
   }
   #listcontainer {
@@ -140,8 +139,10 @@ header {
   .mainpage {
     display: flex;
     flex-direction: column;
+    position: relative;
     width: 25%;
     max-width: 500px;
+    min-height: 100%;
     box-sizing: border-box;
     background: linear-gradient(
       to left,
@@ -169,7 +170,7 @@ header {
     font-weight: 400;
     cursor: pointer;
     margin: 0;
-    visibility: visible;
+    visibility: hidden;
     min-width: 75px;
     background-color: #fff;
   }
@@ -213,7 +214,7 @@ header {
   h2 {
     text-align: center;
   }
-  #time{
+  #time {
     border-radius: 15px;
     padding: 5px;
     background-color: #fff;
@@ -270,9 +271,8 @@ header {
     padding: 5px;
   }
   .details-example {
+    width: 100%;
     padding: 5px;
-    width: 55rem;
-    position: relative;
   }
   .details-example::after {
     content: "";
@@ -287,7 +287,7 @@ header {
     transition: 0.8s ease;
     pointer-events: none;
     cursor: pointer;
-   }
+  }
   .details-example:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
@@ -296,7 +296,6 @@ header {
   }
   #list {
     width: 90%;
-    
   }
 
   .linklist {
@@ -326,18 +325,18 @@ header {
   }
   .previewimg {
     padding-top: 15px;
-    width: 50%;
-    margin-left: 31%;
+    width:  250px;
+    height: 250px;
+    object-fit: cover;
+    margin: auto;
   }
   .directionBtn {
     border-radius: 15px;
     padding-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
     display: block;
-    width: 100%;
-    margin-left: 50%;
-  }
-  #directionlink {
-    translate: -50px 0px;
+      text-align:center;
   }
   .directions {
     width: 20%;
@@ -382,10 +381,12 @@ header {
     background-color: #e9e9f9;
   }
   .imgandlink {
-    display: flex;
-    flex-direction: column;
+    
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
     color: rgb(0, 0, 0);
-    width: 100%;
+    text-align:center;
     padding: 0 10px 10px 0;
   }
 
@@ -433,7 +434,7 @@ header {
     min-height: 40px;
     width: 100%;
     visibility: hidden;
-    padding-bottom: 500px;
+    padding-bottom: 450px;
     justify-content: center;
   }
   .liquidWeight {
@@ -455,7 +456,8 @@ header {
     padding: 8px 10px;
     background-color: #fff;
   }
-  .showconverterbtn {
+  .toolbtn{
+    
     padding: 10px 0px;
     width: 100%;
     font-size: 15px;
@@ -463,6 +465,35 @@ header {
     cursor: pointer;
     margin: 0;
     visibility: visible;
+    min-width: 75px;
+    background-color: #fff;
+  }
+  .toolbtnhide{
+    
+    padding: 10px 0px;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 400;
+    cursor: pointer;
+    margin: 0;
+    visibility: hidden;
+    min-width: 75px;
+    background-color: #fff;
+  }
+  .open-toolbar{
+    visibility: visible;
+    
+    transform: translate(0%, -100%) scale(1);
+    
+  }
+  .showconverterbtn {
+    padding: 10px 0px;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 400;
+    cursor: pointer;
+    margin: 0;
+    visibility: hidden;
     min-width: 75px;
     background-color: #fff;
   }
@@ -510,10 +541,8 @@ header {
       rgba(0, 0, 0, 0)
     );
   }
-  .clearAll{
+  .clearAll {
     font-size: 20px;
-
-
   }
   #clearMeasure {
     margin-top: 10px;
@@ -528,15 +557,13 @@ header {
   }
   details > summary:first-of-type {
     list-style-type: none;
-    transition: font-size 3s;
     padding-bottom: 5px;
     cursor: pointer;
   }
   details > summary:first-of-type:hover {
     list-style-type: none;
-    font-size: 30px;
-    
-    transition:all 0.7s ease-in-out;
+
+    transition: all 0.7s ease-in-out;
   }
   summary {
     margin-right: 5rem;

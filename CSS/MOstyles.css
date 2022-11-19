@@ -22,6 +22,11 @@
       overflow: hidden;
       padding-bottom: 50px;
     }
+    .recipeheader {
+      background-image: url(../img/PotatoBanner.jpg);
+      position: relative;
+      width: 100%;
+    }
     input {
       font-size: 1rem;
     }

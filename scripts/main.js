@@ -141,6 +141,32 @@ function closePopup() {
   document.getElementById("popup").classList.remove("open-popup");
 }
 
+let toolbarhide = document.getElementById("toolshide");
+
+function openTools() {
+  toolbarhide.classList.add("open-toolbar");
+  popcnvt.classList.add("open-cnvt");
+  btncnvt.classList.add("open-cnvt");
+  poptimer.classList.add("open-timer");
+  btntimer.classList.add("open-Btn");
+}
+function closeTools() {
+  toolbarhide.classList.remove("open-toolbar");
+  popcnvt.classList.remove("open-cnvt");
+  btncnvt.classList.remove("open-cnvt");
+  poptimer.classList.remove("open-timer");
+  btntimer.classList.remove("open-Btn");
+}
+
+function openCnvt() {
+  btntimer.classList.add("open-cnvt");
+}
+function closeCnvt() {
+  btntimer.classList.remove("open-cnvt");
+}
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
   loadRecipes();
   console.log("Content Loaded");
