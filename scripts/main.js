@@ -12,34 +12,31 @@ const recipeContainer = document.getElementById("listcontainer");
 searchButton.addEventListener("click", () => {
   recipeContainer.innerHTML = "<div class='loader'></div>";
   setTimeout(() => {
-  loadRecipes(searchText.value); 
-  }, 500);
+    loadRecipes(searchText.value);
+  }, 200);
 });
 //search function at the press of Enter
 searchText.addEventListener("keyup", (e) => {
-
-  
-    const inputVal = searchText.value;
-    if (e.keyCode === 13) {
-      recipeContainer.innerHTL = "<div class='loader'></div>"
-  setTimeout(() => {
+  const inputVal = searchText.value;
+  if (e.keyCode === 13) {
+    recipeContainer.innerHTL = "<div class='loader'></div>";
+    setTimeout(() => {
       loadRecipes(inputVal);
-    }, 500);
-    }
+    }, 200);
+  }
 });
-  
+
 //loads list of pizza recipes by calling cnst renderRecipies
 function loadRecipes(type = "pizza") {
-
   recipeContainer.innerHTML = "<div class='loader'></div>";
-  setTimeout(() => {  
-  const url = baseUrl + `&q=${type}`;
-  fetch(url)
-    .then((res) => res.json())
-    .then((data) => renderRecipies(data.hits))
-    .catch((error) => console.log(error));
-  }, 500);
-};
+  setTimeout(() => {
+    const url = baseUrl + `&q=${type}`;
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => renderRecipies(data.hits))
+      .catch((error) => console.log(error));
+  }, 200);
+}
 
 //loads the list based off input in filterInput field, and calls subsequent info
 const renderRecipies = (recipeList = []) => {
@@ -57,7 +54,7 @@ const renderRecipies = (recipeList = []) => {
         <li class="collection-header">
             <details class="details-example">
             <summary class="collection-header">${recipeTitle}</summary>
-            <ul id="list">
+            <ul class="list">
              `;
 
     //loads list of ingredients from json for each initial item
@@ -77,18 +74,9 @@ const renderRecipies = (recipeList = []) => {
         </li>
     </ul>`;
 
-    
-    
     recipeContainer.insertAdjacentHTML("beforeend", htmlStr);
-
-
   });
-  
-  
 };
-
-
-
 
 function clearInput() {
   document.getElementById("filterInput").value = "";
@@ -100,7 +88,7 @@ function clearInput() {
         <li class="collection-header">
             <details class="details-example">
             <summary class="collection-header"></summary>
-                <ul id="list">
+                <ul class="list">
                 <li class="collection-item"></li>
                 </ul>
                 <div class="imgandlink">
@@ -165,8 +153,6 @@ function openCnvt() {
 function closeCnvt() {
   btntimer.classList.remove("open-cnvt");
 }
-
-
 
 document.addEventListener("DOMContentLoaded", function () {
   loadRecipes();

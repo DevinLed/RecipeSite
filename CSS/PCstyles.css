@@ -142,7 +142,7 @@ header {
     position: relative;
     width: 25%;
     max-width: 500px;
-    min-height: 100%;
+    min-height: 150vh;
     box-sizing: border-box;
     background: linear-gradient(
       to left,
@@ -248,8 +248,7 @@ header {
   ul .expandlist li {
     list-style: none;
     position: relative;
-    padding: 1px rgb(251, 250, 245) rgb(251, 250, 245);
-    max-height: auto;
+    padding: 0px;
     cursor: pointer;
   }
   ul .expandlist2 li {
@@ -294,7 +293,7 @@ header {
     width: 100rem;
     cursor: pointer;
   }
-  #list {
+  .list {
     width: 90%;
   }
 
