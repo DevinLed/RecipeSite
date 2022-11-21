@@ -457,28 +457,50 @@ header {
     background-color: #fff;
   }
   .toolbtn{
-    
+    font-family: Arial, Helvetica, sans-serif;
     padding: 10px 0px;
     width: 100%;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 400;
     cursor: pointer;
-    margin: 0;
+    margin-top: 100px;
     visibility: visible;
     min-width: 75px;
-    background-color: #fff;
+    box-sizing: border-box;
+    background: linear-gradient(
+      to left,
+      rgb(251, 250, 245),
+      rgb(233, 243, 255)
+    );
+    border: 0;
+  }
+  .toolbtn:hover{
+    border: 1px solid transparent;
+    border-color: #000000;
+    font-style: it;
+  }
+  .toolbtnhide:hover{
+    border: 1px solid transparent;
+    border-color: #000000;
+    font-style: it;
   }
   .toolbtnhide{
-    
+    font-family: Arial, Helvetica, sans-serif;    
     padding: 10px 0px;
     width: 100%;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 400;
     cursor: pointer;
     margin: 0;
     visibility: hidden;
     min-width: 75px;
-    background-color: #fff;
+    box-sizing: border-box;
+    background: linear-gradient(
+      to left,
+      rgb(251, 250, 245),
+      rgb(233, 243, 255)
+    );
+    border: 0;
   }
   .open-toolbar{
     visibility: visible;

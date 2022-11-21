@@ -51,6 +51,7 @@ const renderRecipies = (recipeList = []) => {
       image: recipeImage,
       url: url,
     } = recipeObj.recipe;
+    console.log(recipeObj);
     let htmlStr = `
     <ul class="expandlist" style="padding-left: 0px;">
         <li class="collection-header">
