@@ -583,4 +583,29 @@ header {
       transform: rotate(1turn);
     }
   }
+  
+.extradetails{
+  display: flex;
+  padding: 10px;
+  text-align: center;
+}
+  .sidepanel {
+    height: 0;
+    width: 100%;
+    background-color: #e9e9f9;
+    visibility: hidden;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 20px;
+    transition: 0.1s; /* 0.5 second transition effect to slide in the sidepanel */
+  }
+  
+  .open-details{    
+    visibility: visible;
+    height: fit-content;
+  }
+  .healthinfo{
+    padding: 0;
+    margin: 0;
+  }
   }
