@@ -104,7 +104,14 @@ header {
     font-weight: 400;
     border-radius: 30px;
   }
-
+  .showdetails{    
+    padding: 10px 25px;
+    background: #fff;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 400;
+    border-radius: 30px;
+  }
   .popup {
     white-space: pre-line;
     list-style: none;

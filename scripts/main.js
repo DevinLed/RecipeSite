@@ -7,12 +7,7 @@ const API_KEY = "56b9fc8ce334b4a7a762c9a5d815ab88";
 const baseUrl = `https://api.edamam.com/search?app_id=${APP_ID}&app_key=${API_KEY}`;
 const searchButton = document.querySelector(".testsearch");
 const recipeContainer = document.getElementById("listcontainer");
-let detailscount = 0;
 
-document.addEventListener("DOMContentLoaded", function () {
-  loadRecipes();
-  console.log("Content Loaded");
-});
 //search function when button is pressed
 searchButton.addEventListener("click", () => {
   recipeContainer.innerHTML = "<div class='loader'></div>";
@@ -43,7 +38,6 @@ function loadRecipes(type = "pizza") {
   }, 200);
 }
 
-
 /* temporarily disabled - testing eventlistener
 function openDetails() {
   if (detailscount === 0) {
@@ -58,9 +52,6 @@ function openDetails() {
   }
 }
 */
-
-
-
 
 //loads the list based off input in filterInput field, and calls subsequent info
 const renderRecipies = (recipeList = []) => {
@@ -96,7 +87,9 @@ const renderRecipies = (recipeList = []) => {
 
               <div class="directionBtn">
                 <button type="submit" title="Visit external site" class="showpop" id="directionlink"><a href="${url}" target="_blank">Show Full Recipe</button></a>
-                <button type="submit" title="View details" class="showpop" id="showdetails">View Extra Details</button>
+                
+                <div class="showdets">
+                <button type="submit" title="View details" class="showdetails">View Extra Details</button>
                 <div class= "extradetails">
                 <div class="sidepanel" id="sidepanel">
                  <p>Total cooking time is ${time} minutes</p>
@@ -104,12 +97,13 @@ const renderRecipies = (recipeList = []) => {
                  <p>This item is a ${dishType}</p>
                  <ul class = "healthinfo">
                  `;
-                 //list of all health labels
+    //list of all health labels
     health.forEach((health) => {
       htmlStr += `<li>${health}</li>`;
     });
     htmlStr += `
                     </ul>
+                    </div>
                     </div>
                 </div>
               </div>
@@ -118,26 +112,25 @@ const renderRecipies = (recipeList = []) => {
         </li>
     </ul>
     `;
-        recipeContainer.insertAdjacentHTML("beforeend", htmlStr);
-        
+    recipeContainer.insertAdjacentHTML("beforeend", htmlStr);
   });
-
-  //eventlistener for View Extra Details button, only working for first instance
-  document.getElementById("showdetails").addEventListener("click", function(){
-    if (detailscount === 0) {
-      document.getElementById("sidepanel").classList.add("open-details");
-      document.getElementById("showdetails").innerHTML = "Hide Extra Details";
-      detailscount++;
-      console.log(true);
-    } 
-    else {
-      document.getElementById("sidepanel").classList.remove("open-details");
-      document.getElementById("showdetails").innerHTML = "View Extra Details";
-      detailscount--;
-      console.log(false);
-    }
+  let cbox = document.querySelectorAll(".showdets");
+  cbox.forEach((showdets) => {
+    let detailscount = 0;
+    showdets.addEventListener("click", function () {
+      if (detailscount === 0) {
+        document.getElementById("sidepanel").classList.add("open-details");
+        document.querySelector('.showdetails').innerHTML = "Hide Extra Details";
+        detailscount++;
+        console.log(true);
+      } else {
+        document.getElementById("sidepanel").classList.remove("open-details");
+        document.querySelector('.showdetails').innerHTML = "View Extra Details";
+        detailscount--;
+        console.log(false);
+      }
+    });
   });
-  
 };
 
 function clearInput() {
@@ -168,7 +161,7 @@ function clearInput() {
 }
 
 //displays popup window with name and recipe, working on including measurements+ ingredient name
-
+/*
 function openPopup(recipeId) {
   document.getElementById("popup").classList.add("open-popup");
   const recipe = recipeCollection.find((recipe) => recipe.id === recipeId);
@@ -180,7 +173,7 @@ function openPopup(recipeId) {
 function closePopup() {
   document.getElementById("popup").classList.remove("open-popup");
 }
-
+*/
 let toolbarhide = document.getElementById("toolshide");
 
 function openTools() {
@@ -204,3 +197,7 @@ function openCnvt() {
 function closeCnvt() {
   btntimer.classList.remove("open-cnvt");
 }
+document.addEventListener("DOMContentLoaded", function () {
+  loadRecipes();
+  console.log("Content Loaded");
+});
