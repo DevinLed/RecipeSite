@@ -86,7 +86,7 @@ const renderRecipies = (recipeList = []) => {
               </div>
 
               <div class="directionBtn">
-                <button type="submit" title="Visit external site" class="showpop" id="directionlink"><a href="${url}" target="_blank">Show Full Recipe</button></a>
+                <button type="submit" title="Visit external site" class="directionlink"><a href="${url}" target="_blank">Show Full Recipe</button></a>
                 
                 <div class="showdets">
                 <button type="submit" title="View details" class="showdetails">View Extra Details</button>
@@ -113,8 +113,9 @@ const renderRecipies = (recipeList = []) => {
     </ul>
     `;
     recipeContainer.insertAdjacentHTML("beforeend", htmlStr);
-  });
+    
   let cbox = document.querySelectorAll(".showdets");
+  
   cbox.forEach((showdets) => {
     let detailscount = 0;
     showdets.addEventListener("click", function () {
@@ -122,7 +123,7 @@ const renderRecipies = (recipeList = []) => {
         document.getElementById("sidepanel").classList.add("open-details");
         document.querySelector('.showdetails').innerHTML = "Hide Extra Details";
         detailscount++;
-        console.log(true);
+        console.log(showdets);
       } else {
         document.getElementById("sidepanel").classList.remove("open-details");
         document.querySelector('.showdetails').innerHTML = "View Extra Details";
@@ -130,6 +131,7 @@ const renderRecipies = (recipeList = []) => {
         console.log(false);
       }
     });
+  });
   });
 };
 

@@ -154,8 +154,17 @@ header {
     background: linear-gradient(
       to left,
       rgb(251, 250, 245),
-      rgb(233, 243, 255)
+      rgb(124, 159, 201)
     );
+  }
+  .directionlink{
+    
+    padding: 10px 25px;
+    background: #fff;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 400;
+    border-radius: 30px;
   }
   .sidebar {
     width: 100%;
@@ -171,15 +180,17 @@ header {
   }
 
   .showtimerbtn {
-    padding: 10px 0px;
+    padding: 10px 30px;
     width: 100%;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 400;
+    border-radius: 30px;
     cursor: pointer;
     margin: 0;
     visibility: hidden;
+    text-align: left;
     min-width: 75px;
-    background-color: #fff;
+    background-color: #C8C8C8;
   }
 
   .showtimerbtn:active {
@@ -187,16 +198,17 @@ header {
     transition: all 0.2s;
   }
   .hidetimerbtn {
-    padding: 10px 0;
+    padding: 10px 30px;
     width: 100%;
-    cursor: pointer;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 400;
-    position: relative;
-    top: 0;
+    border-radius: 30px;
+    cursor: pointer;
     margin: 0;
     visibility: hidden;
-    background-color: #fff;
+    text-align: left;
+    min-width: 75px;
+    background-color: #C8C8C8;
   }
 
   .hidetimerbtn:active {
@@ -241,15 +253,21 @@ header {
     font-size: 60px;
   }
   .weightc {
-    color: black;
     font-size: 25px;
-    background-color: rgb(233, 243, 255);
+    color: black;
+    width: fit-content;
+    background-color: transparent;
   }
   .bothConvert {
     display: flex;
   }
   .egger {
-    background-color: rgb(233, 243, 255);
+    font-size: 25px;
+    background: linear-gradient(
+    to right,
+    rgb(251, 250, 245),
+    rgb(141, 168, 201)
+  );
     color: rgb(0, 0, 0);
   }
   ul .expandlist li {
@@ -397,8 +415,13 @@ header {
 
   .container {
     display: block;
-    background-color: rgb(233, 243, 255);
+    background: linear-gradient(
+      to right,
+      rgb(251, 250, 245),
+      rgb(141, 168, 201)
+    );
     padding: 5px;
+    border-radius: 30px;
     margin-bottom: 5px;
 
     box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 1px, rgba(0, 0, 0, 0.22) 0px 1px 1px;
@@ -434,9 +457,14 @@ header {
   }
   .converter {
     display: grid;
-    background-color: rgb(233, 243, 255);
+    background: linear-gradient(
+      to right,
+      rgb(251, 250, 245),
+      rgb(141, 168, 201)
+    );
     box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 1px, rgba(0, 0, 0, 0.22) 0px 1px 1px;
     min-height: 40px;
+    border-radius: 30px;
     width: 100%;
     visibility: hidden;
     padding-bottom: 450px;
@@ -463,8 +491,9 @@ header {
   }
   .toolbtn {
     font-family: Arial, Helvetica, sans-serif;
-    padding: 10px 0px;
+    padding: 10px 30px;
     width: 100%;
+    border-radius: 30px;
     font-size: 18px;
     font-weight: 400;
     cursor: pointer;
@@ -472,26 +501,33 @@ header {
     visibility: visible;
     min-width: 75px;
     box-sizing: border-box;
+    text-align: left;
     background: linear-gradient(
       to left,
       rgb(251, 250, 245),
-      rgb(233, 243, 255)
+      rgb(160, 181, 205)
     );
     border: 0;
   }
   .toolbtn:hover {
     border: 1px solid transparent;
-    border-color: #000000;
+    background: #C8C8C8;
+    border-radius: 30px;
+    -webkit-transition: background-color 500ms linear;
+    -moz-transition: background-color 500ms linear;
+    -o-transition: background-color 500ms linear;
+    -ms-transition: background-color 500ms linear;
+    transition: background-color 500ms linear;
     font-style: it;
   }
   .toolbtnhide:hover {
     border: 1px solid transparent;
-    border-color: #000000;
     font-style: it;
   }
   .toolbtnhide {
     font-family: Arial, Helvetica, sans-serif;
-    padding: 10px 0px;
+    padding: 10px 30px;
+    text-align: left;
     width: 100%;
     font-size: 18px;
     font-weight: 400;
@@ -500,44 +536,47 @@ header {
     visibility: hidden;
     min-width: 75px;
     box-sizing: border-box;
-    background: linear-gradient(
-      to left,
-      rgb(251, 250, 245),
-      rgb(233, 243, 255)
-    );
+    border-radius: 30px;
+    background: #C8C8C8;
     border: 0;
   }
   .open-toolbar {
     visibility: visible;
-
+    transition: 0.9 ease;
     transform: translate(0%, -100%) scale(1);
   }
   .showconverterbtn {
-    padding: 10px 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 30px;
     width: 100%;
-    font-size: 15px;
+    text-align: left;
+    font-size: 18px;
     font-weight: 400;
     cursor: pointer;
     margin: 0;
     visibility: hidden;
     min-width: 75px;
-    background-color: #fff;
+    background: #C8C8C8;
   }
 
   .showconverterbtn:active {
     top: 3px;
     transition: all 0.2s;
+    font-family: Arial, Helvetica, sans-serif;
   }
   .hideconverterbtn {
-    padding: 10px 0px;
-    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 30px;
+    width: 100%;
+    text-align: left;
+    font-size: 18px;
     font-weight: 400;
-    position: relative;
-    top: 0;
     cursor: pointer;
+    border-radius: 30px;
     margin: 0;
     visibility: hidden;
-    background-color: #fff;
+    min-width: 75px;
+    background: #C8C8C8;
   }
 
   .hideconverterbtn:active {
