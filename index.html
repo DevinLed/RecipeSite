@@ -33,7 +33,6 @@
     <div class="mainpage">
       <button type="submit" class="toolbtn" id="toolsshow" onclick="openTools()">Tools</button>
       <button type="submit" class="toolbtnhide" id="toolshide" onclick="closeTools()">Hide Tools</button>
-      <button type="submit" class="showtimerbtn" id="btnTimer" onclick="openTimer()">Open Timer</button>
       <button type="submit" class="hidetimerbtn" id="showtimerbtn" onclick="closeTimer()">Close Timer</button>
       <div class="sidebar" id="sidebar">
         <div class="container">
@@ -63,13 +62,12 @@
       </div>
       <div class="rightSide">
         <div class="toolbar">
-        <button type="submit" class="showconverterbtn" id="btnconverter" onclick="openConverter()">Open Converter</button></div>
         <button type="submit" class="hideconverterbtn" id="showconverterbtn" onclick="closeConverter()">Close Converter</button>
         <div class="converter" id="converter">
           <h2 class="weightc">Weight Converter</h2>
           <div class="bothConvert">
             <div class="liquidWeight">
-              <p style="font-size: 20px;">Liquid</p>
+              <p class="weightstate">Liquid</p>
               <label>Ounces: </label><input class="inputWeight" id="inputOunces" type="number" placeholder="Oz"
                 oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
               <label>Grams: </label><input class="inputWeight" id="inputGrams" type="number" placeholder="g"
@@ -84,7 +82,7 @@
                 oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
             </div>
             <div class="dryWeight">
-              <p style="font-size: 20px;">Dry</p>
+              <p class="weightstate">Dry</p>
               <label>Ounces: </label><input class="inputWeight" id="inputDOunces" type="number" placeholder="Oz"
                 oninput="weightConverterDry(this.id,this.value)" onchange="weightConverterDry(this.id,this.value)">
               <label>Grams: </label><input class="inputWeight" id="inputDGrams" type="number" placeholder="g"
@@ -102,18 +100,30 @@
           <div class="clearAll">
           <button id="clearMeasure" class="showpop" onclick="clearMeasure()">Clear</button>
           </div>
+          
+        </div>
         </div>
       </div>
-      <script type="text/javascript" src="scripts/converter.js"></script>
     </div>
     <div class="searchables">
       <ul id="listcontainer"></ul>
     </div>
-    
+    <div class="linksidebar">
+      <div class="externallink">
+        <div class="weblinks">
+          <ul class="elinks">
+            <p class="">External Links</p>
+            <li><a href="https://developer.edamam.com/edamam-recipe-api" target="_blank">Free Recipe API</a></li>
+            <li><a href="">Test2</a></li>
+            <li><a href="">Test3</a></li>
+            <li><a href="">Test4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
        
   </div>
 </div>
-  <script type="text/javascript" src="scripts/timer.js"></script>
   <script type="text/javascript" src="scripts/main.js"></script>
 </body>
 
