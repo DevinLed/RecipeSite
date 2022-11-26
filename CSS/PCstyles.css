@@ -112,6 +112,9 @@ header {
     font-weight: 400;
     border-radius: 30px;
   }
+
+
+  
   .popup {
     white-space: pre-line;
     list-style: none;
@@ -662,25 +665,34 @@ header {
     display: flex;
     padding: 10px;
     text-align: center;
+    align-items: center;
+    justify-content:center ;
+
   }
+
   .sidepanel {
+    text-align: center;
     height: 0;
-    width: 100%;
-    background-color: #e9e9f9;
+    width: max-content;
+    background-color: #f1ffeb;
     visibility: hidden;
     padding-top: 15px;
     padding-bottom: 15px;
     border-radius: 20px;
+    box-shadow: 0 0 8px 8px white inset;
+  
   }
 
   .open-details {
     visibility: visible;
     height: fit-content;
   }
+  
   .healthinfo {
     -webkit-column-count: 3;
     -moz-column-count: 3;
     column-count: 3;
     margin: 0;
+    padding: 10px;
   }
 }

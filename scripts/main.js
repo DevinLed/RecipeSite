@@ -91,7 +91,7 @@ const renderRecipies = (recipeList = []) => {
                 <div class="showdets">
                 <button type="submit" title="View details" class="showdetails">View Extra Details</button>
                 <div class= "extradetails">
-                <div class="sidepanel" id="sidepanel">
+                <div class="sidepanel">
                  <p>Total cooking time is ${time} minutes</p>
                  <p>Enough for ${feeds} people</p>
                  <p>This item is a ${dishType}</p>
@@ -114,25 +114,26 @@ const renderRecipies = (recipeList = []) => {
     `;
     recipeContainer.insertAdjacentHTML("beforeend", htmlStr);
     
+  });
   let cbox = document.querySelectorAll(".showdets");
-  
   cbox.forEach((showdets) => {
-    let detailscount = 0;
-    showdets.addEventListener("click", function () {
-      if (detailscount === 0) {
-        document.getElementById("sidepanel").classList.add("open-details");
-        document.querySelector('.showdetails').innerHTML = "Hide Extra Details";
-        detailscount++;
+    
+    let detailsShown = false; 
+    showdets.addEventListener("click", function (event) { 
+        if (detailsShown === false) {
+        event.currentTarget.children[1].children[0].classList.add("open-details");
+        event.target.textContent = "Hide Extra Details"
+        detailsShown = !detailsShown;
         console.log(showdets);
       } else {
-        document.getElementById("sidepanel").classList.remove("open-details");
-        document.querySelector('.showdetails').innerHTML = "View Extra Details";
-        detailscount--;
+        event.target.textContent = "View Extra Details"
+        event.currentTarget.children[1].children[0].classList.remove("open-details");
+        detailsShown = !detailsShown;
         console.log(false);
       }
     });
   });
-  });
+
 };
 
 function clearInput() {
