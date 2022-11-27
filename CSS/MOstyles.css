@@ -46,6 +46,7 @@
     font-size: 15px;
     font-weight: 400;
     border-radius: 30px;
+    border: 0;
   }
   body {
     margin: 0;
@@ -607,5 +608,21 @@ header {
   .healthinfo{
     padding: 0;
     margin: 0;
+  }
+
+  #clearList{
+    padding: 10px 10px;
+    background: #fff;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 400;
+    border-radius: 30px;
+    border: 0;
+    max-height: 39px;
+  }
+  .linksidebar{
+    visibility: hidden;
+    width: 0;
+    height: 0;
   }
   }

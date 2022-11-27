@@ -1,5 +1,8 @@
 /*Desktop Version*/
 @media only screen and (min-width: 768px) {
+  *{
+    font-family:Arial, Helvetica, sans-serif;
+  }
   html {
     width: 100%;
     height: 100vh;
@@ -10,13 +13,13 @@
   .topbar {
     display: flex;
     justify-content: space-between;
-    
-    z-index: 1;
+    position: relative;
   }
   .recipeheader {
     background-image: url(../img/PotatoBanner.jpg);
     position: relative;
     width: 100%;
+    z-index: 20;
   }
   .inputHeader {
     display: flex;
@@ -42,19 +45,17 @@
 
   .testsearch {
     margin: 0 auto;
-    align-items: center;
     padding: 10px 25px;
     background: rgb(251, 250, 245);
     cursor: pointer;
     font-size: 15px;
     font-weight: 400;
     border-radius: 30px;
-    z-index: 1;
+    border: 0;
   }
   body {
     margin: 0;
     background-color: rgb(251, 250, 245);
-    font-family: Arial, Helvetica, sans-serif;
     line-height: 25px;
     min-width: 768px;
     height: auto;
@@ -106,6 +107,15 @@ header {
     font-weight: 400;
     border-radius: 30px;
   }
+  #clearList{
+    padding: 10px 15px;
+    background: rgb(251, 250, 245);
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 400;
+    border-radius: 30px;
+    border: 0;
+  }
   .showdetails {
     padding: 10px 25px;
     background: #fff;
@@ -150,7 +160,7 @@ header {
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: auto;
+    top: 0;
     min-height: 120vh;
     width: 15%;
     min-width: 200px;
@@ -158,6 +168,7 @@ header {
     box-sizing: border-box;
     background: rgb(124, 159, 201);
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.99);
+    z-index: 1;
   }
   .directionlink {
     padding: 10px 25px;
@@ -209,12 +220,14 @@ header {
     text-align: left;
     min-width: 75px;
     background-color: #c8c8c8;
+    border: 0;
   }
 
   .hidetimerbtn:active {
     top: 3px;
     box-shadow: 0 2px 0px #6d4c41;
     transition: all 0.2s;
+    border: 0;
   }
 
   .open-Btn {
@@ -245,7 +258,6 @@ header {
   h2 {
     background-color: bisque;
     color: rgb(185, 82, 77);
-    font-family: serif;
   }
   .logo {
     font-size: 60px;
@@ -267,7 +279,7 @@ header {
     color: rgb(0, 0, 0);
     margin: 2px;
   }
-  .weightstate{
+  .weightstate {
     font-size: 20px;
     margin: 2px;
   }
@@ -404,6 +416,10 @@ header {
   }
   .collection-item:nth-child(even) {
     background-color: #e9e9f9;
+    padding-left: 10px;
+  }
+  .collection-item:nth-child(odd) {
+    padding-left: 10px;
   }
   .imgandlink {
     margin-left: auto;
@@ -417,20 +433,17 @@ header {
   .container {
     display: grid;
     justify-content: center;
-    background: linear-gradient(
-      to right,
-      rgb(251, 250, 245),
-      rgb(141, 168, 201)
-    );
+    background: rgb(124, 159, 201);
     padding: 5px;
-    border-radius: 30px;
-    margin-bottom: 5px;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 1px, rgba(0, 0, 0, 0.22) 0px 1px 1px;
+    
+    margin-top: 10px; 
+    margin-bottom: 10px;
   }
   .searchables {
     width: 50%;
     margin-top: 5rem;
     padding-left: 15%;
+    
     padding-right: 2%;
     min-height: 50rem;
     margin-left: 10%;
@@ -459,18 +472,15 @@ header {
   }
   .converter {
     display: grid;
-    background: linear-gradient(
-      to right,
-      rgb(251, 250, 245),
-      rgb(141, 168, 201)
-    );
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 1px, rgba(0, 0, 0, 0.22) 0px 1px 1px;
+    background: rgb(124, 159, 201);
     min-height: 40px;
     border-radius: 30px;
     width: 100%;
     visibility: hidden;
-    padding-bottom: 450px;
+    padding-bottom: 10px;
     justify-content: center;
+    
+    margin-top: 10px;
   }
   .liquidWeight {
     padding: 0px 5px;
@@ -492,14 +502,13 @@ header {
     background-color: #fff;
   }
   .toolbtn {
-    font-family: Arial, Helvetica, sans-serif;
     padding: 10px 30px;
     width: 100%;
     border-radius: 30px;
     font-size: 18px;
     font-weight: 400;
     cursor: pointer;
-    margin-top: 25px;
+    margin-top: 125px;
     visibility: visible;
     min-width: 75px;
     box-sizing: border-box;
@@ -512,9 +521,7 @@ header {
     border: 0;
   }
   .toolbtn:hover {
-    border: 1px solid transparent;
     background: #c8c8c8;
-    border-radius: 30px;
     -webkit-transition: background-color 500ms linear;
     -moz-transition: background-color 500ms linear;
     -o-transition: background-color 500ms linear;
@@ -523,11 +530,10 @@ header {
     font-style: it;
   }
   .toolbtnhide:hover {
-    border: 1px solid transparent;
+    background: #c8c8c8;
     font-style: it;
   }
   .toolbtnhide {
-    font-family: Arial, Helvetica, sans-serif;
     padding: 10px 30px;
     text-align: left;
     width: 100%;
@@ -540,6 +546,11 @@ header {
     box-sizing: border-box;
     border-radius: 30px;
     background: #c8c8c8;
+    background: linear-gradient(
+      to right,
+      rgb(251, 250, 245),
+      rgb(160, 181, 205)
+    );
     border: 0;
   }
   .open-toolbar {
@@ -548,7 +559,6 @@ header {
     transform: translate(0%, -100%) scale(1);
   }
   .showconverterbtn {
-    font-family: Arial, Helvetica, sans-serif;
     padding: 10px 30px;
     width: 100%;
     text-align: left;
@@ -564,10 +574,8 @@ header {
   .showconverterbtn:active {
     top: 3px;
     transition: all 0.2s;
-    font-family: Arial, Helvetica, sans-serif;
   }
   .hideconverterbtn {
-    font-family: Arial, Helvetica, sans-serif;
     padding: 10px 30px;
     width: 100%;
     text-align: left;
@@ -579,6 +587,7 @@ header {
     visibility: hidden;
     min-width: 75px;
     background: #c8c8c8;
+    border: 0;
   }
 
   .hideconverterbtn:active {
@@ -695,29 +704,28 @@ header {
   }
 
   .linksidebar {
-    width: 150px;
-    margin-left: auto; 
+    width: 15%;
+    min-width: fit-content;
+    margin-left: auto;
     margin-right: 0;
-    padding-right: 2%;
+    padding-right: 5%;
     padding-top: 5%;
     list-style: none;
-    background: linear-gradient(
-      to right,
-      rgb(251, 250, 245),
-      rgb(160, 181, 205)
-    );
   }
 
   .elinks {
-    text-align: right;
+    text-align: center;
     list-style: none;
-    background: rgb(251, 250, 245);
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 10px;
     min-height: fit-content;
+    background-color:#adcaed;
+    font-size: 18px;
+    font-weight: 400;
+    padding-bottom: 20px;
   }
-  ul.elinks>li:hover{
-    background-color: rgb(176, 197, 220);
+  ul.elinks > li:hover {
+    background-color: white;
     border-radius: 5px;
     padding: 5px;
   }
