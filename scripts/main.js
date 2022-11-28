@@ -5,7 +5,7 @@ const searchText = document.querySelector("#filterInput");
 const APP_ID = "e9121c76";
 const API_KEY = "56b9fc8ce334b4a7a762c9a5d815ab88";
 const baseUrl = `https://api.edamam.com/search?app_id=${APP_ID}&app_key=${API_KEY}`;
-const searchButton = document.querySelector(".testsearch");
+const searchButton = document.querySelector("#searchAll");
 const recipeContainer = document.getElementById("listcontainer");
 
 //search function when button is pressed
@@ -41,13 +41,13 @@ function loadRecipes(type = "pizza") {
 /* temporarily disabled - testing eventlistener
 function openDetails() {
   if (detailscount === 0) {
-    document.getElementById("sidepanel").classList.add("open-details");
-    document.getElementById("showdetails").innerHTML = "Hide Extra Details";
+    document.getElementById("sidePanel").classList.add("open-details");
+    document.getElementById("showDetails").innerHTML = "Hide Extra Details";
     detailscount++;
   } 
   else {
-    document.getElementById("sidepanel").classList.remove("open-details");
-    document.getElementById("showdetails").innerHTML = "View Extra Details";
+    document.getElementById("sidePanel").classList.remove("open-details");
+    document.getElementById("showDetails").innerHTML = "View Extra Details";
     detailscount--;
   }
 }
@@ -85,12 +85,12 @@ const renderRecipies = (recipeList = []) => {
               </div>
 
               <div class="directionBtn">
-                <button type="submit" title="Visit external site" class="directionlink"><a href="${url}" target="_blank">Show Full Recipe</button></a>
+                <button type="submit" title="Visit external site" class="directionLink"><a href="${url}" target="_blank">Show Full Recipe</button></a>
                 
                 <div class="showdets">
-                <button type="submit" title="View details" class="showdetails">View Extra Details</button>
-                <div class= "extradetails">
-                <div class="sidepanel">
+                <button type="submit" title="View details" class="showDetails">View Extra Details</button>
+                <div class= "extraDetails">
+                <div class="sidePanel">
                  <p>Total cooking time is ${time} minutes</p>
                  <p>Enough for ${feeds} people</p>
                  <p>This item is a ${dishType}</p>
@@ -114,18 +114,18 @@ const renderRecipies = (recipeList = []) => {
     recipeContainer.insertAdjacentHTML("beforeend", htmlStr);
     
   });
-  let cbox = document.querySelectorAll(".showdets");
+  let cbox = document.querySelectorAll(".showDetails");
   cbox.forEach((showdets) => {
     
     let detailsShown = false; 
     showdets.addEventListener("click", function (event) { 
-        if (detailsShown === false) {
-        event.currentTarget.children[1].children[0].classList.add("open-details");
+      if (detailsShown === false) {
+        event.currentTarget.nextElementSibling.children[0].classList.add("open-details");
         event.target.textContent = "Hide Extra Details"
         detailsShown = !detailsShown;
       } else {
         event.target.textContent = "View Extra Details"
-        event.currentTarget.children[1].children[0].classList.remove("open-details");
+        event.currentTarget.nextElementSibling.children[0].classList.remove("open-details");
         detailsShown = !detailsShown;
         console.log(false);
       }
@@ -151,7 +151,7 @@ function clearInput() {
                 <img class="previewimg" src=""/>
                 </div>
                 <div class="directionBtn">
-                <button type="submit" class="showpop" id="directionlink" onclick="openPopup()">Show Full Recipe</button>
+                <button type="submit" title="Visit external site" class="directionLink">Show Full Recipe</button>
                 </div>
                 </details>
         </li>

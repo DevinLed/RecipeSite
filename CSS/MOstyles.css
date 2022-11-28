@@ -11,6 +11,7 @@
   .topbar {
     display: flex;
     justify-content: space-between;
+    text-align: center;
   }
   .recipeheader {
     background-image: url(../img/PotatoBanner.jpg);

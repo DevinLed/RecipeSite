@@ -1,7 +1,7 @@
 /*Desktop Version*/
 @media only screen and (min-width: 768px) {
-  *{
-    font-family:Arial, Helvetica, sans-serif;
+  * {
+    font-family: Arial, Helvetica, sans-serif;
   }
   html {
     width: 100%;
@@ -14,6 +14,7 @@
     display: flex;
     justify-content: space-between;
     position: relative;
+    text-align: center;
   }
   .recipeheader {
     background-image: url(../img/PotatoBanner.jpg);
@@ -43,7 +44,7 @@
     z-index: 1;
   }
 
-  .testsearch {
+  /*.testsearch {
     margin: 0 auto;
     padding: 10px 25px;
     background: rgb(251, 250, 245);
@@ -52,7 +53,7 @@
     font-weight: 400;
     border-radius: 30px;
     border: 0;
-  }
+  }*/
   body {
     margin: 0;
     background-color: rgb(251, 250, 245);
@@ -107,24 +108,6 @@ header {
     font-weight: 400;
     border-radius: 30px;
   }
-  #clearList{
-    padding: 10px 15px;
-    background: rgb(251, 250, 245);
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: 400;
-    border-radius: 30px;
-    border: 0;
-  }
-  .showdetails {
-    padding: 10px 25px;
-    background: #fff;
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: 400;
-    border-radius: 30px;
-  }
-
   .popup {
     white-space: pre-line;
     list-style: none;
@@ -170,14 +153,6 @@ header {
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.99);
     z-index: 1;
   }
-  .directionlink {
-    padding: 10px 25px;
-    background: #fff;
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: 400;
-    border-radius: 30px;
-  }
   .sidebar {
     width: 100%;
     box-sizing: border-box;
@@ -191,17 +166,18 @@ header {
   }
 
   .showtimerbtn {
-    padding: 10px 30px;
+    padding: 10px 10px;
     width: 100%;
     font-size: 18px;
     font-weight: 400;
-    border-radius: 30px;
     cursor: pointer;
     margin: 0;
     visibility: hidden;
     text-align: left;
     min-width: 75px;
-    background-color: #c8c8c8;
+    background: rgb(124, 159, 201);
+    border: 0;
+    border-bottom: 1px solid black;
   }
 
   .showtimerbtn:active {
@@ -209,20 +185,28 @@ header {
     transition: all 0.2s;
   }
   .hidetimerbtn {
-    padding: 10px 30px;
+    padding: 10px 10px;
     width: 100%;
     font-size: 18px;
     font-weight: 400;
-    border-radius: 30px;
     cursor: pointer;
     margin: 0;
     visibility: hidden;
-    text-align: left;
+    text-align: right;
     min-width: 75px;
-    background-color: #c8c8c8;
+    background: rgb(124, 159, 201);
     border: 0;
+    border-bottom: 1px solid black;
   }
-
+  .hidetimerbtn:hover {
+    background: #c8c8c8;
+    -webkit-transition: background-color 500ms linear;
+    -moz-transition: background-color 500ms linear;
+    -o-transition: background-color 500ms linear;
+    -ms-transition: background-color 500ms linear;
+    transition: background-color 500ms linear;
+    font-style: it;
+  }
   .hidetimerbtn:active {
     top: 3px;
     box-shadow: 0 2px 0px #6d4c41;
@@ -435,15 +419,24 @@ header {
     justify-content: center;
     background: rgb(124, 159, 201);
     padding: 5px;
-    
-    margin-top: 10px; 
-    margin-bottom: 10px;
+
+    background: rgb(124, 159, 201);
+    border-bottom: 1px solid black;
+  }
+  .container:hover {
+    background: rgb(102, 137, 179);
+    -webkit-transition: background-color 500ms linear;
+    -moz-transition: background-color 500ms linear;
+    -o-transition: background-color 500ms linear;
+    -ms-transition: background-color 500ms linear;
+    transition: background-color 500ms linear;
+    font-style: it;
   }
   .searchables {
     width: 50%;
     margin-top: 5rem;
     padding-left: 15%;
-    
+
     padding-right: 2%;
     min-height: 50rem;
     margin-left: 10%;
@@ -474,13 +467,22 @@ header {
     display: grid;
     background: rgb(124, 159, 201);
     min-height: 40px;
-    border-radius: 30px;
     width: 100%;
     visibility: hidden;
     padding-bottom: 10px;
     justify-content: center;
-    
-    margin-top: 10px;
+
+    background: rgb(124, 159, 201);
+    border-bottom: 1px solid black;
+  }
+  .converter:hover {
+    background: rgb(102, 137, 179);
+    -webkit-transition: background-color 500ms linear;
+    -moz-transition: background-color 500ms linear;
+    -o-transition: background-color 500ms linear;
+    -ms-transition: background-color 500ms linear;
+    transition: background-color 500ms linear;
+    font-style: it;
   }
   .liquidWeight {
     padding: 0px 5px;
@@ -504,23 +506,72 @@ header {
   .toolbtn {
     padding: 10px 30px;
     width: 100%;
-    border-radius: 30px;
-    font-size: 18px;
+    font-size: 25px;
     font-weight: 400;
     cursor: pointer;
     margin-top: 125px;
     visibility: visible;
     min-width: 75px;
     box-sizing: border-box;
-    text-align: left;
-    background: linear-gradient(
-      to left,
-      rgb(251, 250, 245),
-      rgb(160, 181, 205)
-    );
+    text-align: right;
+    background: rgb(124, 159, 201);
     border: 0;
+    border-bottom: 1px solid black;
   }
   .toolbtn:hover {
+    background: rgb(75, 107, 146);
+    -webkit-transition: background-color 500ms linear;
+    -moz-transition: background-color 500ms linear;
+    -o-transition: background-color 500ms linear;
+    -ms-transition: background-color 500ms linear;
+    transition: background-color 500ms linear;
+    font-style: it;
+  }
+  .toolbtnhide {
+    padding: 10px 10px;
+    text-align: right;
+    width: 100%;
+    font-size: 25px;
+    font-weight: 400;
+    cursor: pointer;
+    margin: 0;
+    visibility: hidden;
+    min-width: 75px;
+    box-sizing: border-box;
+    background: rgb(75, 107, 146);
+    border: 0;
+    border-bottom: 1px solid black;
+  }
+
+  .toolbtnhide:hover {
+    background: rgb(124, 159, 201);
+    font-style: it;
+    -webkit-transition: background-color 500ms linear;
+    -moz-transition: background-color 500ms linear;
+    -o-transition: background-color 500ms linear;
+    -ms-transition: background-color 500ms linear;
+    transition: background-color 500ms linear;
+  }
+  .open-toolbar {
+    visibility: visible;
+    transition: 0.9 ease;
+    transform: translate(0%, -100%) scale(1);
+  }
+  .showconverterbtn {
+    padding: 10px 10px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+    margin: 0;
+    visibility: hidden;
+    text-align: right;
+    min-width: 75px;
+    background: rgb(124, 159, 201);
+    border: 0;
+    border-bottom: 1px solid black;
+  }
+  .showconverterbtn:hover {
     background: #c8c8c8;
     -webkit-transition: background-color 500ms linear;
     -moz-transition: background-color 500ms linear;
@@ -529,67 +580,33 @@ header {
     transition: background-color 500ms linear;
     font-style: it;
   }
-  .toolbtnhide:hover {
-    background: #c8c8c8;
-    font-style: it;
-  }
-  .toolbtnhide {
-    padding: 10px 30px;
-    text-align: left;
-    width: 100%;
-    font-size: 18px;
-    font-weight: 400;
-    cursor: pointer;
-    margin: 0;
-    visibility: hidden;
-    min-width: 75px;
-    box-sizing: border-box;
-    border-radius: 30px;
-    background: #c8c8c8;
-    background: linear-gradient(
-      to right,
-      rgb(251, 250, 245),
-      rgb(160, 181, 205)
-    );
-    border: 0;
-  }
-  .open-toolbar {
-    visibility: visible;
-    transition: 0.9 ease;
-    transform: translate(0%, -100%) scale(1);
-  }
-  .showconverterbtn {
-    padding: 10px 30px;
-    width: 100%;
-    text-align: left;
-    font-size: 18px;
-    font-weight: 400;
-    cursor: pointer;
-    margin: 0;
-    visibility: hidden;
-    min-width: 75px;
-    background: #c8c8c8;
-  }
-
   .showconverterbtn:active {
     top: 3px;
     transition: all 0.2s;
   }
   .hideconverterbtn {
-    padding: 10px 30px;
+    padding: 10px 10px;
     width: 100%;
-    text-align: left;
     font-size: 18px;
     font-weight: 400;
     cursor: pointer;
-    border-radius: 30px;
     margin: 0;
     visibility: hidden;
+    text-align: right;
     min-width: 75px;
-    background: #c8c8c8;
+    background: rgb(124, 159, 201);
     border: 0;
+    border-bottom: 1px solid black;
   }
-
+  .hideconverterbtn:hover {
+    background: #c8c8c8;
+    -webkit-transition: background-color 500ms linear;
+    -moz-transition: background-color 500ms linear;
+    -o-transition: background-color 500ms linear;
+    -ms-transition: background-color 500ms linear;
+    transition: background-color 500ms linear;
+    font-style: it;
+  }
   .hideconverterbtn:active {
     top: 3px;
     box-shadow: 0 2px 0px #6d4c41;
@@ -638,7 +655,6 @@ header {
   }
   details > summary:first-of-type:hover {
     list-style-type: none;
-
     transition: all 0.7s ease-in-out;
   }
   summary {
@@ -669,7 +685,7 @@ header {
       transform: rotate(1turn);
     }
   }
-  .extradetails {
+  .extraDetails {
     display: flex;
     padding: 10px;
     text-align: center;
@@ -677,7 +693,7 @@ header {
     justify-content: center;
   }
 
-  .sidepanel {
+  .sidePanel {
     text-align: center;
     height: 0;
     width: max-content;
@@ -719,7 +735,7 @@ header {
     border-radius: 10px;
     padding: 10px;
     min-height: fit-content;
-    background-color:#adcaed;
+    background-color: #adcaed;
     font-size: 18px;
     font-weight: 400;
     padding-bottom: 20px;
@@ -728,5 +744,75 @@ header {
     background-color: white;
     border-radius: 5px;
     padding: 5px;
+    -webkit-transition: background-color 500ms linear;
+    -moz-transition: background-color 500ms linear;
+    -o-transition: background-color 500ms linear;
+    -ms-transition: background-color 500ms linear;
+    transition: background-color 500ms linear;
+  }
+  ul.elinks > li:hover:after{
+
+    -webkit-transition: background-color 500ms linear;
+    -moz-transition: background-color 500ms linear;
+    -o-transition: background-color 500ms linear;
+    -ms-transition: background-color 500ms linear;
+    transition: background-color 500ms linear;
+
+    background-color: #adcaed;
+
+  }
+  .btnAll,
+  .directionLink,
+  .showDetails {
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.85);
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 15px;
+    font-weight: 400;
+    justify-content: center;
+    line-height: 1.25;
+    margin-right: 5px;
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: auto;
+    padding: 9px 15px;
+  }
+
+  .btnAll:hover,
+  .btnAll:focus,
+  .directionLink:hover,
+  .directionLink:focus,
+  .showDetails:hover,
+  .showDetails:focus {
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: rgba(0, 0, 0, 0.65);
+  }
+
+  .btnAll:hover,
+  .directionLink:hover,
+  .showDetails:hover {
+    transform: translateY(-1px);
+  }
+
+  .btnAll:active,
+  .directionLink:active,
+  .showDetails:active {
+    background-color: #f0f0f1;
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+    color: rgba(0, 0, 0, 0.65);
+    transform: translateY(0);
   }
 }

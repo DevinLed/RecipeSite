@@ -19,9 +19,9 @@
 
     <div class="inputHeader">
       <div class="hdSearch"><input type="text" id="filterInput" type="search" placeholder="Search recipes..." /></div>
-      <div class="hdBtn"><button class="testsearch">Search</button></div>
+      <div class="hdBtn"><button class="btnAll" id="searchAll">Search</button></div>
       <div class="listall">
-        <button onclick="clearInput()" id="clearList">Clear</button>
+        <button onclick="clearInput()" class="btnAll" id="clearList">Clear</button>
       </div>
     </div>
   </nav>
@@ -31,9 +31,9 @@
   <div class="sbTool">
   <div class="content">
     <div class="mainpage">
-      <button type="submit" class="toolbtn" id="toolsshow" onclick="openTools()">Tools</button>
-      <button type="submit" class="toolbtnhide" id="toolshide" onclick="closeTools()">Hide Tools</button>
-      <button type="submit" class="hidetimerbtn" id="showtimerbtn" onclick="closeTimer()">Close Timer</button>
+      <button type="submit" class="toolbtn" id="toolsshow" onclick="openTools()"><b>Tools</b></button>
+      <button type="submit" class="toolbtnhide" id="toolshide" onclick="closeTools()"><b>Hide Tools</b></button>
+      <button type="submit" class="hidetimerbtn" id="showtimerbtn" onclick="closeTimer()"><b>Close Timer</b></button>
       <div class="sidebar" id="sidebar">
         <div class="container">
           <h1 class="egger">Timer</h1>
@@ -62,7 +62,7 @@
       </div>
       <div class="rightSide">
         <div class="toolbar">
-        <button type="submit" class="hideconverterbtn" id="showconverterbtn" onclick="closeConverter()">Close Converter</button>
+        <button type="submit" class="hideconverterbtn" id="showconverterbtn" onclick="closeConverter()"><b>Close Converter</b></button>
         <div class="converter" id="converter">
           <h2 class="weightc">Weight Converter</h2>
           <div class="bothConvert">
@@ -112,7 +112,7 @@
       <div class="externallink">
         <div class="weblinks">
           <ul class="elinks">
-            <p style="text-align: center;"><u>External Links</u></p>
+            <p style="text-align: center;"><b><u>External Links</b></u></p>
             <li><a href="https://developer.edamam.com/edamam-recipe-api" target="_blank">Free Recipe API</a></li>
             <li><a href="https://www.allrecipes.com/recipes/" target="_blank">Recipe Website</a></li>
             <li><a href="https://github.com/DevinLed" target="_blank">My GitHub</a></li>
