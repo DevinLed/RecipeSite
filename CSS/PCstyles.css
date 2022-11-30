@@ -32,6 +32,7 @@
     width: 100%;
   }
   .hdBtn {
+    padding-left: 5px;
     display: inline-block;
   }
 
@@ -399,7 +400,6 @@ header {
     background-color: #fff;
   }
   .collection-item:nth-child(even) {
-    background-color: #e9e9f9;
     padding-left: 10px;
   }
   .collection-item:nth-child(odd) {
@@ -815,4 +815,15 @@ header {
     color: rgba(0, 0, 0, 0.65);
     transform: translateY(0);
   }
+  .menu-wrap {
+      display: none;
+}
+.searchIcon{
+  max-width: 20px;
+  max-height: 20px;
+}
+.clearList{
+  max-width: 20px;
+  max-height: 20px;
+}
 }

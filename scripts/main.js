@@ -9,6 +9,8 @@ const searchButton = document.querySelector("#searchAll");
 const recipeContainer = document.getElementById("listcontainer");
 let toolsCheck = 0;
 
+
+
 //search function when button is pressed
 searchButton.addEventListener("click", () => {
   recipeContainer.innerHTML = "<div class='loader'></div>";
@@ -73,9 +75,7 @@ const renderRecipies = (recipeList = []) => {
         <li class="collection-header">
             <details class="details-example">
             <summary class="collection-header">${recipeTitle}</summary>
-            <ul class="list">
-             `;
-
+            <ul class="list">`;
     //loads list of ingredients from json for each initial item
     ingredientLines.forEach((ingredient) => {
       htmlStr += `<li class="collection-item">${ingredient}</li>`;
@@ -192,6 +192,7 @@ function closeTools() {
   btncnvt.classList.remove("open-cnvt");
   poptimer.classList.remove("open-timer");
   btntimer.classList.remove("open-Btn");
+  toolsCheck = 0;
 }
 
 function openCnvt() {
@@ -289,7 +290,6 @@ function closeTimer() {
   poptimer.classList.remove("open-timer");
   btntimer.classList.remove("open-Btn");
   toolsCheck++;
-  console.log(toolsCheck);
   if (toolsCheck === 2) {
     toolbarhide.classList.remove("open-toolbar");
     popcnvt.classList.remove("open-cnvt");
@@ -465,7 +465,6 @@ function closeConverter() {
   popcnvt.classList.remove("open-cnvt");
   btncnvt.classList.remove("open-cnvt");
   toolsCheck++;
-  console.log(toolsCheck);
   if (toolsCheck === 2) {
     toolbarhide.classList.remove("open-toolbar");
     popcnvt.classList.remove("open-cnvt");
