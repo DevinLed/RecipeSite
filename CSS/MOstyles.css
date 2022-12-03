@@ -34,12 +34,30 @@
   }
 
   #filterInput {
-    display: inline-block;
-    padding: 0.5rem;
-    border-radius: 1rem;
-    width: 50vw;
-    background-color: rgb(251, 250, 245);
-    z-index: 1;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 15px;
+    font-weight: 400;
+    justify-content: center;
+    line-height: 1.25;
+    margin-right: 5px;
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    height: 40px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: 25vw;
+    padding: 9px 15px;
   }
 
   .testsearch {

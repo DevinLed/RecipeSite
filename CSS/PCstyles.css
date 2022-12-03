@@ -15,18 +15,63 @@
     justify-content: space-between;
     position: relative;
     text-align: center;
+    background-repeat: no-repeat;
+    height: 23rem;
   }
   .recipeheader {
-    background-image: url(../img/PotatoBanner.jpg);
+    background-image: url(../img/HOME-BANNER.png);
     position: relative;
     width: 100%;
-    z-index: 20;
+    z-index: 2;
+  }
+  .toolBarTop {
+    position: fixed;
+    width: 100%;
+    height: 25px;
+    background-color: #231f20;
+    padding: 5px;
+    z-index: 3;
+    margin: 0;
+  }
+  .toolBarList {
+    margin: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #c8c8c8;
+    list-style: none;
+  }
+  .toolBarList li {
+    display: inline;
+    color: #c8c8c8;
+    transform: translate(-50px, 0%) scale(0.9);
+  }
+  .toolBarLinks {
+    margin: 5px;
+    position: relative;
+    top: -25px;
+  }
+  .toolBarLinks a {
+    font-size: 15px;
+    color: #c8c8c8;
+  }
+  #logoTitle{
+    position: relative;
+    font-style: bold;
+    font-size: 20px;
+    text-decoration: none;
+    text-align: center;
+    margin: 0;
+    color:#c8c8c8;
+  }
+  #logoTitle a{
+    color:#c8c8c8;
   }
   .inputHeader {
     display: flex;
     margin-left: 35%;
     padding: 2rem;
     justify-content: space-between;
+    align-items: center;
   }
   .hdSearch {
     width: 100%;
@@ -37,12 +82,30 @@
   }
 
   #filterInput {
-    display: inline-block;
-    padding: 0.5rem;
-    border-radius: 1rem;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 15px;
+    font-weight: 400;
+    justify-content: center;
+    line-height: 1.25;
+    margin-right: 0px;
+    height: 40px;
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
     width: 25vw;
-    background-color: rgb(251, 250, 245);
-    z-index: 1;
+    padding: 9px 15px;
   }
 
   /*.testsearch {
@@ -62,6 +125,8 @@
     min-width: 768px;
     height: auto;
     padding-bottom: 1px;
+    padding:0;
+    overflow-x:hidden;
   }
   input {
     font-size: 1rem;
@@ -84,7 +149,7 @@ header {
     width: 100%;
     background-color: rgb(251, 250, 245);
     padding: 0;
-    height: 100%;
+    height: auto;
   }
   #listcontainer {
     padding: 0;
@@ -141,18 +206,10 @@ header {
   }
 
   .mainpage {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    min-height: 120vh;
-    width: 15%;
+    width: 100%;
     min-width: 200px;
-    max-width: 500px;
-    box-sizing: border-box;
-    background: rgb(124, 159, 201);
-    box-shadow: 0 0 1em rgba(0, 0, 0, 0.99);
     z-index: 1;
+    text-align: center;
   }
   .sidebar {
     width: 100%;
@@ -176,14 +233,14 @@ header {
     visibility: hidden;
     text-align: left;
     min-width: 75px;
-    background: rgb(124, 159, 201);
     border: 0;
-    border-bottom: 1px solid black;
+    text-align: center;
   }
 
   .showtimerbtn:active {
     top: 3px;
     transition: all 0.2s;
+    text-align: center;
   }
   .hidetimerbtn {
     padding: 10px 10px;
@@ -195,9 +252,8 @@ header {
     visibility: hidden;
     text-align: right;
     min-width: 75px;
-    background: rgb(124, 159, 201);
     border: 0;
-    border-bottom: 1px solid black;
+    text-align: center;
   }
   .hidetimerbtn:hover {
     background: #c8c8c8;
@@ -254,9 +310,11 @@ header {
     background-color: transparent;
     margin-top: 8px;
     margin-bottom: 8px;
+    
   }
   .bothConvert {
-    display: flex;
+    display: inline;
+    
   }
   .egger {
     font-size: 25px;
@@ -311,6 +369,7 @@ header {
     cursor: pointer;
   }
   .details-example:hover:after {
+    transition:transform 5s;
     transform: scaleX(1);
     transform-origin: bottom left;
     width: 100rem;
@@ -384,19 +443,16 @@ header {
   .expandlist:nth-child(even) {
     align-items: center;
     width: fit-content(200px);
-    background-color: #e9e9f9;
   }
 
   .expandlist:nth-child(odd) {
     align-items: center;
-    background-color: white;
   }
   .collection-item {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     width: 100%;
-    border: 1px solid black;
     background-color: #fff;
   }
   .collection-item:nth-child(even) {
@@ -417,11 +473,9 @@ header {
   .container {
     display: grid;
     justify-content: center;
-    background: rgb(124, 159, 201);
     padding: 5px;
-
-    background: rgb(124, 159, 201);
-    border-bottom: 1px solid black;
+width: 100%;
+height: 170px;
   }
   .container:hover {
     background: rgb(102, 137, 179);
@@ -438,9 +492,8 @@ header {
     padding-left: 15%;
 
     padding-right: 2%;
-    min-height: 50rem;
+    min-height: auto;
     margin-left: 10%;
-    margin-bottom: auto;
     padding-bottom: 20px;
   }
   .collection-header2 {
@@ -452,29 +505,31 @@ header {
     width: 100%;
   }
   .rightSide {
-    display: grid;
+    width: 100%;
     max-height: 150px;
   }
   .toolbar {
     padding-top: 0rem;
+    
+    display: inline;
   }
   h3 {
     font-size: 30px;
     text-align: center;
     translate: 0px -50px;
   }
+  .kitchenTools{
+    display: flex;
+    justify-content: space-between;
+  }
   .converter {
     display: grid;
-    background: rgb(124, 159, 201);
-    min-height: 40px;
     width: 100%;
     visibility: hidden;
     padding-bottom: 10px;
     justify-content: center;
-
-    background: rgb(124, 159, 201);
-    border-bottom: 1px solid black;
-  }
+    height: 170px;
+      }
   .converter:hover {
     background: rgb(102, 137, 179);
     -webkit-transition: background-color 500ms linear;
@@ -486,10 +541,15 @@ header {
   }
   .liquidWeight {
     padding: 0px 5px;
-    display: grid;
+    display: inline-grid;
+    column-gap: 50px;
+    grid-template-columns: auto auto auto;
+    
   }
   .dryWeight {
-    display: grid;
+    display: inline-grid;
+    column-gap: 50px;
+    grid-template-columns: auto auto auto;
     padding: 0px 5px;
   }
   .open-cnvt {
@@ -509,14 +569,12 @@ header {
     font-size: 25px;
     font-weight: 400;
     cursor: pointer;
-    margin-top: 125px;
     visibility: visible;
     min-width: 75px;
     box-sizing: border-box;
     text-align: right;
-    background: rgb(124, 159, 201);
     border: 0;
-    border-bottom: 1px solid black;
+    text-align: center;
   }
   .toolbtn:hover {
     background: rgb(75, 107, 146);
@@ -540,11 +598,10 @@ header {
     box-sizing: border-box;
     background: rgb(75, 107, 146);
     border: 0;
-    border-bottom: 1px solid black;
+    text-align: center;
   }
 
   .toolbtnhide:hover {
-    background: rgb(124, 159, 201);
     font-style: it;
     -webkit-transition: background-color 500ms linear;
     -moz-transition: background-color 500ms linear;
@@ -567,7 +624,6 @@ header {
     visibility: hidden;
     text-align: right;
     min-width: 75px;
-    background: rgb(124, 159, 201);
     border: 0;
     border-bottom: 1px solid black;
   }
@@ -594,9 +650,8 @@ header {
     visibility: hidden;
     text-align: right;
     min-width: 75px;
-    background: rgb(124, 159, 201);
     border: 0;
-    border-bottom: 1px solid black;
+    text-align: center;
   }
   .hideconverterbtn:hover {
     background: #c8c8c8;
@@ -638,9 +693,7 @@ header {
     font-size: 20px;
   }
   #clearMeasure {
-    margin-top: 10px;
-    width: 100%;
-    padding: 10px;
+   display:none;
   }
   span {
     display: inline-block;
@@ -655,7 +708,7 @@ header {
   }
   details > summary:first-of-type:hover {
     list-style-type: none;
-    transition: all 0.7s ease-in-out;
+    transition: all 1.7s ease-in-out;
   }
   summary {
     margin-right: 5rem;
@@ -750,8 +803,7 @@ header {
     -ms-transition: background-color 500ms linear;
     transition: background-color 500ms linear;
   }
-  ul.elinks > li:hover:after{
-
+  ul.elinks > li:hover:after {
     -webkit-transition: background-color 500ms linear;
     -moz-transition: background-color 500ms linear;
     -o-transition: background-color 500ms linear;
@@ -759,7 +811,6 @@ header {
     transition: background-color 500ms linear;
 
     background-color: #adcaed;
-
   }
   .btnAll,
   .directionLink,
@@ -797,13 +848,7 @@ header {
   .showDetails:focus {
     border-color: rgba(0, 0, 0, 0.15);
     box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-    color: rgba(0, 0, 0, 0.461);
-  }
-
-  .btnAll:hover,
-  .directionLink:hover,
-  .showDetails:hover {
-    transform: translateY(-1px);
+    background-color: rgba(133, 133, 133, 0.861);
   }
 
   .btnAll:active,
@@ -816,14 +861,30 @@ header {
     transform: translateY(0);
   }
   .menu-wrap {
-      display: none;
-}
-.searchIcon{
-  max-width: 20px;
-  max-height: 20px;
-}
-.clearList{
-  max-width: 20px;
-  max-height: 20px;
-}
+    display: none;
+  }
+  .searchIcon {
+    max-width: 20px;
+    max-height: 20px;
+  }
+  .clearList {
+    max-width: 20px;
+    max-height: 20px;
+  }
+  footer{
+    margin-bottom: 0px;
+    bottom: 0px;
+
+  }
+  .thank{
+    
+    background-color:#231f20;
+    margin-bottom: 0;
+    text-align: center;
+    color: #c8c8c8;
+    height: 8rem;
+    padding: 5px;
+    padding-top: 30px;
+    bottom: 0;
+  }
 }

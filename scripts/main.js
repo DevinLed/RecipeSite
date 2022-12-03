@@ -75,6 +75,7 @@ const renderRecipies = (recipeList = []) => {
         <li class="collection-header">
             <details class="details-example">
             <summary class="collection-header">${recipeTitle}</summary>
+            <p style="padding-left: 30px;">Ingredients:</p>
             <ul class="list">`;
     //loads list of ingredients from json for each initial item
     ingredientLines.forEach((ingredient) => {
@@ -182,30 +183,19 @@ let toolbarhide = document.getElementById("toolshide");
 function openTools() {
   toolbarhide.classList.add("open-toolbar");
   popcnvt.classList.add("open-cnvt");
-  btncnvt.classList.add("open-cnvt");
   poptimer.classList.add("open-timer");
-  btntimer.classList.add("open-Btn");
 }
 function closeTools() {
   toolbarhide.classList.remove("open-toolbar");
   popcnvt.classList.remove("open-cnvt");
-  btncnvt.classList.remove("open-cnvt");
   poptimer.classList.remove("open-timer");
-  btntimer.classList.remove("open-Btn");
   toolsCheck = 0;
 }
 
-function openCnvt() {
-  btntimer.classList.add("open-cnvt");
-}
-function closeCnvt() {
-  btntimer.classList.remove("open-cnvt");
-}
 let startBtn = document.getElementById("start");
 let stopBtn = document.getElementById("stop");
 let resetBtn = document.getElementById("reset");
 let poptimer = document.getElementById("sidebar");
-let btntimer = document.getElementById("showtimerbtn");
 
 let hour = 00;
 let minute = 00;
@@ -284,33 +274,10 @@ function stopWatch() {
 //test for egg timer open/close button
 function openTimer() {
   poptimer.classList.add("open-timer");
-  btntimer.classList.add("open-Btn");
-}
-function closeTimer() {
-  poptimer.classList.remove("open-timer");
-  btntimer.classList.remove("open-Btn");
-  toolsCheck++;
-  if (toolsCheck === 2) {
-    toolbarhide.classList.remove("open-toolbar");
-    popcnvt.classList.remove("open-cnvt");
-    btncnvt.classList.remove("open-cnvt");
-    poptimer.classList.remove("open-timer");
-    btntimer.classList.remove("open-Btn");
-    toolsCheck = 0;
-  } else {
-    toolsCheck;
-  }
 }
 
-function openBtn() {
-  btntimer.classList.add("open-Btn");
-}
-function closeBtn() {
-  btntimer.classList.remove("open-Btn");
-}
 
 let popcnvt = document.getElementById("converter");
-let btncnvt = document.getElementById("showconverterbtn");
 //weight conversion for 6 common cooking measurements LIQUID
 function weightConverter(source, valNum) {
   const depends = "Depends on ingredient";
@@ -459,30 +426,8 @@ function clearMeasure() {
 }
 function openConverter() {
   popcnvt.classList.add("open-cnvt");
-  btncnvt.classList.add("open-cnvt");
-}
-function closeConverter() {
-  popcnvt.classList.remove("open-cnvt");
-  btncnvt.classList.remove("open-cnvt");
-  toolsCheck++;
-  if (toolsCheck === 2) {
-    toolbarhide.classList.remove("open-toolbar");
-    popcnvt.classList.remove("open-cnvt");
-    btncnvt.classList.remove("open-cnvt");
-    poptimer.classList.remove("open-timer");
-    btntimer.classList.remove("open-Btn");
-    toolsCheck = 0;
-  } else {
-    toolsCheck;
-  }
 }
 
-function openCnvt() {
-  btntimer.classList.add("open-cnvt");
-}
-function closeCnvt() {
-  btntimer.classList.remove("open-cnvt");
-}
 document.addEventListener("DOMContentLoaded", function () {
   loadRecipes();
   console.log("Content Loaded");
