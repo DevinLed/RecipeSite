@@ -32,7 +32,9 @@
   .hdBtn {
     display: inline-block;
   }
-
+.toolBarTop{
+  display: none;
+}
   #filterInput {
     align-items: center;
     background-color: #ffffff;

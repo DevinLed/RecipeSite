@@ -75,7 +75,7 @@
     <div class="content">
 
       <div class="searchables">
-        <ul id="listcontainer"></ul>
+        <div class="listcontainer"></ul>
       </div>
     </div>
   </div>
@@ -116,32 +116,31 @@
             <div class="bothConvert">
               <div class="liquidWeight">
 
-                <label>Ounces: </label><input class="inputWeight" id="inputOunces" type="number" placeholder="Oz"
+                <label>Liquid</label><input class="inputWeight" id="inputOunces" type="number" placeholder="Oz"
                   oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
-                <label>Grams: </label><input class="inputWeight" id="inputGrams" type="number" placeholder="g"
+                <input class="inputWeight" id="inputGrams" type="number" placeholder="g"
                   oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
-                <label>Cups: </label><input class="inputWeight" id="inputCups" type="number" placeholder="cups"
+                <input class="inputWeight" id="inputCups" type="number" placeholder="cups"
                   oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
-                <label>Tablespoon: </label><input class="inputWeight" id="inputTbl" type="number" placeholder="tbsp"
+                <input class="inputWeight" id="inputTbl" type="number" placeholder="tbsp"
                   oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
-                <label>Teaspoon: </label><input class="inputWeight" id="inputTsp" type="number" placeholder="tsp"
+                <input class="inputWeight" id="inputTsp" type="number" placeholder="tsp"
                   oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
-                <label>Millilitres: </label><input class="inputWeight" id="inputMl" type="number" placeholder="ml"
+                <input class="inputWeight" id="inputMl" type="number" placeholder="ml"
                   oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
               </div>
-
               <div class="dryWeight">
-                <label>Ounces: </label><input class="inputWeight" id="inputDOunces" type="number" placeholder="Oz"
+                <label>Dry</label><input class="inputWeight" id="inputDOunces" type="number" placeholder="Oz"
+                  oninput="weightConverterDry(this.id,this.value)" onchange="weightConverterDry(this.id,this.value)"" style="border-right-style: solid;margin-left: 16px;">
+                <input class="inputWeight" id="inputDGrams" type="number" placeholder="g"
                   oninput="weightConverterDry(this.id,this.value)" onchange="weightConverterDry(this.id,this.value)">
-                <label>Grams: </label><input class="inputWeight" id="inputDGrams" type="number" placeholder="g"
+                <input class="inputWeight" id="inputDCups" type="number" placeholder="cups"
                   oninput="weightConverterDry(this.id,this.value)" onchange="weightConverterDry(this.id,this.value)">
-                <label>Cups: </label><input class="inputWeight" id="inputDCups" type="number" placeholder="cups"
+                <input class="inputWeight" id="inputDTbl" type="number" placeholder="tbsp"
                   oninput="weightConverterDry(this.id,this.value)" onchange="weightConverterDry(this.id,this.value)">
-                <label>Tablespoon: </label><input class="inputWeight" id="inputDTbl" type="number" placeholder="tbsp"
+                <input class="inputWeight" id="inputDTsp" type="number" placeholder="tsp"
                   oninput="weightConverterDry(this.id,this.value)" onchange="weightConverterDry(this.id,this.value)">
-                <label>Teaspoon: </label><input class="inputWeight" id="inputDTsp" type="number" placeholder="tsp"
-                  oninput="weightConverterDry(this.id,this.value)" onchange="weightConverterDry(this.id,this.value)">
-                <label>Millilitres: </label><input class="inputWeight" id="inputDMl" type="number" placeholder="ml"
+                <input class="inputWeight" id="inputDMl" type="number" placeholder="ml"
                   oninput="weightConverterDry(this.id,this.value)" onchange="weightConverterDry(this.id,this.value)">
               </div>
             </div>
@@ -162,7 +161,7 @@
 <footer>
   <div class="outro">
     <div class="thank">
-      <p>Thank’s for visiting Recipe App</p>
+      <p>Thank you for visiting</p>
 
       <p>A simple recipe fetching app created by Devin for Get Coding. | Created using JS, CSS, HTML | Check out my
         GitHub</p>

@@ -6,7 +6,8 @@ const APP_ID = "e9121c76";
 const API_KEY = "56b9fc8ce334b4a7a762c9a5d815ab88";
 const baseUrl = `https://api.edamam.com/search?app_id=${APP_ID}&app_key=${API_KEY}`;
 const searchButton = document.querySelector("#searchAll");
-const recipeContainer = document.getElementById("listcontainer");
+const recipeContainer = document.querySelector(".listcontainer");
+const randomColor = Math.floor(Math.random()*16777215).toString(16);
 let toolsCheck = 0;
 
 
@@ -73,18 +74,19 @@ const renderRecipies = (recipeList = []) => {
     let htmlStr = `
     <ul class="expandlist" style="padding-left: 0px;">
         <li class="collection-header">
+        
             <details class="details-example">
-            <summary class="collection-header">${recipeTitle}</summary>
-            <p style="padding-left: 30px;">Ingredients:</p>
+            <summary class="collection-header" style="background-color:${randomColor};">${recipeTitle}            
+            <div class="imgandlink">
+            <img class="previewimg" src="${recipeImage}"/>
+          </div></summary>
+            <p>Ingredients:</p>
             <ul class="list">`;
     //loads list of ingredients from json for each initial item
     ingredientLines.forEach((ingredient) => {
       htmlStr += `<li class="collection-item">${ingredient}</li>`;
     });
     htmlStr += `</ul>
-              <div class="imgandlink">
-                <img class="previewimg" src="${recipeImage}"/>
-              </div>
 
               <div class="directionBtn">
                 <button type="submit" title="Visit external site" class="directionLink"><a href="${url}" target="_blank">Show Full Recipe</button></a>
@@ -113,7 +115,11 @@ const renderRecipies = (recipeList = []) => {
         </li>
     </ul>
     `;
+    
     recipeContainer.insertAdjacentHTML("beforeend", htmlStr);
+    
+document.querySelector(".collection-header").style.background = randomColor;
+console.log(randomColor);
   });
   let cbox = document.querySelectorAll(".showDetails");
   cbox.forEach((showdets) => {
@@ -143,7 +149,7 @@ function clearInput() {
   var output = "";
   //generates initial clickable item in list
   output += `
-    <ul class="expandlist" style="padding-left: 3px;">
+    <ul class="expandlist" style="display:none;">
         <li class="collection-header">
             <details class="details-example">
             <summary class="collection-header"></summary>
@@ -161,7 +167,7 @@ function clearInput() {
     </ul>
     `;
 
-  document.getElementById("listcontainer").innerHTML = output;
+  document.querySelector(".listcontainer").innerHTML = output;
 }
 
 //displays popup window with name and recipe, working on including measurements+ ingredient name
@@ -411,18 +417,18 @@ function weightConverterDry(source, valNum) {
 }
 //clear button to wipe out all values in conversion chart
 function clearMeasure() {
-  inputOunces.value = (0).toFixed();
-  inputGrams.value = (0).toFixed();
-  inputCups.value = (0).toFixed();
-  inputTbl.value = (0).toFixed();
-  inputTsp.value = (0).toFixed();
-  inputMl.value = (0).toFixed();
-  inputDOunces.value = (0).toFixed();
-  inputDGrams.value = (0).toFixed();
-  inputDCups.value = (0).toFixed();
-  inputDTbl.value = (0).toFixed();
-  inputDTsp.value = (0).toFixed();
-  inputDMl.value = (0).toFixed();
+  inputOunces.value = "Oz";
+  inputGrams.value = "g";
+  inputCups.value = "cups";
+  inputTbl.value = "tbsp";
+  inputTsp.value = "tsp";
+  inputMl.value = "ml";
+  inputDOunces.value =  "Oz";
+  inputDGrams.value = "g";
+  inputDCups.value = "cups";
+  inputDTbl.value = "tbsp";
+  inputDTsp.value = "tsp";
+  inputDMl.value = "ml";
 }
 function openConverter() {
   popcnvt.classList.add("open-cnvt");
