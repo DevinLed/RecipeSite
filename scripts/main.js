@@ -7,23 +7,41 @@ const API_KEY = "56b9fc8ce334b4a7a762c9a5d815ab88";
 const baseUrl = `https://api.edamam.com/search?app_id=${APP_ID}&app_key=${API_KEY}`;
 const searchButton = document.querySelector("#searchAll");
 const recipeContainer = document.querySelector(".listcontainer");
-const randomColor = Math.floor(Math.random()*16777215).toString(16);
+const currSearch = document.querySelector(".currentSearch");
 let toolsCheck = 0;
 
 
+generatePastelColor = () => {
+  let R = Math.floor((Math.random() * 127) + 127);
+  let G = Math.floor((Math.random() * 127) + 127);
+  let B = Math.floor((Math.random() * 127) + 127);
+  
+  let rgb = (R << 16) + (G << 8) + B;
+  return `#${rgb.toString(16)}`;      
+}
 
 //search function when button is pressed
 searchButton.addEventListener("click", () => {
-  recipeContainer.innerHTML = "<div class='loader'></div>";
+  currSearch.style.height = "25px";
+  recipeContainer.innerHTML =
+    "<div class='loadBar'><div class='loader'></div></div>";
   setTimeout(() => {
     loadRecipes(searchText.value);
+    if (searchText.value != null) {
+      currSearch.innerHTML = "No search inputted.";
+      currSearch.style.height = "20vh";
+    } else {
+      console.log(false);
+    }
   }, 200);
 });
 //search function at the press of Enter
 searchText.addEventListener("keyup", (e) => {
   const inputVal = searchText.value;
   if (e.keyCode === 13) {
-    recipeContainer.innerHTL = "<div class='loader'></div>";
+    currSearch.style.height = "25px";
+    recipeContainer.innerHTL =
+      "<div class='loadBar'><div class='loader'></div></div>";
     setTimeout(() => {
       loadRecipes(inputVal);
     }, 200);
@@ -31,7 +49,7 @@ searchText.addEventListener("keyup", (e) => {
 });
 
 //loads list of pizza recipes by calling cnst renderRecipies
-function loadRecipes(type = "pizza") {
+function loadRecipes(type = "Pizza") {
   recipeContainer.innerHTML = "<div class='loader'></div>";
   setTimeout(() => {
     const url = baseUrl + `&q=${type}`;
@@ -40,22 +58,9 @@ function loadRecipes(type = "pizza") {
       .then((data) => renderRecipies(data.hits))
       .catch((error) => console.log(error));
   }, 200);
+  currSearch.innerHTML = "Current Search: ";
+  currSearch.insertAdjacentHTML("beforeend", type);
 }
-
-/* temporarily disabled - testing eventlistener
-function openDetails() {
-  if (detailscount === 0) {
-    document.getElementById("sidePanel").classList.add("open-details");
-    document.getElementById("showDetails").innerHTML = "Hide Extra Details";
-    detailscount++;
-  } 
-  else {
-    document.getElementById("sidePanel").classList.remove("open-details");
-    document.getElementById("showDetails").innerHTML = "View Extra Details";
-    detailscount--;
-  }
-}
-*/
 
 //loads the list based off input in filterInput field, and calls subsequent info
 const renderRecipies = (recipeList = []) => {
@@ -75,8 +80,8 @@ const renderRecipies = (recipeList = []) => {
     <ul class="expandlist" style="padding-left: 0px;">
         <li class="collection-header">
         
-            <details class="details-example">
-            <summary class="collection-header" style="background-color:${randomColor};">${recipeTitle}            
+            <details class="details-example" style="background-color: ${generatePastelColor()}">
+            <summary class="collection-header"><p style="min-height: 50px; margin-bottom:0;">${recipeTitle}</p>        
             <div class="imgandlink">
             <img class="previewimg" src="${recipeImage}"/>
           </div></summary>
@@ -94,10 +99,21 @@ const renderRecipies = (recipeList = []) => {
                 <div class="showdets">
                 <button type="submit" title="View details" class="showDetails">View Extra Details</button>
                 <div class= "extraDetails">
-                <div class="sidePanel">
-                 <p>Total cooking time is ${time} minutes</p>
-                 <p>Enough for ${feeds} people</p>
-                 <p>This item is a ${dishType}</p>
+                <div class="sidePanel">`;
+    if (time === 0) {
+      htmlStr += `
+                 <p id="cookTime">This item is not cooked</p>`;
+    } else {
+      htmlStr += `
+                 <p id="cookTime">Total cooking time is ${time} minutes</p>`;
+    }
+    if (feeds === 1) {
+      htmlStr += `<p>Enough for ${feeds} person</p>`;
+    } else {
+      htmlStr += `<p>Enough for ${feeds} people</p>`;
+    }
+
+    htmlStr += `<p>Type: ${dishType}</p>
                  <ul class = "healthinfo">
                  `;
     //list of all health labels
@@ -115,12 +131,11 @@ const renderRecipies = (recipeList = []) => {
         </li>
     </ul>
     `;
-    
+
     recipeContainer.insertAdjacentHTML("beforeend", htmlStr);
-    
-document.querySelector(".collection-header").style.background = randomColor;
-console.log(randomColor);
+    document.querySelector(".expandlist").style.transition = "all 2s"
   });
+
   let cbox = document.querySelectorAll(".showDetails");
   cbox.forEach((showdets) => {
     let detailsShown = false;
@@ -145,6 +160,7 @@ console.log(randomColor);
 
 function clearInput() {
   document.getElementById("filterInput").value = "";
+  currSearch.style.height = "20vh";
 
   var output = "";
   //generates initial clickable item in list
@@ -167,6 +183,7 @@ function clearInput() {
     </ul>
     `;
 
+  currSearch.innerHTML = "Current Search: Cleared";
   document.querySelector(".listcontainer").innerHTML = output;
 }
 
@@ -281,7 +298,6 @@ function stopWatch() {
 function openTimer() {
   poptimer.classList.add("open-timer");
 }
-
 
 let popcnvt = document.getElementById("converter");
 //weight conversion for 6 common cooking measurements LIQUID
@@ -423,7 +439,7 @@ function clearMeasure() {
   inputTbl.value = "tbsp";
   inputTsp.value = "tsp";
   inputMl.value = "ml";
-  inputDOunces.value =  "Oz";
+  inputDOunces.value = "Oz";
   inputDGrams.value = "g";
   inputDCups.value = "cups";
   inputDTbl.value = "tbsp";
@@ -437,4 +453,5 @@ function openConverter() {
 document.addEventListener("DOMContentLoaded", function () {
   loadRecipes();
   console.log("Content Loaded");
+  
 });

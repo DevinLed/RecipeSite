@@ -24,6 +24,10 @@
     width: 100%;
     z-index: 2;
   }
+  .currentSearch{
+    padding-top: 20px;
+    font-size: 20px;
+  }
   .toolBarTop {
     position: fixed;
     width: 100%;
@@ -164,13 +168,15 @@ header {
     background-color: rgb(255, 255, 255);
     overflow: hidden;
     min-width: 50%;
-    width: 100%;
-  
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 1px, rgba(0, 0, 0, 0.22) 0px 1px 1px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    width: 100%;  
     min-height: 40px;
+  }
+  .listcontainer>.expandlist{
+    margin: 0px;
+    margin-left: 10px;
+    flex: 1 1 270px;
+    
+    transition: 0.8s ease;
   }
   a {
     text-decoration: none;
@@ -319,7 +325,6 @@ header {
     padding: 5px;
   }
   .details-example {
-    width: 100%;
     box-shadow: 0px 0px 8px 2px grey;
     display:flex;
     justify-content: center;
@@ -328,6 +333,10 @@ header {
     text-align: center;
     margin: 1px;
     border-radius: 5%;
+    max-width: 260px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 80%;
     
   }
   .details-example::after {
@@ -355,7 +364,7 @@ header {
     width: 100%;
     padding-left: 0;  
     overflow: hidden;
-    ;
+    text-align: left;
   }
 
   .linklist {
@@ -385,10 +394,10 @@ header {
   }
   .previewimg {
     padding-top: 15px;
-    width: 250px;
-    height: 250px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    margin: auto;
+    margin: 0;
     border-radius: 18%;
   }
   .directionBtn {
@@ -415,7 +424,7 @@ header {
   }
   details[open] summary ~ * {
     animation: sweep 0.5s ease-in-out;
-    width: 323px;
+    width: 100%;
     
   }
   .collection-header {
@@ -424,23 +433,14 @@ header {
     display: grid;
     margin: 0;
     padding: 5px;
+    max-width: 263px;
   }
-  .expandlist:nth-child(even) {
-    align-items: center;
-    width: fit-content(200px);
-  }
-
-  .expandlist:nth-child(odd) {
-    align-items: center;
-  }
-  .collection-item {
-    white-space: nowrap;
-    
+  .collection-item {    
     max-width: 33ch;
     overflow: hidden;
     text-overflow: ellipsis;
     width: fit-content;
-    background-color: #fff;
+    padding-bottom: 10px;
   }
   .collection-item:nth-child(even) {
     padding-left: 10px;
@@ -454,7 +454,7 @@ header {
     display: block;
     color: rgb(0, 0, 0);
     text-align: center;
-    padding: 0 10px 10px 0;
+    padding: 10px;
   }
 
   .container {
@@ -465,6 +465,7 @@ header {
     height: 170px;
   }
   .searchables {
+    background-color: rgb(255, 255, 255);
     display:flex;
     justify-content: center;
     align-items: flex-start;
@@ -701,7 +702,6 @@ header {
     text-align: center;
     margin-right: 1%;
   }
-
   .loader {
     pointer-events: none;
     width: 30px;
@@ -712,20 +712,25 @@ header {
     animation: an1 1s ease infinite;
     background-color: rgb(255, 255, 255);
     display: grid;
-    place-content: center;
-    margin-left: 48%;
+  }
+  .loadBar{
+    text-align: center;
+    justify-content: center;
   }
   @keyframes an1 {
     0% {
       transform: rotate(0turn);
+      text-align: center;
+      justify-content: center;
     }
     100% {
       transform: rotate(1turn);
+      text-align: center;
+      justify-content: center;
     }
   }
   .extraDetails {
     display: flex;
-    padding: 10px;
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -734,19 +739,21 @@ header {
   .sidePanel {
     text-align: center;
     height: 0;
-    width: max-content;
+    width: 20px;
     background-color: #f6fff2;
     visibility: hidden;
     padding-top: 15px;
     padding-bottom: 15px;
     border-radius: 20px;
     box-shadow: 0 0 8px 8px white inset;
-    z-index: 500;
   }
 
   .open-details {
+    list-style: none;
     visibility: visible;
     height: fit-content;
+    width: 100%;
+    max-width: fit-content;
   }
 
   .healthinfo {
@@ -755,6 +762,7 @@ header {
     column-count: 3;
     margin: 0;
     padding: 10px;
+    list-style: none;
   }
 
   .linksidebar {
