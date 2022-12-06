@@ -8,6 +8,7 @@ const baseUrl = `https://api.edamam.com/search?app_id=${APP_ID}&app_key=${API_KE
 const searchButton = document.querySelector("#searchAll");
 const recipeContainer = document.querySelector(".listcontainer");
 const currSearch = document.querySelector(".currentSearch");
+
 let toolsCheck = 0;
 
 
@@ -76,18 +77,18 @@ const renderRecipies = (recipeList = []) => {
       dishType: dishType,
       healthLabels: health,
     } = recipeObj.recipe;
+    console.log(recipeObj);
     let htmlStr = `
     <ul class="expandlist" style="padding-left: 0px;">
         <li class="collection-header">
         
             <details class="details-example" style="background-color: ${generatePastelColor()}">
-            <summary class="collection-header"><p style="min-height: 50px; margin-bottom:0;">${recipeTitle}</p>        
-            <div class="imgandlink">
-            <img class="previewimg" src="${recipeImage}"/>
-          </div></summary>
-            <p>Ingredients:</p>
+            <summary class="collectionSummary"><img class="previewimg" src="${recipeImage}"/><p class="titleWord">${recipeTitle}</p>        
+            </summary>
+            <p style="margin-top:0;">Ingredients:</p>
             <ul class="list">`;
     //loads list of ingredients from json for each initial item
+    
     ingredientLines.forEach((ingredient) => {
       htmlStr += `<li class="collection-item">${ingredient}</li>`;
     });
@@ -100,20 +101,16 @@ const renderRecipies = (recipeList = []) => {
                 <button type="submit" title="View details" class="showDetails">View Extra Details</button>
                 <div class= "extraDetails">
                 <div class="sidePanel">`;
-    if (time === 0) {
-      htmlStr += `
-                 <p id="cookTime">This item is not cooked</p>`;
-    } else {
-      htmlStr += `
-                 <p id="cookTime">Total cooking time is ${time} minutes</p>`;
-    }
-    if (feeds === 1) {
-      htmlStr += `<p>Enough for ${feeds} person</p>`;
-    } else {
-      htmlStr += `<p>Enough for ${feeds} people</p>`;
-    }
-
-    htmlStr += `<p>Type: ${dishType}</p>
+                if (time === 0) {
+                  htmlStr += `
+                             <p id="cookTime">This item is not cooked</p>`;
+                } else {
+                  htmlStr += `
+                             <p id="cookTime">Total cooking time is ${time} minutes</p>`;
+                }
+                htmlStr += `
+                <p>Serves: ${feeds}</p>
+                <p>${dishType}</p>
                  <ul class = "healthinfo">
                  `;
     //list of all health labels
@@ -133,12 +130,18 @@ const renderRecipies = (recipeList = []) => {
     `;
 
     recipeContainer.insertAdjacentHTML("beforeend", htmlStr);
-    document.querySelector(".expandlist").style.transition = "all 2s"
+    document.querySelector(".expandlist").style.transition = "all 2s";
+    document.querySelector(".collectionSummary").onmouseover = function() {mouseOver()};
   });
 
+  function mouseOver(){
+    console.log("test");
+  }
+
   let cbox = document.querySelectorAll(".showDetails");
+  
+let detailsShown = false;
   cbox.forEach((showdets) => {
-    let detailsShown = false;
     showdets.addEventListener("click", function (event) {
       if (detailsShown === false) {
         event.currentTarget.nextElementSibling.children[0].classList.add(
@@ -152,10 +155,10 @@ const renderRecipies = (recipeList = []) => {
           "open-details"
         );
         detailsShown = !detailsShown;
-        console.log(false);
       }
     });
   });
+
 };
 
 function clearInput() {
@@ -168,7 +171,7 @@ function clearInput() {
     <ul class="expandlist" style="display:none;">
         <li class="collection-header">
             <details class="details-example">
-            <summary class="collection-header"></summary>
+            <summary class="collectionSummary"></summary>
                 <ul class="list">
                 <li class="collection-item"></li>
                 </ul>

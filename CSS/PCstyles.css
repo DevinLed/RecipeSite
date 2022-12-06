@@ -27,6 +27,10 @@
   .currentSearch{
     padding-top: 20px;
     font-size: 20px;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    text-align: center;
+    padding-bottom: 30px;
   }
   .toolBarTop {
     position: fixed;
@@ -168,13 +172,12 @@ header {
     background-color: rgb(255, 255, 255);
     overflow: hidden;
     min-width: 50%;
-    width: 100%;  
+    width: 75%;  
     min-height: 40px;
   }
   .listcontainer>.expandlist{
     margin: 0px;
     margin-left: 10px;
-    flex: 1 1 270px;
     
     transition: 0.8s ease;
   }
@@ -297,7 +300,6 @@ header {
     margin: 2px;
   }
   .expandlist{
-    width: 20%;
     padding: 20px;
   }
   ul .expandlist li {
@@ -435,6 +437,23 @@ header {
     padding: 5px;
     max-width: 263px;
   }
+  
+  .collectionSummary {
+    align-items: center;
+    list-style: none;
+    display: grid;
+    margin: 0;
+    padding: 5px;
+    max-width: 263px;
+    height: 100%;
+  }
+  .collection-header:hover{
+    transition: all 0.8s ease-in-out;
+    background-color: rgb(0, 0, 0, 0.3);
+    border-radius: 5%;
+    max-width: 263px;
+    
+  }
   .collection-item {    
     max-width: 33ch;
     overflow: hidden;
@@ -448,15 +467,14 @@ header {
   .collection-item:nth-child(odd) {
     padding-left: 10px;
   }
-  .imgandlink {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    color: rgb(0, 0, 0);
-    text-align: center;
-    padding: 10px;
-  }
-
+.titleWord{
+  min-height: 50px; 
+  padding-top:20px; 
+  margin-bottom:0; 
+  color: rgb(255,255,255);
+  font-size: 18px;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
   .container {
     display: grid;
     justify-content: center;
@@ -473,11 +491,6 @@ header {
     width: 100%;
     list-style: none;
   
-  }
-  .collection-header2 {
-    max-width: 33ch;
-    max-height: 90ch;
-    overflow: hidden;
   }
   .listall {
     width: 100%;
