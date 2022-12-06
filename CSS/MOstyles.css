@@ -104,16 +104,31 @@ header {
     padding: 0;
     height: 100%;
   }
-  #listcontainer {
+  .currentSearch{
+    padding-top: 20px;
+    font-size: 20px;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  .listcontainer {
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
     padding: 0;
     background-color: rgb(255, 255, 255);
     overflow: hidden;
-    min-width: auto;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 1px, rgba(0, 0, 0, 0.22) 0px 1px 1px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    min-width: 50%;
+    width: 75%;  
     min-height: 40px;
+  }
+  .listcontainer>.expandlist{
+    margin: 0px;
+    margin-left: 10px;
+    
+    transition: 0.8s ease;
   }
   a {
     text-decoration: none;
@@ -164,22 +179,22 @@ header {
     text-align: center;
   }
   .sidebar {
+    display: flex;
     width: 40vw;
     box-sizing: border-box;
     visibility: hidden;
     transition: transform 0.4s, top 0.4s;
+    border-radius: 15px;
+    text-align: center;
+    justify-content: center;
   }
 
   .open-timer {
-    visibility: visible;
-    transform: translate(0%, 2%) scale(1);
-    transition: transform 0.4s, top 0.4s;
     position: fixed;
-    width: 105%;
-    z-index: 9002;
-    padding-left: 50px;
-    
-    transform: translate(-10%, -50%) scale(0.9);
+    visibility: visible;
+    transition: transform 0.4s, top 0.4s;
+    transform: translate(0%, -317.3vh) scale(1);
+    z-index: 1;
   }
 
   .showtimerbtn {
@@ -260,6 +275,13 @@ header {
   .bothConvert {
     display: flex;
   }
+  .kitchenTools {
+    display:flex;
+    visibility: hidden;
+    width: 100vw;
+    text-align: center;
+    justify-content: center;
+  }
   .egger {
     background-color: rgb(233, 243, 255);
     color: rgb(0, 0, 0);
@@ -290,8 +312,40 @@ header {
     padding: 5px;
   }
   .details-example {
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 1px;
+    border-radius: 15px;
+    max-width: 260px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 80%;
+    
+  }
+.titleWord{
+  word-break: break-all; 
+  min-height: 50px;
+  width: 100%; 
+  padding-top: 10px;
+  margin-bottom:0; 
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+}
+  .list {
+    display: grid;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 1px;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
     width: 100%;
-    padding: 5px;
+    overflow: hidden;
+    text-align: left;
+    border-radius: 15px;
   }
   .details-example::after {
     content: "";
@@ -305,12 +359,6 @@ header {
     transform-origin: bottom left;
     transition: 0.8s ease;
     pointer-events: none;
-    cursor: pointer;
-  }
-  .details-example:hover:after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-    width: 100rem;
     cursor: pointer;
   }
   #list {
@@ -344,10 +392,11 @@ header {
   }
   .previewimg {
     padding-top: 15px;
-    width:  250px;
-    height: 250px;
+    width: 75%;
+    height: 75%;
     object-fit: cover;
-    margin: auto;
+    margin: 0;
+    border-radius: 18%;
   }
   .directionBtn {
     border-radius: 15px;
@@ -381,29 +430,13 @@ header {
     align-items: center;
     max-width: 100%;
   }
-  .expandlist:nth-child(even) {
-    align-items: center;
-    width: fit-content(200px);
-    background-color: #e9e9f9;
-  }
-
-  .expandlist:nth-child(odd) {
-    align-items: center;
-    background-color: white;
-  }
   .collection-item {
+    padding: 5px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    width: 90%;
-    border: 1px solid black;
+    width: 100%;
     background-color: #fff;
-  }
-  .collection-item:nth-child(even) {
-    padding-left: 5px;
-  }
-  .collection-item:nth-child(odd) {
-    padding-left: 5px;
   }
   .imgandlink {
     
@@ -416,20 +449,26 @@ header {
   }
 
   .container {
-    display: block;
+    display: grid;
     background-color: rgb(233, 243, 255);
     padding: 5px;
     margin-bottom: 5px;
-
+    border-radius: 15px;
+    min-width: 190px;
+    height: 167px;
+    text-align: center;
+    justify-content: center;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 1px, rgba(0, 0, 0, 0.22) 0px 1px 1px;
   }
   .searchables {
-    width: 90%;
-    margin-top: 5rem;
-    padding-left: 25px;
-    min-height: 50rem;
-    margin-bottom: auto;
-    padding-bottom: 20px;
+    background-color: rgb(255, 255, 255);
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    list-style: none;
+  
   }
   .collection-header2 {
     max-width: 33ch;
@@ -612,7 +651,8 @@ header {
     transition: all 0.7s ease-in-out;
   }
   summary {
-    margin-right: 5rem;
+    margin-right: auto;
+    margin-left: auto;
   }
   .inputWeight {
     width: 50px;
@@ -654,23 +694,21 @@ header {
     justify-content: center;
   }
 
-
   .sidePanel {
     text-align: center;
     height: 0;
-    width: max-content;
+    width: 20px;
     background-color: #f6fff2;
     visibility: hidden;
     padding-top: 15px;
     padding-bottom: 15px;
     border-radius: 20px;
-    box-shadow: 0 0 8px 8px white inset;
-    
+    list-style: none;
   }
-
   .open-details {
     visibility: visible;
     height: fit-content;
+    width: fit-content;
   }
   .healthinfo {
     -webkit-column-count: 2;
@@ -678,6 +716,7 @@ header {
     column-count: 2;
     margin: 0;
     padding: 10px;
+    list-style: none;
   }
   .linksidebar{
     visibility: hidden;
@@ -921,11 +960,24 @@ button:hover {
   max-width: 20px;
   max-height: 20px;
 }
-.clearList{
+.clearList {
   max-width: 20px;
   max-height: 20px;
 }
-
+footer {
+  margin-bottom: 0px;
+  bottom: 0px;
+}
+.thank {
+  background-color: #231f20;
+  margin-bottom: 0;
+  text-align: center;
+  color: #c8c8c8;
+  height: 6rem;
+  padding: 5px;
+  padding-top: 10px;
+  bottom: 0;
+}
 
 }
 

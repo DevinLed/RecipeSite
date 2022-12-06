@@ -100,7 +100,7 @@ const renderRecipies = (recipeList = []) => {
                 <div class="showdets">
                 <button type="submit" title="View details" class="showDetails">View Extra Details</button>
                 <div class= "extraDetails">
-                <div class="sidePanel">`;
+                <div class="sidePanel" style="box-shadow: 0 0 8px 8px white inset;>`;
                 if (time === 0) {
                   htmlStr += `
                              <p id="cookTime">This item is not cooked</p>`;
@@ -131,12 +131,8 @@ const renderRecipies = (recipeList = []) => {
 
     recipeContainer.insertAdjacentHTML("beforeend", htmlStr);
     document.querySelector(".expandlist").style.transition = "all 2s";
-    document.querySelector(".collectionSummary").onmouseover = function() {mouseOver()};
   });
 
-  function mouseOver(){
-    console.log("test");
-  }
 
   let cbox = document.querySelectorAll(".showDetails");
   
@@ -206,6 +202,11 @@ function closePopup() {
 */
 let toolbarhide = document.getElementById("toolshide");
 
+let startBtn = document.getElementById("start");
+let stopBtn = document.getElementById("stop");
+let resetBtn = document.getElementById("reset");
+let poptimer = document.getElementById("sidebar");
+
 function openTools() {
   toolbarhide.classList.add("open-toolbar");
   popcnvt.classList.add("open-cnvt");
@@ -218,10 +219,6 @@ function closeTools() {
   toolsCheck = 0;
 }
 
-let startBtn = document.getElementById("start");
-let stopBtn = document.getElementById("stop");
-let resetBtn = document.getElementById("reset");
-let poptimer = document.getElementById("sidebar");
 
 let hour = 00;
 let minute = 00;
