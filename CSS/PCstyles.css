@@ -35,11 +35,13 @@
   .toolBarTop {
     position: fixed;
     width: 100%;
-    height: 25px;
+    height: 40px;
     background-color: #231f20;
     padding: 5px;
     z-index: 3;
     margin: 0;
+    white-space: normal;
+    min-width: 990px;
   }
   .toolBarList {
     margin: 0;
@@ -47,6 +49,8 @@
     padding-right: 5px;
     color: #c8c8c8;
     list-style: none;
+    height: 40px;
+    
   }
   .toolBarList li {
     display: inline;
@@ -61,8 +65,10 @@
   .toolBarLinks a {
     font-size: 15px;
     color: #c8c8c8;
+    transition: all 250ms ease-in-out;
   }
   #logoTitle {
+    padding-top: 5px;
     position: relative;
     font-style: bold;
     font-size: 20px;
@@ -73,10 +79,15 @@
   }
   #logoTitle a {
     color: #c8c8c8;
+    
+    transition: all 250ms ease-in-out;
   }
-  a:hover{
-    color:#000000;
-    transition: all 250ms;
+  .toolBarList a:hover{
+    color:white;
+    transition: all 250ms ease-in-out;
+    background-color: #676364;
+    border-radius: 5px;
+    padding: 5px;
   }
   .inputHeader {
     display: flex;
@@ -323,25 +334,18 @@
     text-align: center;
     margin: 1px;
     border-radius: 15px;
-    max-width: 260px;
     overflow: hidden;
     text-overflow: ellipsis;
-    min-width: 80%;
+    min-width: 100%;
+    background-image: url(./img/collectionImage.jpg);
+    background-position: center;
+    transition: all 250ms ease-in-out;
     
   }
-  .details-example::after {
-    content: "";
-    width: 40px;
-    position: absolute;
-    transform: scaleX(0);
-    height: 100%;
-    bottom: 0;
-    left: 0;
-    background-color: rgb(0, 0, 0, 0.1);
-    transform-origin: bottom left;
-    transition: 0.8s ease;
-    pointer-events: none;
-    cursor: pointer;
+  .details-example:hover{
+
+
+    transition: height 1s ease;
   }
   .list {
     display: grid;
@@ -383,9 +387,11 @@
     border-radius: 40px;
   }
   .previewimg {
+    padding-left: 10%;
+    padding-right: 10%;
     padding-top: 15px;
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     object-fit: cover;
     margin: 0;
     border-radius: 18%;
@@ -417,6 +423,9 @@
   details[open] summary ~ * {
     animation: sweep 0.5s ease-in-out;
     width: 100%;
+    color: white;
+    
+    transition: height 1s ease;
     
   }
   .collection-header {
@@ -425,7 +434,7 @@
     display: grid;
     margin: 0;
     padding: 5px;
-    max-width: 263px;
+    max-width: 300px;
   }
   
   .collectionSummary {
@@ -434,15 +443,16 @@
     display: grid;
     margin: 0;
     padding: 5px;
-    max-width: 263px;
     height: 100%;
+    justify-content: center;
+    text-align: center;
   }
   .collection-header:hover{
     transition: all 0.1s ease;
     background-color: rgb(0, 0, 0, 0.3);
     border-radius: 15px;
-    max-width: 263px;
     
+    max-width: 300px;
   }
   .collection-item {    
     max-width: 33ch;
@@ -459,10 +469,10 @@
   }
 .titleWord{
   min-height: 50px; 
-  padding-top:20px; 
   margin-bottom:0; 
-  color: black;
-  font-size: 18px;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-weight: 500;
 }
   .container {
     display: grid;
@@ -697,6 +707,8 @@
   }
   summary {
     margin-right: 5rem;
+    
+    transition: all 250ms ease-in-out;
   }
   .inputWeight {
     width: 7%;

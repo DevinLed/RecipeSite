@@ -192,8 +192,7 @@ header {
   .open-timer {
     position: fixed;
     visibility: visible;
-    transition: transform 0.4s, top 0.4s;
-    transform: translate(0%, -317.3vh) scale(1);
+    transform: translate(0%, -350.3vh) scale(1);
     z-index: 1;
   }
 
@@ -325,15 +324,13 @@ header {
     min-width: 80%;
     
   }
-.titleWord{
-  word-break: break-all; 
-  min-height: 50px;
-  width: 100%; 
-  padding-top: 10px;
-  margin-bottom:0; 
-  color: rgb(0, 0, 0);
-  font-size: 16px;
-}
+  .titleWord{
+    min-height: 50px; 
+    margin-bottom:0; 
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: 500;
+  }
   .list {
     display: grid;
     margin-right: auto;
@@ -513,7 +510,7 @@ header {
   .open-cnvt {
     border-radius: 5px;
     visibility: visible;
-    top: 28%;
+    top: 32%;
     right: 53%;
     width: 75%;
     transition: transform 0.4s, top 0.4s;

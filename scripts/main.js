@@ -82,7 +82,7 @@ const renderRecipies = (recipeList = []) => {
     <ul class="expandlist" style="padding-left: 0px;">
         <li class="collection-header">
         
-            <details class="details-example" style="background-color: ${generatePastelColor()}">
+            <details class="details-example" style="background-image: url(./img/collectionImage.jpg);">
             <summary class="collectionSummary"><img class="previewimg" src="${recipeImage}"/><p class="titleWord">${recipeTitle}</p>        
             </summary>
             <p style="margin-top:0;">Ingredients:</p>
@@ -100,7 +100,7 @@ const renderRecipies = (recipeList = []) => {
                 <div class="showdets">
                 <button type="submit" title="View details" class="showDetails">View Extra Details</button>
                 <div class= "extraDetails">
-                <div class="sidePanel" style="box-shadow: 0 0 8px 8px white inset;>`;
+                <div class="sidePanel">`;
                 if (time === 0) {
                   htmlStr += `
                              <p id="cookTime">This item is not cooked</p>`;
