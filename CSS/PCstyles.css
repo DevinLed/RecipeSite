@@ -9,7 +9,6 @@
     transition: all 0.3s ease 0s;
     overflow-y: scroll;
   }
-
   .topbar {
     display: flex;
     justify-content: space-between;
@@ -24,7 +23,7 @@
     width: 100%;
     z-index: 2;
   }
-  .currentSearch{
+  .currentSearch {
     padding-top: 20px;
     font-size: 20px;
     background-color: rgb(255, 255, 255);
@@ -50,7 +49,6 @@
     color: #c8c8c8;
     list-style: none;
     height: 40px;
-    
   }
   .toolBarList li {
     display: inline;
@@ -79,11 +77,11 @@
   }
   #logoTitle a {
     color: #c8c8c8;
-    
+
     transition: all 250ms ease-in-out;
   }
-  .toolBarList a:hover{
-    color:white;
+  .toolBarList a:hover {
+    color: white;
     transition: all 250ms ease-in-out;
     background-color: #676364;
     border-radius: 5px;
@@ -163,7 +161,7 @@
     height: auto;
   }
   .listcontainer {
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
@@ -171,13 +169,13 @@
     background-color: rgb(255, 255, 255);
     overflow: hidden;
     min-width: 50%;
-    width: 75%;  
+    width: 75%;
     min-height: 40px;
   }
-  .listcontainer>.expandlist{
+  .listcontainer > .expandlist {
     margin: 0px;
     margin-left: 10px;
-    
+
     transition: 0.8s ease;
   }
   a {
@@ -241,7 +239,6 @@
     transition: transform 0.4s, top 0.4s;
   }
 
-
   .open-Btn {
     visibility: visible;
     transform: translate(0%, 0%) scale(1);
@@ -298,7 +295,7 @@
     font-size: 20px;
     margin: 2px;
   }
-  .expandlist{
+  .expandlist {
     padding: 20px;
   }
   ul .expandlist li {
@@ -327,7 +324,7 @@
   }
   .details-example {
     box-shadow: 0px 0px 1px 1px grey;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
@@ -337,30 +334,41 @@
     overflow: hidden;
     text-overflow: ellipsis;
     min-width: 100%;
-    background-image: url(./img/collectionImage.jpg);
-    background-position: center;
-    transition: all 250ms ease-in-out;
-    
+    background-image: url(../img/collectionImage.jpg);
+    background-repeat: none;
+    max-height: 327px;
+    transition: max-height 0.25s ease-out;
+    overflow: hidden;
   }
-  .details-example:hover{
-
-
-    transition: height 1s ease;
+  .details-example:hover{    
+    max-height: 650px;
+    transition: max-height 0.4s ease-in;
   }
   .list {
-    display: grid;
-    margin: 0;
-    padding: 0;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-    list-style: none;
-    width: 100%;
-    padding-left: 0;  
-    overflow: hidden;
-    text-align: left;
+      display: grid;
+      margin: 0;
+      padding: 0;
+      margin-left: auto;
+      margin-right: auto;
+      justify-content: center;
+      list-style: none;
+      width: 100%;
+      padding-left: 0;  
+      overflow: hidden;
+      text-align: left;
+    
   }
-
+  .recipeBackground{
+    width: 100vw;
+    height: 100vh;
+    background-color:rgba(0, 0, 0, 0.3)
+  }
+.tester{
+  height: 0;
+  transition: left 250ms ease-in-out;
+  text-align: center;
+  position: fixed;
+}
   .linklist {
     background: no-repeat center center fixed;
     width: 100%;
@@ -418,15 +426,13 @@
       margin-left: 0px;
     }
   }
-  
-  
-  details[open] summary ~ * {
+
+   summary ~ * {
     animation: sweep 0.5s ease-in-out;
     width: 100%;
     color: white;
-    
+
     transition: height 1s ease;
-    
   }
   .collection-header {
     align-items: center;
@@ -436,7 +442,7 @@
     padding: 5px;
     max-width: 300px;
   }
-  
+
   .collectionSummary {
     align-items: center;
     list-style: none;
@@ -446,34 +452,47 @@
     height: 100%;
     justify-content: center;
     text-align: center;
+    padding-bottom: 30px;
   }
-  .collection-header:hover{
+  .collection-header:hover {
     transition: all 0.1s ease;
     background-color: rgb(0, 0, 0, 0.3);
     border-radius: 15px;
-    
+
     max-width: 300px;
   }
-  .collection-item {    
-    max-width: 33ch;
+  .collection-item {
     overflow: hidden;
     text-overflow: ellipsis;
     width: fit-content;
+    padding-left: 10px;
     padding-bottom: 10px;
+    
   }
-  .collection-item:nth-child(even) {
-    padding-left: 10px;
+  .recipeCardList{
+    
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    height: min-content;
   }
-  .collection-item:nth-child(odd) {
-    padding-left: 10px;
+  .titleWord {
+    margin-left: auto;
+    margin-right: auto;
+    height: max-content;
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 200;
+    justify-content: center;
+    text-align: center;
+    width: max-content;
+    
+    max-width: 20ch;
+    border-radius: 20px;
+    color: black;
+    background-color: rgb(255, 255, 255, 0.5);
+    padding: 5px;
   }
-.titleWord{
-  min-height: 50px; 
-  margin-bottom:0; 
-  color: rgb(255, 255, 255);
-  font-size: 20px;
-  font-weight: 500;
-}
   .container {
     display: grid;
     justify-content: center;
@@ -483,13 +502,12 @@
   }
   .searchables {
     background-color: rgb(255, 255, 255);
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
     width: 100%;
     list-style: none;
-  
   }
   .listall {
     width: 100%;
@@ -517,7 +535,7 @@
     appearance: none;
     margin: 0;
   }
-  input[type=number] {
+  input[type="number"] {
     appearance: textfield;
   }
   .converter {
@@ -531,7 +549,7 @@
   .liquidWeight {
     padding-bottom: 20px;
   }
-  label{
+  label {
     padding: 20px;
   }
   .dryWeight {
@@ -693,21 +711,9 @@
   span {
     display: inline-block;
   }
-  details summary::-webkit-details-marker {
-    display: none;
-  }
-  details > summary:first-of-type {
-    list-style-type: none;
-    padding-bottom: 5px;
-    cursor: pointer;
-  }
-  details > summary:first-of-type:hover {
-    list-style-type: none;
-    transition: all 1.7s ease-in-out;
-  }
   summary {
     margin-right: 5rem;
-    
+
     transition: all 250ms ease-in-out;
   }
   .inputWeight {
@@ -727,7 +733,7 @@
     background-color: rgb(255, 255, 255);
     display: grid;
   }
-  .loadBar{
+  .loadBar {
     text-align: center;
     justify-content: center;
   }
@@ -748,25 +754,51 @@
     text-align: center;
     align-items: center;
     justify-content: center;
+    padding: 0;
   }
 
   .sidePanel {
-    text-align: center;
-    height: 0;
-    width: 20px;
-    background-color: #f6fff2;
-    visibility: hidden;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    text-align: left;
+    height: auto;
+    width: auto;
+    visibility: visible;
     border-radius: 20px;
+    color: black;
+    background-color: rgb(255, 255, 255, 0.5);
+    padding: 5px;
+  }
+  .recipeCard{
+    
+  text-align: center;
+
   }
 
   .open-details {
+    
+    transition:all 250ms ease-in-out;
     list-style: none;
     visibility: visible;
-    height: fit-content;
-    width: 100%;
-    max-width: fit-content;
+    height: max-content;
+    position: fixed;
+    border: 1px solid black;
+    text-overflow: ellipsis;
+    padding-top: 50px;
+    padding-right: 0;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    top: 0;
+    left: 13%;
+    margin-top: 10vh;
+    width:75%;
+    background-color: #1C4218;
+    border-radius: 15px;
+    color:#ffffff;
+    z-index: 6;
+    overflow-y: scroll;
   }
 
   .healthinfo {
@@ -818,6 +850,57 @@
 
     background-color: #adcaed;
   }
+  .recipeCardLink{
+    margin-top: 30px;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 15px;
+    font-weight: 400;
+    justify-content: center;
+    line-height: 1.25;
+    position: relative;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: auto;
+    padding: 9px 15px;
+  }
+  .hideDetails{
+    margin-left: 90%;
+    padding: 10px;
+    
+    transform: translate(0px, -50px) scale(0.9);
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 15px;
+    font-weight: 400;
+    justify-content: center;
+    line-height: 1.25;
+    position: relative;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: auto;
+    padding: 9px 15px;
+    height: min-content;
+  
+  }
   .btnAll,
   .directionLink,
   .showDetails {
@@ -847,11 +930,8 @@
   }
 
   .btnAll:hover,
-  .btnAll:focus,
   .directionLink:hover,
-  .directionLink:focus,
-  .showDetails:hover,
-  .showDetails:focus {
+  .showDetails:hover {
     border-color: rgba(0, 0, 0, 0.15);
     box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
     background-color: rgba(133, 133, 133, 0.861);
@@ -890,5 +970,10 @@
     padding: 5px;
     padding-top: 10px;
     bottom: 0;
+  }
+  
+  .allIncased{
+    background-color:rgb(0, 0, 0, 0.7);
+    z-index: 5;
   }
 }

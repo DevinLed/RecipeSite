@@ -77,29 +77,15 @@ const renderRecipies = (recipeList = []) => {
       dishType: dishType,
       healthLabels: health,
     } = recipeObj.recipe;
-    console.log(recipeObj);
     let htmlStr = `
+
     <ul class="expandlist" style="padding-left: 0px;">
         <li class="collection-header">
         
-            <details class="details-example" style="background-image: url(./img/collectionImage.jpg);">
+            <div class="details-example">
             <summary class="collectionSummary"><img class="previewimg" src="${recipeImage}"/><p class="titleWord">${recipeTitle}</p>        
             </summary>
-            <p style="margin-top:0;">Ingredients:</p>
-            <ul class="list">`;
-    //loads list of ingredients from json for each initial item
-    
-    ingredientLines.forEach((ingredient) => {
-      htmlStr += `<li class="collection-item">${ingredient}</li>`;
-    });
-    htmlStr += `</ul>
-
-              <div class="directionBtn">
-                <button type="submit" title="Visit external site" class="directionLink"><a href="${url}" target="_blank">Show Full Recipe</button></a>
-                
-                <div class="showdets">
-                <button type="submit" title="View details" class="showDetails">View Extra Details</button>
-                <div class= "extraDetails">
+            <div class= "extraDetails">
                 <div class="sidePanel">`;
                 if (time === 0) {
                   htmlStr += `
@@ -111,24 +97,53 @@ const renderRecipies = (recipeList = []) => {
                 htmlStr += `
                 <p>Serves: ${feeds}</p>
                 <p>${dishType}</p>
-                 <ul class = "healthinfo">
-                 `;
-    //list of all health labels
-    health.forEach((health) => {
-      htmlStr += `<li>${health}</li>`;
-    });
-    htmlStr += `
+                </div>
+                </div>
+
+              <div class="directionBtn">
+                <button type="submit" title="Visit external site" class="directionLink"><a href="${url}" target="_blank">Show Full Recipe</button></a>
+                </div>
+                <div class="showdets">
+                  <button type="submit" title="View details" class="showDetails">View Details</button>
+                  <ul class="list">
+                  
+                  <div class="tester">
+                  <h style="margin-top:0;font-size: 25px;font-style:bold;margin-bottom: 20px;">${recipeTitle}</h>
+                  <button type="submit" title="View details" class="hideDetails">Close</button>
+                  <p style="font-size: 18px;margin-top: 0;">Ingredients: </p>
+                  <div class="recipeCard">
+                  <div class="recipeCardList">
+                  `;
+                  //loads list of ingredients from json for each initial item
+    
+                  ingredientLines.forEach((ingredient) => {
+                  htmlStr += `
+                    <li class="collection-item">${ingredient}</li>`;
+                  });
+                  htmlStr += `
+                  
+                    
+                    </div>
+                  <p style="font-size:18px;text-align:center;">Health Information: </p>
+                    <ul class = "healthinfo">
+                   `;
+                  //list of all health labels
+                  health.forEach((health) => {
+                    htmlStr += `<li>${health}</li>`;
+                  });
+                  htmlStr += `
+                  
+                    </ul>
+                    <div style="text-align:center;">
+                  <button type="submit" title="Visit external site" class="recipeCardLink"><a href="${url}" target="_blank">Show Full Recipe</button></a>
+                  </div>
                     </ul>
                     </div>
                     </div>
-                </div>
-              </div>
-              
-            </details>
-        </li>
-    </ul>
-    `;
-
+                    </div>
+                    </li>
+                    </ul>
+                  `;
     recipeContainer.insertAdjacentHTML("beforeend", htmlStr);
     document.querySelector(".expandlist").style.transition = "all 2s";
   });
@@ -136,6 +151,7 @@ const renderRecipies = (recipeList = []) => {
 
   let cbox = document.querySelectorAll(".showDetails");
   
+  let hbox = document.querySelectorAll(".hideDetails");
 let detailsShown = false;
   cbox.forEach((showdets) => {
     showdets.addEventListener("click", function (event) {
@@ -143,15 +159,26 @@ let detailsShown = false;
         event.currentTarget.nextElementSibling.children[0].classList.add(
           "open-details"
         );
-        event.target.textContent = "Hide Extra Details";
+        event.target.textContent = "Hide Details";
         detailsShown = !detailsShown;
       } else {
-        event.target.textContent = "View Extra Details";
+        event.target.textContent = "View Details";
         event.currentTarget.nextElementSibling.children[0].classList.remove(
           "open-details"
         );
         detailsShown = !detailsShown;
       }
+    });
+  });
+  hbox.forEach((showdets) => {
+    showdets.addEventListener("click", function (event) {
+      
+      detailsShown = !detailsShown;
+      event.currentTarget.parentNode.classList.remove(
+        "open-details"
+      );
+      event.currentTarget.parentNode.parentNode.previousElementSibling.textContent = "View Details";
+      console.log(false);
     });
   });
 

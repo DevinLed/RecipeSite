@@ -311,56 +311,51 @@ header {
     padding: 5px;
   }
   .details-example {
-    display:flex;
+    box-shadow: 0px 0px 1px 1px grey;
+    display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
     text-align: center;
     margin: 1px;
     border-radius: 15px;
-    max-width: 260px;
     overflow: hidden;
     text-overflow: ellipsis;
-    min-width: 80%;
-    
+    min-width: 100%;
+    background-repeat: none;
+    max-height: 327px;
+    transition: max-height 0.25s ease-out;
+    overflow: hidden;
   }
-  .titleWord{
-    min-height: 50px; 
-    margin-bottom:0; 
-    color: rgb(255, 255, 255);
-    font-size: 20px;
-    font-weight: 500;
+  .details-example:hover{    
+    max-height: 600px;
+    transition: max-height 0.25s ease-in;
   }
   .list {
-    display: grid;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 1px;
-    align-items: center;
-    justify-content: center;
-    list-style: none;
-    width: 100%;
-    overflow: hidden;
-    text-align: left;
-    border-radius: 15px;
+      display: grid;
+      margin: 0;
+      padding: 0;
+      margin-left: auto;
+      margin-right: auto;
+      justify-content: center;
+      list-style: none;
+      width: 100%;
+      padding-left: 0;  
+      overflow: hidden;
+      text-align: left;
+    
   }
-  .details-example::after {
-    content: "";
-    width: 50rem;
-    position: absolute;
-    transform: scaleX(0);
-    height: 100%;
-    bottom: 0;
-    left: 0;
-    background-color: rgb(0, 0, 0, 0.1);
-    transform-origin: bottom left;
-    transition: 0.8s ease;
-    pointer-events: none;
-    cursor: pointer;
+  .recipeBackground{
+    width: 100vw;
+    height: 100vh;
+    background-color:rgba(0, 0, 0, 0.3)
   }
-  #list {
-    width: 90%;
-  }
+.tester{
+  height: 0;
+  transition: left 250ms ease-in-out;
+  text-align: center;
+  position: fixed;
+}
 
   .linklist {
     background: no-repeat center center fixed;
