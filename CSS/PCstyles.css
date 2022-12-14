@@ -16,6 +16,7 @@
     text-align: center;
     background-repeat: no-repeat;
     height: 23rem;
+    
   }
   .recipeheader {
     background-image: url(../img/HOME-BANNER.png);
@@ -37,7 +38,7 @@
     height: 40px;
     background-color: #231f20;
     padding: 5px;
-    z-index: 3;
+    z-index: 8;
     margin: 0;
     white-space: normal;
     min-width: 990px;
@@ -49,6 +50,7 @@
     color: #c8c8c8;
     list-style: none;
     height: 40px;
+    z-index: 8;
   }
   .toolBarList li {
     display: inline;
@@ -128,17 +130,6 @@
     width: 25vw;
     padding: 9px 15px;
   }
-
-  /*.testsearch {
-    margin: 0 auto;
-    padding: 10px 25px;
-    background: rgb(251, 250, 245);
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: 400;
-    border-radius: 30px;
-    border: 0;
-  }*/
   body {
     margin: 0;
     background-color: rgb(251, 250, 245);
@@ -181,44 +172,6 @@
   a {
     text-decoration: none;
     color: #000000;
-  }
-  .showpop {
-    padding: 10px 25px;
-    background: #fff;
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: 400;
-    border-radius: 30px;
-  }
-  .popup {
-    white-space: pre-line;
-    list-style: none;
-    word-wrap: break-word;
-    width: 60%;
-    background: #fff;
-    border-radius: 6px;
-    position: fixed;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 1px, rgba(0, 0, 0, 0.22) 0px 1px 1px;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.9);
-    text-align: center;
-    padding: 0 30px 30px;
-    color: #333;
-    visibility: hidden;
-    transition: transform 0.4s, top 0.4s;
-    word-wrap: break-word;
-    height: 250px;
-    min-height: 300px;
-    max-height: auto;
-    padding-top: 120px;
-    z-index: 9002;
-  }
-
-  .open-popup {
-    visibility: visible;
-    top: 50%;
-    transform: translate(-50%, -50%) scale(1);
   }
 
   .mainpage {
@@ -304,24 +257,6 @@
     padding: 0px;
     cursor: pointer;
   }
-  ul .expandlist2 li {
-    list-style: none;
-    position: relative;
-    width: 40%;
-    background-color: rgb(241, 219, 219);
-    margin: 0;
-    max-height: auto;
-    padding-left: 0px;
-  }
-
-  ul .expandlist2 li:hover {
-    border-bottom: solid 10px rgb(255, 255, 255);
-    cursor: pointer;
-  }
-  .expandlist2 {
-    margin: 0;
-    padding: 5px;
-  }
   .details-example {
     box-shadow: 0px 0px 1px 1px grey;
     display: flex;
@@ -334,15 +269,11 @@
     overflow: hidden;
     text-overflow: ellipsis;
     min-width: 100%;
-    background-image: url(../img/collectionImage.jpg);
     background-repeat: none;
-    max-height: 327px;
-    transition: max-height 0.25s ease-out;
+    min-height: 424.5px;
+    max-height: 424.5px;
+    transition: all 0.4s ease-in-out;
     overflow: hidden;
-  }
-  .details-example:hover{    
-    max-height: 650px;
-    transition: max-height 0.4s ease-in;
   }
   .list {
       display: grid;
@@ -355,7 +286,6 @@
       width: 100%;
       padding-left: 0;  
       overflow: hidden;
-      text-align: left;
     
   }
   .recipeBackground{
@@ -368,6 +298,7 @@
   transition: left 250ms ease-in-out;
   text-align: center;
   position: fixed;
+  overflow-y: hidden;
 }
   .linklist {
     background: no-repeat center center fixed;
@@ -406,7 +337,7 @@
   }
   .directionBtn {
     border-radius: 15px;
-    padding-top: 15px;
+    padding-bottom: 5px;
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -441,6 +372,7 @@
     margin: 0;
     padding: 5px;
     max-width: 300px;
+    transition: all 150ms ease;
   }
 
   .collectionSummary {
@@ -449,14 +381,15 @@
     display: grid;
     margin: 0;
     padding: 5px;
-    height: 100%;
+    max-height: min-content;
     justify-content: center;
     text-align: center;
-    padding-bottom: 30px;
   }
-  .collection-header:hover {
-    transition: all 0.1s ease;
-    background-color: rgb(0, 0, 0, 0.3);
+  .details-example:hover{
+    
+    transition: all 150ms ease;
+    
+    box-shadow: rgb(0, 0, 0) 0px 1px 10px 0px;
     border-radius: 15px;
 
     max-width: 300px;
@@ -467,6 +400,8 @@
     width: fit-content;
     padding-left: 10px;
     padding-bottom: 10px;
+    text-align: center;
+    justify-content: center;
     
   }
   .recipeCardList{
@@ -475,23 +410,23 @@
     -moz-column-count: 3;
     column-count: 3;
     height: min-content;
+    justify-content: center;
+    text-align: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
   }
   .titleWord {
     margin-left: auto;
     margin-right: auto;
+    min-height: 50px;
     height: max-content;
-    margin-bottom: 5px;
     font-size: 18px;
     font-weight: 200;
-    justify-content: center;
     text-align: center;
-    width: max-content;
-    
-    max-width: 20ch;
-    border-radius: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
     color: black;
-    background-color: rgb(255, 255, 255, 0.5);
-    padding: 5px;
   }
   .container {
     display: grid;
@@ -750,30 +685,49 @@
     }
   }
   .extraDetails {
-    display: flex;
+    position: relative;
+    display: inline-block;
     text-align: center;
     align-items: center;
     justify-content: center;
     padding: 0;
+    height: 0;
   }
 
   .sidePanel {
-    
+    color: rgb(0,0,0,0.0);
     padding: 0;
-    margin: 0;
+    margin-left: 31px;
     font-size: 18px;
-    text-align: left;
-    height: auto;
-    width: auto;
-    visibility: visible;
-    border-radius: 20px;
-    color: black;
-    background-color: rgb(255, 255, 255, 0.5);
+    height: 197.6px;
+    width: 228px;
+    border-radius: 18%;
+    visibility: hidden;
     padding: 5px;
+    position: relative;
+    transform: translate(0px, -290px) scale(0.9);
+    transition: all 400ms ease-in-out;
+
+  }
+  
+  .details-example:hover .sidePanel{
+    
+    transition: all 400ms ease-in-out;
+    color: black;
+    margin-left: 31px;
+    visibility: visible;
+    height: 197.6px;
+    width: 228px;
+    border-radius: 18%;
+    position: relative;
+    transform: translate(0px, -287px) scale(0.9);
+    background-color:rgba(255, 255, 255, 0.7);
+    
+    
   }
   .recipeCard{
     
-  text-align: center;
+  text-align: center
 
   }
 
@@ -798,7 +752,6 @@
     border-radius: 15px;
     color:#ffffff;
     z-index: 6;
-    overflow-y: scroll;
   }
 
   .healthinfo {
@@ -830,25 +783,6 @@
     font-size: 18px;
     font-weight: 400;
     padding-bottom: 20px;
-  }
-  ul.elinks > li:hover {
-    background-color: white;
-    border-radius: 5px;
-    padding: 5px;
-    -webkit-transition: background-color 500ms linear;
-    -moz-transition: background-color 500ms linear;
-    -o-transition: background-color 500ms linear;
-    -ms-transition: background-color 500ms linear;
-    transition: background-color 500ms linear;
-  }
-  ul.elinks > li:hover:after {
-    -webkit-transition: background-color 500ms linear;
-    -moz-transition: background-color 500ms linear;
-    -o-transition: background-color 500ms linear;
-    -ms-transition: background-color 500ms linear;
-    transition: background-color 500ms linear;
-
-    background-color: #adcaed;
   }
   .recipeCardLink{
     margin-top: 30px;
@@ -972,8 +906,4 @@
     bottom: 0;
   }
   
-  .allIncased{
-    background-color:rgb(0, 0, 0, 0.7);
-    z-index: 5;
-  }
 }

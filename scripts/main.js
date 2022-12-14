@@ -11,16 +11,6 @@ const currSearch = document.querySelector(".currentSearch");
 
 let toolsCheck = 0;
 
-
-generatePastelColor = () => {
-  let R = Math.floor((Math.random() * 127) + 127);
-  let G = Math.floor((Math.random() * 127) + 127);
-  let B = Math.floor((Math.random() * 127) + 127);
-  
-  let rgb = (R << 16) + (G << 8) + B;
-  return `#${rgb.toString(16)}`;      
-}
-
 //search function when button is pressed
 searchButton.addEventListener("click", () => {
   currSearch.style.height = "25px";
@@ -77,29 +67,45 @@ const renderRecipies = (recipeList = []) => {
       dishType: dishType,
       healthLabels: health,
     } = recipeObj.recipe;
+    var colors = [
+      "rgb(116, 88, 60)",
+      "rgb(132, 137, 147)",
+      "rgb(196, 185, 168)",
+      "rgb(114, 73, 48)",
+      "rgb(117, 129, 155)",
+      "rgb(109, 156, 69)",
+      "rgb(140, 123, 106)",
+      "rgb(121, 52, 6)",
+      "rgb(90, 107, 112)",
+      "rgb(99, 66, 40)",
+      "rgb(190, 152, 116)",
+      "rgb(70, 50, 29)",
+      "rgb(109, 78, 50)"
+    ];
+    var randomColor = colors[Math.floor(Math.random() * colors.length)];
     let htmlStr = `
 
     <ul class="expandlist" style="padding-left: 0px;">
         <li class="collection-header">
         
-            <div class="details-example">
+            <div class="details-example" style="background-color: ${randomColor}">
             <summary class="collectionSummary"><img class="previewimg" src="${recipeImage}"/><p class="titleWord">${recipeTitle}</p>        
             </summary>
             <div class= "extraDetails">
                 <div class="sidePanel">`;
-                if (time === 0) {
-                  htmlStr += `
-                             <p id="cookTime">This item is not cooked</p>`;
-                } else {
-                  htmlStr += `
-                             <p id="cookTime">Total cooking time is ${time} minutes</p>`;
-                }
-                htmlStr += `
+    if (time === 0) {
+      htmlStr += `
+                             <p class="cookTime">This item is not cooked</p>`;
+    } else {
+      htmlStr += `
+                             <p class="cookTime">Total cooking time is ${time} minutes</p>`;
+    }
+    htmlStr += `
                 <p>Serves: ${feeds}</p>
                 <p>${dishType}</p>
                 </div>
                 </div>
-
+              <div class="btnExtra">
               <div class="directionBtn">
                 <button type="submit" title="Visit external site" class="directionLink"><a href="${url}" target="_blank">Show Full Recipe</button></a>
                 </div>
@@ -108,36 +114,37 @@ const renderRecipies = (recipeList = []) => {
                   <ul class="list">
                   
                   <div class="tester">
-                  <h style="margin-top:0;font-size: 25px;font-style:bold;margin-bottom: 20px;">${recipeTitle}</h>
+                  <h style="margin-top:0;font-size: 25px;font-style:bold;margin-bottom: 5px;">${recipeTitle}</h>
                   <button type="submit" title="View details" class="hideDetails">Close</button>
                   <p style="font-size: 18px;margin-top: 0;">Ingredients: </p>
                   <div class="recipeCard">
                   <div class="recipeCardList">
                   `;
-                  //loads list of ingredients from json for each initial item
-    
-                  ingredientLines.forEach((ingredient) => {
-                  htmlStr += `
+    //loads list of ingredients from json for each initial item
+
+    ingredientLines.forEach((ingredient) => {
+      htmlStr += `
                     <li class="collection-item">${ingredient}</li>`;
-                  });
-                  htmlStr += `
+    });
+    htmlStr += `
                   
                     
                     </div>
                   <p style="font-size:18px;text-align:center;">Health Information: </p>
                     <ul class = "healthinfo">
                    `;
-                  //list of all health labels
-                  health.forEach((health) => {
-                    htmlStr += `<li>${health}</li>`;
-                  });
-                  htmlStr += `
+    //list of all health labels
+    health.forEach((health) => {
+      htmlStr += `<li>${health}</li>`;
+    });
+    htmlStr += `
                   
                     </ul>
                     <div style="text-align:center;">
                   <button type="submit" title="Visit external site" class="recipeCardLink"><a href="${url}" target="_blank">Show Full Recipe</button></a>
                   </div>
                     </ul>
+                    </div>
                     </div>
                     </div>
                     </div>
@@ -148,11 +155,10 @@ const renderRecipies = (recipeList = []) => {
     document.querySelector(".expandlist").style.transition = "all 2s";
   });
 
-
   let cbox = document.querySelectorAll(".showDetails");
-  
+
   let hbox = document.querySelectorAll(".hideDetails");
-let detailsShown = false;
+  let detailsShown = false;
   cbox.forEach((showdets) => {
     showdets.addEventListener("click", function (event) {
       if (detailsShown === false) {
@@ -172,16 +178,13 @@ let detailsShown = false;
   });
   hbox.forEach((showdets) => {
     showdets.addEventListener("click", function (event) {
-      
       detailsShown = !detailsShown;
-      event.currentTarget.parentNode.classList.remove(
-        "open-details"
-      );
-      event.currentTarget.parentNode.parentNode.previousElementSibling.textContent = "View Details";
+      event.currentTarget.parentNode.classList.remove("open-details");
+      event.currentTarget.parentNode.parentNode.previousElementSibling.textContent =
+        "View Details";
       console.log(false);
     });
   });
-
 };
 
 function clearInput() {
@@ -245,7 +248,6 @@ function closeTools() {
   poptimer.classList.remove("open-timer");
   toolsCheck = 0;
 }
-
 
 let hour = 00;
 let minute = 00;
@@ -480,5 +482,4 @@ function openConverter() {
 document.addEventListener("DOMContentLoaded", function () {
   loadRecipes();
   console.log("Content Loaded");
-  
 });
