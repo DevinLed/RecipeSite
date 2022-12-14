@@ -1,6 +1,6 @@
 /*Mobile Version*/
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) and (min-width: 340px) {
   html {
     width: 100%;
     height: 100vh;
@@ -291,7 +291,7 @@
   transition: left 250ms ease-in-out;
   text-align: center;
   position: fixed;
-  
+  max-height: 100vh;
   overflow-y: scroll;
 }
   .linklist {
@@ -654,7 +654,7 @@
     visibility: hidden;
     padding: 5px;
     position: relative;
-    transform: translate(0px, -290px) scale(0.9);
+    transform: translate(0px, -250px) scale(0.9);
     transition: all 400ms ease-in-out;
 
   }
@@ -669,7 +669,7 @@
     width: 228px;
     border-radius: 18%;
     position: relative;
-    transform: translate(0px, -287px) scale(0.9);
+    transform: translate(0px, -252px) scale(0.9);
     background-color:rgba(255, 255, 255, 0.7);
     
     
