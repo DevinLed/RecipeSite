@@ -1,6 +1,6 @@
 /*Mobile Version*/
 
-@media only screen and (max-width: 768px) and (min-width: 340px) {
+@media only screen and (max-width: 768px){
   html {
     width: 100%;
     height: 100vh;
@@ -148,7 +148,8 @@
   .open-timer {
     position: fixed;
     visibility: visible;
-    transform: translate(0%, -375.3vh) scale(1);
+    top: 18%;
+    transform: translate(0%, 0%) scale(1);
     z-index: 1;
   }
 
@@ -229,6 +230,7 @@
   }
   .bothConvert {
     display: flex;
+    justify-content: center;
   }
   .kitchenTools {
     display:flex;
@@ -263,8 +265,7 @@
     text-overflow: ellipsis;
     min-width: 100%;
     background-repeat: none;
-    min-height: 424.5px;
-    max-height: 424.5px;
+    min-height: 100px;
     transition: all 0.4s ease-in-out;
     overflow: hidden;
   }
@@ -331,7 +332,6 @@
   }
   .directionBtn {
     border-radius: 15px;
-    padding-top: 15px;
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -504,7 +504,8 @@
   }
   .dryWeight {
     display: grid;
-    padding: 0px 5px;
+    margin-left: 30px;
+    justify-content: center;
   }
   .open-cnvt {
     border-radius: 5px;
@@ -519,6 +520,13 @@
     border-radius: 20px;
     padding: 8px 10px;
     background-color: #fff;
+  }
+  .btnExtra{
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    margin-bottom: 5px;
   }
   .toolbtn{
     
@@ -629,6 +637,7 @@
     margin-top: 10px;
     width: 100%;
     padding: 10px;
+    background-color: white;
   }
   span {
     display: inline-block;
@@ -654,7 +663,8 @@
     visibility: hidden;
     padding: 5px;
     position: relative;
-    transform: translate(0px, -250px) scale(0.9);
+    top: -30vh;
+    left: -3vw;
     transition: all 400ms ease-in-out;
 
   }
@@ -669,7 +679,9 @@
     width: 228px;
     border-radius: 18%;
     position: relative;
-    transform: translate(0px, -252px) scale(0.9);
+    top: -28vh;
+    left: -3vw;
+    transform: scale(0.7);
     background-color:rgba(255, 255, 255, 0.7);
     
     
@@ -684,7 +696,7 @@
     margin-left: auto;
   }
   .inputWeight {
-    width: 50px;
+    width: 70px;
   }
 
   .loader {
