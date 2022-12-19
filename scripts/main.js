@@ -68,19 +68,19 @@ const renderRecipies = (recipeList = []) => {
       healthLabels: health,
     } = recipeObj.recipe;
     var colors = [
-      "rgb(116, 88, 60)",
-      "rgb(132, 137, 147)",
-      "rgb(196, 185, 168)",
-      "rgb(114, 73, 48)",
-      "rgb(117, 129, 155)",
-      "rgb(109, 156, 69)",
-      "rgb(140, 123, 106)",
-      "rgb(121, 52, 6)",
-      "rgb(90, 107, 112)",
-      "rgb(99, 66, 40)",
-      "rgb(190, 152, 116)",
-      "rgb(70, 50, 29)",
-      "rgb(109, 78, 50)"
+      "rgb(116, 88, 60, 0.5)",
+      "rgb(132, 137, 147, 0.5)",
+      "rgb(196, 185, 168, 0.5)",
+      "rgb(114, 73, 48, 0.5)",
+      "rgb(117, 129, 155, 0.5)",
+      "rgb(109, 156, 69, 0.5)",
+      "rgb(140, 123, 106, 0.5)",
+      "rgb(121, 52, 6, 0.5)",
+      "rgb(90, 107, 112, 0.5)",
+      "rgb(99, 66, 40, 0.5)",
+      "rgb(190, 152, 116, 0.5)",
+      "rgb(70, 50, 29, 0.5)",
+      "rgb(109, 78, 50, 0.5)"
     ];
     var randomColor = colors[Math.floor(Math.random() * colors.length)];
     let htmlStr = `
@@ -113,7 +113,7 @@ const renderRecipies = (recipeList = []) => {
                   <button type="submit" title="View details" class="showDetails">View Details</button>
                   <ul class="list">
                   
-                  <div class="tester">
+                  <div class="recipeCardDiv">
                   <h style="margin-top:0;font-size: 25px;font-style:bold;margin-bottom: 5px;">${recipeTitle}</h>
                   <button type="submit" title="View details" class="hideDetails">Close</button>
                   <p style="font-size: 18px;margin-top: 0;">Ingredients: </p>

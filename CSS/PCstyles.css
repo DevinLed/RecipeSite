@@ -270,7 +270,7 @@
     text-overflow: ellipsis;
     min-width: 100%;
     background-repeat: none;
-    min-height: 100px;
+    height: 360.75px;
     transition: all 0.4s ease-in-out;
     overflow: hidden;
   }
@@ -292,7 +292,7 @@
     height: 100vh;
     background-color:rgba(0, 0, 0, 0.3)
   }
-.tester{
+.recipeCardDiv{
   height: 0;
   transition: left 250ms ease-in-out;
   text-align: center;
@@ -325,14 +325,18 @@
     border-radius: 40px;
   }
   .previewimg {
-    padding-left: 10%;
-    padding-right: 10%;
+    display: flex;
+    padding-right: 30px;
+    padding-left: 30px;
     padding-top: 15px;
-    width: 80%;
-    height: 80%;
+    width: 232px;
+    height: 197.6px;
     object-fit: cover;
     margin: 0;
     border-radius: 18%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
   .directionBtn {
     border-radius: 15px;
@@ -378,6 +382,7 @@
     display: grid;
     margin: 0;
     padding: 5px;
+    width: 100%;
     max-height: min-content;
     justify-content: center;
     text-align: center;
@@ -422,8 +427,7 @@
     font-size: 18px;
     font-weight: 200;
     text-align: center;
-    margin-top: 0;
-    margin-bottom: 10px;
+    margin-top: 10px;
     color: black;
   }
   .container {
@@ -646,7 +650,6 @@
   }
   #clearMeasure {
     display: grid;
-    background-color: white;
   }
   span {
     display: inline-block;
@@ -710,9 +713,8 @@
     border-radius: 18%;
     visibility: hidden;
     padding: 5px;
-    top: -32vh;
     position: relative;
-    transform: scale(0.9);
+    transform: translate(0%, -140%) scale(1.0);
     transition: all 400ms ease-in-out;
 
   }
@@ -726,9 +728,8 @@
     height: 197.6px;
     width: 228px;
     border-radius: 18%;
-    top: -32vh;
-    position: relative;
-    transform: scale(0.9);
+    position:relative;
+    transform: translate(0%, -140%) scale(0.9);
     background-color:rgba(255, 255, 255, 0.7);
     
     
@@ -843,7 +844,7 @@
     height: min-content;
   
   }
-  .btnAll,
+  .btnAll,.showpop,
   .directionLink,
   .showDetails {
     align-items: center;
@@ -871,7 +872,7 @@
     padding: 9px 15px;
   }
 
-  .btnAll:hover,
+  .btnAll:hover,.showpop:hover,
   .directionLink:hover,
   .showDetails:hover {
     border-color: rgba(0, 0, 0, 0.15);
@@ -879,7 +880,7 @@
     background-color: rgba(133, 133, 133, 0.861);
   }
 
-  .btnAll:active,
+  .btnAll:active,.showpop:active,
   .directionLink:active,
   .showDetails:active {
     background-color: #f0f0f1;
