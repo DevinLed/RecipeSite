@@ -80,7 +80,7 @@ const renderRecipies = (recipeList = []) => {
       "rgb(99, 66, 40, 0.5)",
       "rgb(190, 152, 116, 0.5)",
       "rgb(70, 50, 29, 0.5)",
-      "rgb(109, 78, 50, 0.5)"
+      "rgb(109, 78, 50, 0.5)",
     ];
     var randomColor = colors[Math.floor(Math.random() * colors.length)];
     let htmlStr = `
@@ -116,6 +116,7 @@ const renderRecipies = (recipeList = []) => {
                   <div class="recipeCardDiv">
                   <h style="margin-top:0;font-size: 25px;font-style:bold;margin-bottom: 5px;">${recipeTitle}</h>
                   <button type="submit" title="View details" class="hideDetails">Close</button>
+                  <img class="previewimgopen" src="${recipeImage}"/>
                   <p style="font-size: 18px;margin-top: 0;">Ingredients: </p>
                   <div class="recipeCard">
                   <div class="recipeCardList">

@@ -209,13 +209,14 @@
     text-align: center;
   }
   #time {
+    margin-right: auto;
+    margin-left: auto;
     border-radius: 15px;
     padding: 5px;
     background-color: #fff;
     width: fit-content;
     border: 2px solid black;
-    padding-bottom: 5px;
-    margin-bottom: 5px;
+    height: max-content;
   }
   h2 {
     background-color: bisque;
@@ -276,11 +277,11 @@
   }
   .list {
       display: grid;
-      margin: 0;
       padding: 0;
       margin-left: auto;
       margin-right: auto;
       justify-content: center;
+      text-align: center;
       list-style: none;
       width: 100%;
       padding-left: 0;  
@@ -293,9 +294,13 @@
     background-color:rgba(0, 0, 0, 0.3)
   }
 .recipeCardDiv{
+  display: grid;
+  width: max-content;
   height: 0;
   transition: left 250ms ease-in-out;
   text-align: center;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   overflow-y: hidden;
 }
@@ -333,6 +338,19 @@
     height: 197.6px;
     object-fit: cover;
     margin: 0;
+    border-radius: 18%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .previewimgopen {
+    display: flex;
+    width: 232px;
+    height: 197.6px;
+    transform: translate(0%, -10%);
+    object-fit: cover;
+    margin-right: auto;
+    margin-left: auto;
     border-radius: 18%;
     justify-content: center;
     align-items: center;
@@ -432,6 +450,7 @@
   }
   .container {
     display: grid;
+    text-align: center;
     justify-content: center;
     padding: 5px;
     width: 100%;
@@ -736,17 +755,19 @@
   }
   .recipeCard{
     
-  text-align: center
-
+  text-align: center;
+  width: 100%;
   }
-
   .open-details {
     
     transition:all 250ms ease-in-out;
     list-style: none;
     visibility: visible;
     height: max-content;
+    max-height: 60vh;
     position: fixed;
+    justify-content: center;
+    overflow-y: scroll;
     border: 1px solid black;
     text-overflow: ellipsis;
     padding-top: 50px;
@@ -754,10 +775,10 @@
     padding-left: 10px;
     padding-bottom: 10px;
     top: 0;
-    left: 13%;
+    left: 20%;
     margin-top: 10vh;
-    width:75%;
-    background-color: #1C4218;
+    width: 60%;
+    background-color: #4F772D;
     border-radius: 15px;
     color:#ffffff;
     z-index: 6;
@@ -844,7 +865,7 @@
     height: min-content;
   
   }
-  .btnAll,.showpop,
+  .btn,.btnAll,.showpop,
   .directionLink,
   .showDetails {
     align-items: center;
@@ -872,7 +893,7 @@
     padding: 9px 15px;
   }
 
-  .btnAll:hover,.showpop:hover,
+  .btn:hover,.btnAll:hover,.showpop:hover,
   .directionLink:hover,
   .showDetails:hover {
     border-color: rgba(0, 0, 0, 0.15);
@@ -880,7 +901,7 @@
     background-color: rgba(133, 133, 133, 0.861);
   }
 
-  .btnAll:active,.showpop:active,
+  .btn:active,.btnAll:active,.showpop:active,
   .directionLink:active,
   .showDetails:active {
     background-color: #f0f0f1;
