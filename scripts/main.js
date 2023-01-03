@@ -160,12 +160,15 @@ const renderRecipies = (recipeList = []) => {
 
   let hbox = document.querySelectorAll(".hideDetails");
   let detailsShown = false;
+  let blkBkg = document.getElementById("blackBackground");
   cbox.forEach((showdets) => {
     showdets.addEventListener("click", function (event) {
       if (detailsShown === false) {
+        
         event.currentTarget.nextElementSibling.children[0].classList.add(
           "open-details"
         );
+        blkBkg.style.visibility= "visible";
         event.target.textContent = "Hide Details";
         detailsShown = !detailsShown;
       } else {
@@ -179,6 +182,8 @@ const renderRecipies = (recipeList = []) => {
   });
   hbox.forEach((showdets) => {
     showdets.addEventListener("click", function (event) {
+      
+      blkBkg.style.visibility= "hidden";
       detailsShown = !detailsShown;
       event.currentTarget.parentNode.classList.remove("open-details");
       event.currentTarget.parentNode.parentNode.previousElementSibling.textContent =
