@@ -407,9 +407,6 @@
   }
   .hideDetails {
     margin-left: 75%;
-    padding: 10px;
-
-    transform: translate(0px, -50px) scale(0.9);
     background-color: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 0.25rem;
@@ -728,9 +725,8 @@
     left: 2%;
     margin-top: 1vh;
     width: 95%;
-    background-color: #1c4218;
+    background-color: #eceed8;
     border-radius: 15px;
-    color: #ffffff;
     z-index: 6;
     overflow-y: scroll;
   }

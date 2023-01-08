@@ -429,10 +429,11 @@
     text-overflow: ellipsis;
     width: fit-content;
     padding-left: 10px;
+    margin-right: auto;
+    margin-left: auto;
     padding-bottom: 10px;
-    text-align: center;
+    text-align: left;
     justify-content: center;
-    text-align: center;
     
     
   }
@@ -853,7 +854,7 @@
     margin-left: 90%;
     padding: 10px;
     
-    transform: translate(0px, -50px) scale(0.9);
+    transform: translate(0px, -10px) scale(0.9);
     background-color: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 0.25rem;

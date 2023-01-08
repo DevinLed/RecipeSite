@@ -114,8 +114,8 @@ const renderRecipies = (recipeList = []) => {
                   <ul class="list">
                   
                   <div class="recipeCardDiv">
-                  <h style="margin-top:0;font-size: 25px;font-style:bold;margin-bottom: 5px;">${recipeTitle}</h>
                   <button type="submit" title="View details" class="hideDetails">Close</button>
+                  <h style="margin-top:0;font-size: 25px;font-style:bold;margin-bottom: 5px;">${recipeTitle}</h>
                   <img class="previewimgopen" src="${recipeImage}"/>
                   <p style="font-size: 18px;margin-top: 0;">Ingredients: </p>
                   <div class="recipeCard">
