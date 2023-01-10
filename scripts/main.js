@@ -13,18 +13,14 @@ let toolsCheck = 0;
 
 //search function when button is pressed
 searchButton.addEventListener("click", () => {
+  
+  const inputVal = searchText.value;
   currSearch.style.height = "25px";
-  recipeContainer.innerHTML =
-    "<div class='loadBar'><div class='loader'></div></div>";
-  setTimeout(() => {
-    loadRecipes(searchText.value);
-    if (searchText.value != null) {
-      currSearch.innerHTML = "No search inputted.";
-      currSearch.style.height = "20vh";
-    } else {
-      console.log(false);
-    }
-  }, 200);
+    recipeContainer.innerHTL =
+      "<div class='loadBar'><div class='loader'></div></div>";
+    setTimeout(() => {
+      loadRecipes(inputVal);
+    }, 200);
 });
 //search function at the press of Enter
 searchText.addEventListener("keyup", (e) => {
@@ -40,7 +36,7 @@ searchText.addEventListener("keyup", (e) => {
 });
 
 //loads list of pizza recipes by calling cnst renderRecipies
-function loadRecipes(type = "Pizza") {
+function loadRecipes(type = "Salad") {
   recipeContainer.innerHTML = "<div class='loader'></div>";
   setTimeout(() => {
     const url = baseUrl + `&q=${type}`;
@@ -484,7 +480,24 @@ function clearMeasure() {
 function openConverter() {
   popcnvt.classList.add("open-cnvt");
 }
+let mybutton = document.getElementById("topBtn");
 
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 240 || document.documentElement.scrollTop > 240) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+} 
 document.addEventListener("DOMContentLoaded", function () {
   loadRecipes();
   console.log("Content Loaded");
